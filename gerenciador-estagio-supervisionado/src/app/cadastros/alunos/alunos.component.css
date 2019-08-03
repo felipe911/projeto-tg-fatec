@@ -1,0 +1,39 @@
+#form-cadastro{
+    margin-top: 30px;
+    border: 1px solid #ced4da;
+    padding: 30px;
+}
+
+#btn-salvar{
+    float: right;
+    margin-top: 10px;
+    padding: 10px 30px 10px 30px;
+}
+
+.label-block{
+    display: block !important;
+}
+
+.btn-full-width{
+    width: 100%;
+    text-align: left;
+}
+
+.row-margin{
+    margin-bottom: 10px;
+}
+
+/* Sobrescrita Bootstrap */
+
+.dropdown-toggle::after {
+    margin-left: 120px;
+    border-top: .4em solid;
+    border-right: .4em solid transparent;
+    border-left: .4em solid transparent;
+}
+
+.btn-primary {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border-color: #ced4da;
+}
