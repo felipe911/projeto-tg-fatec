@@ -30,7 +30,7 @@ h1{
 /* Sobrescrita Bootstrap */
 
 .dropdown-toggle::after {
-    margin-left: 120px;
+    margin-left: 10px;
     border-top: .3em solid;
     border-right: .3em solid transparent;
     border-left: .3em solid transparent;
