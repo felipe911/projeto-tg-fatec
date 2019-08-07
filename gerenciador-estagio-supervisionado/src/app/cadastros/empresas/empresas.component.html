@@ -1,0 +1,87 @@
+<div class="container">
+  <form id="form-cadastro">
+
+    <h1>Cadastrar {{ titulo }}</h1>
+
+    <div class="row row-margin">
+
+      <div class="col-md-5">
+        <label for="input-razao-social">Razão Social:</label>
+        <input type="text" class="form-control" id="input-razao-social">
+      </div>
+
+      <div class="col-md-3">
+        <label for="input-nome">Contato (Responsável):</label>
+        <input type="text" class="form-control" id="input-nome">
+      </div>
+
+      <div class="col-md-2">
+        <label for="input-data-prazo-convenio" class="label-block">Prazo Convênio:</label>
+        <input type="date" class="form-control" id="input-data-prazo-convenio">
+      </div>
+
+      <div class="col-md-2">
+        <label for="input-qtd-estagiarios" class="label-block">Qtd. Estagiários:</label>
+        <input type="number" class="form-control" id="input-qtd-estagiarios" >
+      </div>
+    </div>
+
+    <div class="row row-margin">
+
+      <div class="col-md-2">
+        <label for="input-cep">CEP:</label>
+        <input type="text" class="form-control" id="input-cep" >
+      </div>
+
+      <div class="col-md-1">
+        <div class="dropdown">
+          <label for="dropdown-uf" class="label-block">UF:</label>
+          <button id="dropdown-uf" class="btn btn-primary dropdown-toggle btn-full-width" type="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            --
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdown-uf">
+            <a class="dropdown-item" href="#">SP</a>
+            <a class="dropdown-item" href="#">RJ</a>
+            <a class="dropdown-item" href="#">SC</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <label for="input-cidade" class="label-block">Cidade:</label>
+        <input type="text" class="form-control" id="input-cidade">
+      </div>
+
+      <div class="col-md-5">
+        <label for="input-endereco" class="label-block">Endereço:</label>
+        <input type="text" class="form-control" id="input-endereco">
+      </div>
+
+      <div class="col-md-2">
+        <label for="input-bairro" class="label-block">Bairro:</label>
+        <input type="text" class="form-control" id="input-bairro">
+      </div>
+    </div>
+
+    <div class="row row-margin">
+      <div class="col-md-2">
+        <label for="input-numero" class="label-block">Número:</label>
+        <input type="text" class="form-control" id="input-numero">
+      </div>
+
+      <div class="col-md-3">
+        <label for="input-telefone" class="label-block">Telefone:</label>
+        <input type="text" class="form-control" id="input-telefone">
+      </div>
+
+      <div class="col-md-5">
+        <label for="input-email" class="label-block">E-mail:</label>
+        <input type="email" class="form-control" id="input-email">
+      </div>
+    </div>
+  </form>
+
+  <button id="btn-salvar" type="button" class="btn btn-success">Salvar</button>
+
+</div>
