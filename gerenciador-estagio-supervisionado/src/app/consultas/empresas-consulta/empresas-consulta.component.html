@@ -1,0 +1,114 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <h1>Consultar {{ titulo }}</h1>
+      </div>
+      <div class="col-md-3">
+        <button id="btn-cadastrar-aluno" type="button" class="btn btn-success">Cadastrar Empresa</button>
+      </div>
+    </div>
+    <form id="form-cadastro">
+      <div class="row row-margin">
+  
+        <div class="col-md-3">
+          <label for="input-razao-social">Razão Social:</label>
+          <input type="text" class="form-control" id="input-razao-social">
+        </div>
+  
+        <div class="col-md-3">
+          <div class="dropdown">
+            <label for="dropdown-cidade" class="label-block">Cidade:</label>
+            <button id="dropdown-cidade" class="btn btn-primary dropdown-toggle btn-full-width" type="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Selecione
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdown-cidade">
+              <a class="dropdown-item" href="">Sorocaba</a>
+              <a class="dropdown-item" href="">Votorantim</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="dropdown">
+            <label for="dropdown-possui-estagiarios" class="label-block">Possui Estagiários:</label>
+            <button id="dropdown-possui-estagiarios" class="btn btn-primary dropdown-toggle btn-full-width" type="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Selecione
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdown-possui-estagiarios">
+              <a class="dropdown-item" href="">Sim</a>
+              <a class="dropdown-item" href="">Não</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="input-convenio-partir-de">Convênio a partir de:</label>
+          <input type="date" class="form-control" id="input-convenio-partir-de" >
+        </div>
+  
+      </div>
+  
+      <div class="row row-margin">
+        <div class="col-md-12">
+          <button id="btn-pesquisar" type="button" class="btn btn-info">Pesquisar</button>
+        </div>
+      </div>
+    </form>
+  
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Razão Social</th>
+          <th scope="col">Convênio a partir de</th>
+          <th scope="col">Cidade</th>
+          <th scope="col">Possui Estagiários</th>
+          <th scope="col">Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Fatec Sorocaba</td>
+          <td>20/07/1991</td>
+          <td>Sorocaba</td>
+          <td>Sim</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
