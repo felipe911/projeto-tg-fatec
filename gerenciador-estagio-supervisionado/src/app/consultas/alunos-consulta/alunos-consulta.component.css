@@ -13,6 +13,12 @@ h1{
     float: right;
 }
 
+#btn-pesquisar{
+    margin-top: 20px;
+    padding: 10px 30px 10px 30px;
+    float: right;
+}
+
 .label-block{
     display: block !important;
 }
@@ -29,14 +35,22 @@ h1{
 /* Sobrescrita Bootstrap */
 
 .dropdown-toggle::after {
-    margin-left: 10px;
+    margin-left: 120px;
     border-top: .3em solid;
     border-right: .3em solid transparent;
     border-left: .3em solid transparent;
+}
+
+.dropdown-item:hover{
+    background-color: rgb(93, 190, 235);
 }
 
 .btn-primary {
     color: rgb(0, 0, 0);
     background-color: #ffffff;
     border-color: #ced4da;
+}
+
+.table-bordered{
+    margin-top: 40px !important;
 }

@@ -35,6 +35,10 @@ h1{
     border-left: .3em solid transparent;
 }
 
+.dropdown-item:hover{
+    background-color: rgb(93, 190, 235);
+}
+
 .btn-primary {
     color: rgb(0, 0, 0);
     background-color: #ffffff;
