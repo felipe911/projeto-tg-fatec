@@ -32,6 +32,10 @@ h1{
     margin-bottom: 10px;
 }
 
+.alinhamento{
+    text-align: center;
+}
+
 /* Sobrescrita Bootstrap */
 
 .dropdown-toggle::after {
