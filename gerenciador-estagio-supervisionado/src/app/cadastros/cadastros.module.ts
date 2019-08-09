@@ -6,6 +6,7 @@ import { EmpresasComponent } from './empresas/empresas.component';
 import { RelatoriosComponent } from './relatorios/relatorios.component';
 import { RelatorioPesquisaAlunoComponent } from './relatorios/relatorio-pesquisa-aluno/relatorio-pesquisa-aluno.component';
 import { RelatorioAdicionarComponent } from './relatorios/relatorio-adicionar/relatorio-adicionar.component';
+import { RelatorioExibicaoComponent } from './relatorios/relatorio-exibicao/relatorio-exibicao.component';
 
 @NgModule({
 
@@ -15,6 +16,7 @@ import { RelatorioAdicionarComponent } from './relatorios/relatorio-adicionar/re
         RelatoriosComponent,
         RelatorioPesquisaAlunoComponent,
         RelatorioAdicionarComponent,
+        RelatorioExibicaoComponent,
     ],
     exports: [ 
         AlunosComponent,

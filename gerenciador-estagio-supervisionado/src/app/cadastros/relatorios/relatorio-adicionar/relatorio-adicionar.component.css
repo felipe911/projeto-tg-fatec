@@ -41,6 +41,10 @@ h1, h3{
     margin-left: 10px;
 }
 
+.espacamento-top{
+    margin-top: 15px;
+}
+
 /* Sobrescrita Bootstrap */
 
 .dropdown-toggle::after {
