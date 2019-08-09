@@ -13,6 +13,7 @@ import { RelatoriosConsultaComponent } from './consultas/relatorios-consulta/rel
 import { AssociarContratoComponent } from './contratos/associar-contrato/associar-contrato.component';
 import { AssociarAlunoComponent } from './contratos/associar-contrato/associar-aluno/associar-aluno.component';
 import { AssociarEmpresaComponent } from './contratos/associar-contrato/associar-empresa/associar-empresa.component';
+import { RelatorioPesquisaAlunoComponent } from './cadastros/relatorios/relatorio-pesquisa-aluno/relatorio-pesquisa-aluno.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AssociarEmpresaComponent } from './contratos/associar-contrato/associar
     AlunosComponent,
     EmpresasComponent,
     RelatoriosComponent,
+    RelatorioPesquisaAlunoComponent,
     AlunosConsultaComponent,
     EmpresasConsultaComponent,
     ContratosConsultaComponent,

@@ -4,6 +4,7 @@ import { CommonModule } from "@angular/common";
 import { AlunosComponent } from "./alunos/alunos.component";
 import { EmpresasComponent } from './empresas/empresas.component';
 import { RelatoriosComponent } from './relatorios/relatorios.component';
+import { RelatorioPesquisaAlunoComponent } from './relatorios/relatorio-pesquisa-aluno/relatorio-pesquisa-aluno.component';
 
 @NgModule({
 
@@ -11,6 +12,7 @@ import { RelatoriosComponent } from './relatorios/relatorios.component';
         AlunosComponent,
         EmpresasComponent,
         RelatoriosComponent,
+        RelatorioPesquisaAlunoComponent,
     ],
     exports: [ 
         AlunosComponent,
