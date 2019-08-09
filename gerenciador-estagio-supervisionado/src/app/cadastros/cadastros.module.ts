@@ -3,16 +3,19 @@ import { CommonModule } from "@angular/common";
 
 import { AlunosComponent } from "./alunos/alunos.component";
 import { EmpresasComponent } from './empresas/empresas.component';
+import { RelatoriosComponent } from './relatorios/relatorios.component';
 
 @NgModule({
 
     declarations:[
         AlunosComponent,
         EmpresasComponent,
+        RelatoriosComponent,
     ],
     exports: [ 
         AlunosComponent,
-        EmpresasComponent
+        EmpresasComponent,
+        RelatoriosComponent
     ],
     imports: [
         CommonModule
