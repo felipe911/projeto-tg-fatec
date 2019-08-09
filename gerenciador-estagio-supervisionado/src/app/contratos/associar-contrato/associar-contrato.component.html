@@ -1,12 +1,23 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-12">
       <h1>Associar Contrato - Aluno e Empresa</h1>
     </div>
   </div>
-  <form id="form-associar">
-    <div class="row row-margin">
 
+  <div class="row row-margin">
+    <div class="col-md-6">
+      <app-associar-aluno></app-associar-aluno>
+    </div>
+
+    <div class="col-md-6">
+        <app-associar-empresa></app-associar-empresa>
+    </div>
+  </div>
+
+  <form id="form-associar">
+
+    <div class="row row-margin">
       <div class="col-md-3">
         <label for="input-data-inicio">Data Início:</label>
         <input type="date" class="form-control" id="input-data-inicio">

@@ -1,47 +1,41 @@
-<div class="container">
-  <div class="row">
+<form id="form-aluno">
+<div class="row">
     <div class="col-md-12">
-      <h1>Aluno</h1>
+      <h3>Aluno</h3>
     </div>
   </div>
-  <form id="form-aluno">
-    <div class="row row-margin">
+  <div class="row row-margin">
 
-      <div class="col-md-8">
-        <label for="input-ra">RA:</label>
-        <input type="text" class="form-control" id="input-ra">
+    <div class="col-md-8">
+      <label for="input-ra">RA:</label>
+      <input type="text" class="form-control" id="input-ra">
+    </div>
+
+    <div class="col-md-4">
+      <button id="btn-buscar" type="button" class="btn btn-info btn-full-width-center">Buscar</button>
+    </div>
+  </div>
+    <div class="col-md-12 bloco-centro">
+      <div class="row">
+      <div class="col-md-6">
+        <label class="label">Nome:</label>
+        <label id="label-nome" class="label espacamento">Felipe Augusto</label>
       </div>
 
-      <div class="col-md-4">
-        <button id="btn-buscar" type="button" class="btn btn-info btn-full-width-center">Buscar</button>
+      <div class="col-md-6">
+        <label class="label">Semestre:</label>
+        <label id="label-semestre" class="label espacamento">6. Semestre</label>
+      </div>
+
+      <div class="col-md-6">
+        <label class="label">Curso:</label>
+        <label id="label-curso" class="label espacamento">ADS</label>
+      </div>
+
+      <div class="col-md-6">
+        <label class="label">Período:</label>
+        <label id="label-periodo" class="label espacamento">Noite</label>
+      </div>
       </div>
     </div>
-      <div class="col-md-12 bloco-centro">
-
-        <h3>Informações</h3>
-
-        <div class="row">
-
-        <div class="col-md-6">
-          <label class="label-block">Nome:</label>
-          <label id="label-nome" class="label-block">Felipe Augusto de Oliveira</label>
-        </div>
-
-        <div class="col-md-6">
-          <label class="label-block">Semestre:</label>
-          <label id="label-semestre" class="label-block">6. Semestre</label>
-        </div>
-
-        <div class="col-md-6">
-          <label class="label-block">Curso:</label>
-          <label id="label-curso" class="label-block">ADS - Análise e Desenvolvimento de Sistemas</label>
-        </div>
-
-        <div class="col-md-6">
-          <label class="label-block">Período:</label>
-          <label id="label-periodo" class="label-block">Noite</label>
-        </div>
-        </div>
-      </div>
-  </form>
-</div>
+</form>

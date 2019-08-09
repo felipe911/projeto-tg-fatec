@@ -1,62 +1,45 @@
-<div class="container">
+<form id="form-aluno">
+
   <div class="row">
     <div class="col-md-12">
-      <h1>Empresa</h1>
+      <h3>Empresa</h3>
     </div>
   </div>
-  <form id="form-aluno">
-    <div class="row row-margin">
+  <div class="row row-margin">
 
-      <div class="col-md-3">
-        <label for="input-id">ID:</label>
-        <input type="text" class="form-control" id="input-id">
-      </div>
-
-
-      <div class="col-md-6">
-        <div class="dropdown">
-          <label for="dropdown-razao-social" class="label-block">Razão Social:</label>
-          <button id="dropdown-razao-social" class="btn btn-primary dropdown-toggle btn-full-width" type="button"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Selecione
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdown-razao-social">
-            <a class="dropdown-item" href="">Fatec Sorocaba</a>
-          </div>
+    <div class="col-md-2">
+      <label for="input-id">ID:</label>
+      <input type="text" class="form-control" id="input-id">
+    </div>
+    
+    <div class="col-md-6">
+      <div class="dropdown">
+        <label for="dropdown-razao-social" class="label-block">Razão Social:</label>
+        <button id="dropdown-razao-social" class="btn btn-primary dropdown-toggle btn-full-width" type="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Selecione
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdown-razao-social">
+          <a class="dropdown-item" href="">Fatec Sorocaba</a>
         </div>
-      </div>
-
-
-      <div class="col-md-3">
-        <button id="btn-buscar" type="button" class="btn btn-info btn-full-width-center">Buscar</button>
       </div>
     </div>
-      <div class="col-md-12 bloco-centro">
+    <div class="col-md-4">
+      <button id="btn-buscar" type="button" class="btn btn-info btn-full-width-center">Buscar</button>
+    </div>
+  </div>
 
-        <h3>Informações</h3>
-
-        <div class="row">
-
-        <div class="col-md-6">
-          <label for="input-email" class="label-block">Nome:</label>
-          <label for="input-email" class="label-block">Felipe Augusto de Oliveira</label>
-        </div>
-
-        <div class="col-md-6">
-          <label for="input-email" class="label-block">Semestre:</label>
-          <label for="input-email" class="label-block">6. Semestre</label>
-        </div>
-
-        <div class="col-md-6">
-          <label for="input-email" class="label-block">Curso:</label>
-          <label for="input-email" class="label-block">ADS - Análise e Desenvolvimento de Sistemas</label>
-        </div>
-
-        <div class="col-md-6">
-          <label for="input-email" class="label-block">Período:</label>
-          <label for="input-email" class="label-block">Noite</label>
-        </div>
-        </div>
+    <div class="col-md-12 bloco-centro">
+      <div class="row">
+      <div class="col-md-12">
+        <label for="input-email" class="label">Área da Empresa:</label>
+        <label for="input-email" class="label espacamento">Tecnologia</label>
       </div>
-  </form>
-</div>
+
+      <div class="col-md-12">
+        <label for="input-email" class="label">Cidade:</label>
+        <label for="input-email" class="label espacamento">Sorocaba</label>
+      </div>
+      </div>
+    </div>
+</form>
