@@ -21,6 +21,11 @@ h1, h3{
     text-align: left;
 }
 
+.btn-full-width-center{
+    width: 100%;
+    text-align: center;
+}
+
 .row-margin{
     margin-bottom: 10px;
 }
