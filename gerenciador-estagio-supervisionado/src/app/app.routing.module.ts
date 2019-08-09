@@ -8,6 +8,7 @@ import { EmpresasConsultaComponent } from './consultas/empresas-consulta/empresa
 import { AssociarContratoComponent } from "./contratos/associar-contrato/associar-contrato.component";
 import { AssociarAlunoComponent } from "./contratos/associar-contrato/associar-aluno/associar-aluno.component";
 import { AssociarEmpresaComponent } from "./contratos/associar-contrato/associar-empresa/associar-empresa.component";
+import { ContratosConsultaComponent } from './consultas/contratos-consulta/contratos-consulta.component';
 
 const rotas: Routes = [
 
@@ -15,6 +16,7 @@ const rotas: Routes = [
     { path: 'cadastrar/empresa', component: EmpresasComponent },
     { path: 'consultar/alunos', component: AlunosConsultaComponent },
     { path: 'consultar/empresas', component: EmpresasConsultaComponent },
+    { path: 'consultar/contratos', component: ContratosConsultaComponent },
     { path: 'contrato/associar', component: AssociarContratoComponent },
     { path: 'contrato/associar/aluno', component: AssociarAlunoComponent },
     { path: 'contrato/associar/empresa', component: AssociarEmpresaComponent }
