@@ -1,0 +1,56 @@
+h1{
+    margin-bottom: 20px;
+}
+
+#form-cadastro{
+    border: 1px solid #ced4da;
+    padding: 30px;
+}
+
+#btn-cadastrar-aluno{
+    margin-top: 10px;
+    padding: 10px 30px 10px 30px;
+    float: right;
+}
+
+#btn-pesquisar{
+    margin-top: 20px;
+    padding: 10px 30px 10px 30px;
+    float: right;
+}
+
+.label-block{
+    display: block !important;
+}
+
+.btn-full-width{
+    width: 100%;
+    text-align: left;
+}
+
+.row-margin{
+    margin-bottom: 10px;
+}
+
+/* Sobrescrita Bootstrap */
+
+.dropdown-toggle::after {
+    margin-left: 120px;
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-left: .3em solid transparent;
+}
+
+.dropdown-item:hover{
+    background-color: rgb(93, 190, 235);
+}
+
+.btn-primary {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border-color: #ced4da;
+}
+
+.table-bordered{
+    margin-top: 40px !important;
+}
