@@ -1,3 +1,61 @@
-<p>
-  associar-aluno works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Aluno</h1>
+    </div>
+  </div>
+  <form id="form-aluno">
+    <div class="row row-margin">
+
+      <div class="col-md-8">
+        <label for="input-ra">RA:</label>
+        <input type="text" class="form-control" id="input-ra">
+      </div>
+
+      <div class="col-md-4">
+        <button id="btn-buscar" type="button" class="btn btn-info btn-full-width">Buscar</button>
+      </div>
+    </div>
+      <div class="col-md-12 bloco-centro">
+
+        <h3>Informações</h3>
+
+        <div class="col-md-3">
+          <div class="dropdown">
+            <label for="dropdown-periodo" class="label-block">Período:</label>
+            <button id="dropdown-semestre" class="btn btn-primary dropdown-toggle btn-full-width" type="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Selecione
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdown-semestre">
+              <a class="dropdown-item" href="">Manhã</a>
+              <a class="dropdown-item" href="">Tarde</a>
+              <a class="dropdown-item" href="">Noite</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="input-email" class="label-block">Email:</label>
+          <input type="email" class="form-control" id="input-email">
+        </div>
+
+        <div class="col-md-3">
+          <label for="input-telefone" class="label-block">Telefone:</label>
+          <input type="text" class="form-control" id="input-telefone">
+        </div>
+
+        <div class="col-md-3">
+          <label for="checkbox-sexo" class="label-block">Sexo:</label>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+            <label class="custom-control-label" for="customRadioInline1">Masculino</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+            <label class="custom-control-label" for="customRadioInline2">Feminino</label>
+          </div>
+        </div>
+      </div>
+  </form>
+</div>
