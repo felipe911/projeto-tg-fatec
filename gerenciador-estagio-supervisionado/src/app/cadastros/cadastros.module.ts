@@ -3,16 +3,23 @@ import { CommonModule } from "@angular/common";
 
 import { AlunosComponent } from "./alunos/alunos.component";
 import { EmpresasComponent } from './empresas/empresas.component';
+import { RelatoriosComponent } from './relatorios/relatorios.component';
+import { RelatorioPesquisaAlunoComponent } from './relatorios/relatorio-pesquisa-aluno/relatorio-pesquisa-aluno.component';
+import { RelatorioAdicionarComponent } from './relatorios/relatorio-adicionar/relatorio-adicionar.component';
 
 @NgModule({
 
     declarations:[
         AlunosComponent,
         EmpresasComponent,
+        RelatoriosComponent,
+        RelatorioPesquisaAlunoComponent,
+        RelatorioAdicionarComponent,
     ],
     exports: [ 
         AlunosComponent,
-        EmpresasComponent
+        EmpresasComponent,
+        RelatoriosComponent
     ],
     imports: [
         CommonModule

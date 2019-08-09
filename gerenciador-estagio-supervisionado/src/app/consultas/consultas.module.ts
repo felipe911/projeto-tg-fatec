@@ -12,11 +12,13 @@ import { RelatoriosConsultaComponent } from './relatorios-consulta/relatorios-co
         AlunosConsultaComponent,
         EmpresasConsultaComponent,
         ContratosConsultaComponent,
-        RelatoriosConsultaComponent,
+        RelatoriosConsultaComponent
     ],
     exports: [ 
         AlunosConsultaComponent,
-        EmpresasConsultaComponent
+        EmpresasConsultaComponent,
+        ContratosConsultaComponent,
+        RelatoriosConsultaComponent
     ],
     imports: [
         CommonModule
