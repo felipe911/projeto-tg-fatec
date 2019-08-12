@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 
+import { MenuComponent } from './menu/menu.component';
 import { AlunosComponent } from './cadastros/alunos/alunos.component';
 import { EmpresasComponent } from './cadastros/empresas/empresas.component';
 import { RelatoriosComponent } from './cadastros/relatorios/relatorios.component';
@@ -20,6 +21,7 @@ import { RelatorioExibicaoComponent } from './cadastros/relatorios/relatorio-exi
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
     AlunosComponent,
     EmpresasComponent,
     RelatoriosComponent,
