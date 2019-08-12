@@ -2,7 +2,10 @@
   height: 100px;
   width: 100%;
   background-color: #990000;
-  display: block;
+}
+
+.espacamento{
+  height: 120px;
 }
 
 .settings {
@@ -183,14 +186,6 @@ display:table-cell;
 vertical-align:middle;
 width:190px;
 font-family: 'Titillium Web', sans-serif;
-}
-
-
-.main-menu .fb-like {
-
-left: 180px;
-position:absolute;
-top: 15px;
 }
 
 .main-menu>ul.logout {
