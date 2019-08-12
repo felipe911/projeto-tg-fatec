@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
+import { MenuComponent } from './menu/menu.component';
 import { AlunosComponent } from "./cadastros/alunos/alunos.component";
 import { EmpresasComponent } from './cadastros/empresas/empresas.component';
 import { AlunosConsultaComponent } from './consultas/alunos-consulta/alunos-consulta.component';
@@ -14,6 +15,7 @@ import { RelatoriosComponent } from './cadastros/relatorios/relatorios.component
 
 const rotas: Routes = [
 
+    { path: 'menu', component: MenuComponent },
     { path: 'cadastrar/aluno', component: AlunosComponent },
     { path: 'cadastrar/empresa', component: EmpresasComponent },
     { path: 'cadastrar/relatorio', component: RelatoriosComponent },
