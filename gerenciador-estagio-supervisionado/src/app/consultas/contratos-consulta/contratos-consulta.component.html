@@ -14,8 +14,17 @@
         </div>
   
         <div class="col-md-3">
-          <label for="input-ra">Empresa:</label>
-          <input type="text" class="form-control" id="input-ra">
+          <div class="dropdown">
+            <label for="dropdown-empresa" class="label-block">Empresa:</label>
+            <button id="dropdown-empresa" class="btn btn-primary dropdown-toggle btn-full-width" type="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Selecione
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdown-empresa">
+              <a class="dropdown-item" href="">Fatec SO</a>
+              <a class="dropdown-item" href="">Fatec SP</a>
+            </div>
+          </div>
         </div>
 
         <div class="col-md-3">
@@ -52,7 +61,7 @@
   
         <div class="col-md-3">
           <div class="dropdown">
-            <label for="dropdown-possui-relatorio" class="label-block">Possui Relatório:</label>
+            <label for="dropdown-possui-relatorio" class="label-block">Relatório Pendente:</label>
             <button id="dropdown-possui-relatorio" class="btn btn-primary dropdown-toggle btn-full-width" type="button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Selecione
@@ -63,7 +72,20 @@
             </div>
           </div>
         </div>
+
         <div class="col-md-3">
+          <div class="dropdown">
+            <label for="dropdown-curso" class="label-block">Curso:</label>
+            <button id="dropdown-curso" class="btn btn-primary dropdown-toggle btn-full-width" type="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Selecione
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdown-curso">
+              <a class="dropdown-item" href="">Análise e Desenvolvimento de Sistemas</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
           <button id="btn-pesquisar" type="button" class="btn btn-info">Pesquisar</button>
         </div>
       </div>
