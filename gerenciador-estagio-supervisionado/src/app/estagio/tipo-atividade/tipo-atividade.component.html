@@ -1,0 +1,99 @@
+<menu></menu>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <h1>Validação de Horas de Estágio - Formulário 1</h1>
+    </div>
+  </div>
+  <form id="form-tipo-atividade">
+    <div class="row row-margin dados-aluno">
+      <div class="col-md-3">
+        <label for="ra">RA:</label>
+        <label id="ra" class="label-block">0030481521009</label>
+      </div>
+      <div class="col-md-3">
+        <label for="nome">Nome:</label>
+        <label id="nome" class="label-block">Felipe Augusto de Oliveira</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 bloco-atividade">
+        <h3>1 - Tipo de Atividade desenvolvida e forma de comprovação</h3>
+        <br/>
+        <input type="radio" class="check" id="estagiario" name="opcao">
+        <label for="estagiario">como Estagiário</label>
+        <div class="bloco-atividade">
+          <input type="checkbox" class="check" id="setor-privado">
+          <label for="setor-privado">Realizado no setor privado (indústria/comércio/serviços)</label>
+          <br/>
+          <input type="checkbox" class="check" id="organizacoes">
+          <label for="organizacoes ">Realizado em organizações do 3. setor (ONG's)</label>
+          <br/>
+          <input type="checkbox" class="check" id="adm">
+          <label for="adm ">Realizado em órgãos de administração pública</label>
+          <br/>
+          <input type="checkbox" class="check" id="extracurricular">
+          <label for="extracurricular ">Realizado em atividades extravurriculares sob supervisão da FATEC</label>
+        </div>
+        <input type="radio" class="check" id="profissional-liberal" name="opcao">
+        <label for="profissional-liberal">como Profissional Liberal</label>
+        <div class="bloco-atividade">
+          <label>Com declaração assinada pelo Contador, especificando ser a área inerente ao curso, informando a Inscrição no respectivo Conselho de Classe, e comprovante do cadastro da Prefeitura Municipal (no caso de prestador de serviço).</label>
+        </div>
+        <input type="radio" class="check" id="empresario" name="opcao">
+        <label for="empresario">como Empresário</label>
+        <div class="bloco-atividade">
+          <label>Com declaração assinada pelo Contador, informando a Razão Social, CNPJ e ramo das atividades desenvolvidas pela empresa, ou declaração de firma individual.</label>
+        </div>
+        <input type="radio" class="check" id="vinculo-empregaticio" name="opcao">
+        <label for="vinculo-empregaticio">através de Vínculo Empregatício</label>
+        <div class="bloco-atividade">
+          <label>Comprovada através de registro em carteira Profissional e com Declaração da empresa, das funções desempenhadas.</label>
+        </div>
+        <input type="radio" class="check" id="outros" name="opcao">
+        <label for="outros">Outros</label>
+        <div class="bloco-atividade">
+          <label for="outros">Especificar:</label>
+          <input type="text" class="form-control" id="outros">
+        </div>
+      </div>
+      <div class="col-md-12 bloco-atividade">
+          <h3>2 - Local e Período</h3>
+          <br/>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="local" class="label-block">Local:</label>
+              <input type="text" class="form-control" id="local">
+            </div>
+            <div class="col-md-3">
+              <label for="periodo-de" class="label-block">De:</label>
+              <input type="date" class="form-control" id="periodo-de">
+            </div>
+            <div class="col-md-3">
+              <label for="periodo-ate" class="label-block">Até:</label>
+              <input type="date" class="form-control" id="periodo-ate">
+            </div>
+          </div>
+      </div>
+      <div class="col-md-12 bloco-atividade">
+          <h3>3 - Área da Atividade</h3>
+          <br/>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="text" class="form-control" id="area-atividade">
+            </div>
+          </div>
+      </div>
+      <div class="col-md-12 bloco-atividade">
+          <h3>4 - Total de Horas cumpridas</h3>
+          <br/>
+          <div class="row">
+            <div class="col-md-3">
+              <input type="text" class="form-control" id="horas-cumpridas">
+            </div>
+          </div>
+      </div>
+    </div>
+  </form>
+</div>
