@@ -12,6 +12,7 @@ import { AssociarEmpresaComponent } from "./contratos/associar-contrato/associar
 import { ContratosConsultaComponent } from './consultas/contratos-consulta/contratos-consulta.component';
 import { RelatoriosConsultaComponent } from './consultas/relatorios-consulta/relatorios-consulta.component';
 import { RelatoriosComponent } from './cadastros/relatorios/relatorios.component';
+import { RelatorioParcialComponent } from './estagio/relatorio-parcial/relatorio-parcial.component';
 import { TipoAtividadeComponent } from './estagio/tipo-atividade/tipo-atividade.component';
 
 const rotas: Routes = [
@@ -27,6 +28,7 @@ const rotas: Routes = [
     { path: 'contrato/associar', component: AssociarContratoComponent },
     { path: 'contrato/associar/aluno', component: AssociarAlunoComponent },
     { path: 'contrato/associar/empresa', component: AssociarEmpresaComponent },
+    { path: 'estagio/relatorio-parcial', component: RelatorioParcialComponent },
     { path: 'estagio/tipo-atividade', component: TipoAtividadeComponent }
 
 ]

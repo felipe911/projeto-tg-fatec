@@ -1,0 +1,109 @@
+<menu></menu>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <h1>Relatório Parcial de Estágio</h1>
+      <h4>Lei 11.788/08 Art. 7</h4>
+      <br/>
+    </div>
+  </div>
+  <form id="form-relatorio-parcial">
+    <div class="row row-margin">
+
+      <div class="col-md-3">
+        <label for="nome">Estagiário(a):</label>
+        <label id="nome" class="label-block">Felipe Augusto de Oliveira</label>
+      </div>
+
+      <div class="col-md-3">
+        <label for="ra">RA:</label>
+        <label id="ra" class="label-block">0030481521009</label>
+      </div>
+
+      <div class="col-md-3">
+        <label for="curso">Curso:</label>
+        <label id="curso" class="label-block">Análise e Desenvolvimento de Sistemas</label>
+      </div>
+
+      <div class="col-md-3">
+        <label for="periodo">Período:</label>
+        <label id="periodo" class="label-block">Noturno</label>
+      </div>
+
+      <div class="col-md-3">
+        <label for="supervisor">Supervisor(a) de Estágio:</label>
+        <label id="supervisor" class="label-block">João das Neves</label>
+      </div>
+
+      <div class="col-md-3">
+        <label for="vigencia">Vigência de Estágio:</label>
+        <label id="vigencia" class="label-block">01/12/2020</label>
+      </div>
+
+      
+      <div class="col-md-3">
+        <label for="periodo-avaliacao">Período de Avaliação:</label>
+        <label id="periodo-avaliacao" class="label-block">01/06/2019 até 01/12/2019</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 bloco-atividade">
+        <h4>Atividades auxiliadas no estágio de acordo com o termo de compromisso de estágio:</h4>
+        <textarea class="form-control" id="atividade" rows="3"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 bloco-atividade">
+            <h4>Atividades Realizadas no Estágio:</h4>
+            <br/>
+            <label for="acordo-plano" class="check">Estão de Acordo com o plano de atividades ?</label>
+            <input type="radio" class="check" id="acordo-plano-sim" name="plano">Sim
+            <input type="radio" class="check" id="acordo-plano-nao" name="plano">Não
+            <br/>
+            <br/>
+            <label for="compativel-curso" class="check">São compatíveis com o curso ? </label>
+            <input type="radio" class="check" id="compativel-sim" name="compativel-curso">Sim
+            <input type="radio" class="check" id="compativel-nao" name="compativel-curso">Não
+            <br/>
+            <br/>
+            <label for="semestre-cursado" class="check">São compatíveis com o semestre cursado ? </label>
+            <input type="radio" class="check" id="cursado-sim" name="semestre-cursado">Sim
+            <input type="radio" class="check" id="cursado-nao" name="semestre-cursado">Não
+            <br/>
+            <br/>
+            <label for="permite-aplicar" class="check">Permite que aplique o conhecimento obtido no curso ? </label>
+            <input type="radio" class="check" id="aplicar-sim" name="permite-aplicar">Sim
+            <input type="radio" class="check" id="aplicar-nao" name="permite-aplicar">Não
+            <br/>
+            <br/>
+            <label for="instalacoes-adequadas" class="check">As instalações da parte concedente são adequadas à realização do estágio ? </label>
+            <input type="radio" class="check" id="instalacoes-sim" name="instalacoes-adequadas">Sim
+            <input type="radio" class="check" id="instalacoes-nao" name="instalacoes-adequadas">Não
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 bloco-atividade">
+        <h4>Quando assinalado NÃO, justifique os motivos:</h4>
+        <textarea class="form-control" id="atividade" rows="3"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 bloco-atividade">
+        <h4>Apresente as dificuldades encontradas na realização do estágio:</h4>
+        <textarea class="form-control" id="atividade" rows="3"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 bloco-atividade">
+        <h4>Considerações do Supervisor(a) de estágio:</h4>
+        <textarea class="form-control" id="atividade" rows="3"></textarea>
+      </div>
+    </div>
+  </form>
+  <button id="btn-salvar" type="button" class="btn btn-success">Salvar</button>
+</div>

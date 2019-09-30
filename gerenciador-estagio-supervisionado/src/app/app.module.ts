@@ -18,6 +18,7 @@ import { RelatorioPesquisaAlunoComponent } from './cadastros/relatorios/relatori
 import { RelatorioAdicionarComponent } from './cadastros/relatorios/relatorio-adicionar/relatorio-adicionar.component';
 import { RelatorioExibicaoComponent } from './cadastros/relatorios/relatorio-exibicao/relatorio-exibicao.component';
 import { TipoAtividadeComponent } from './estagio/tipo-atividade/tipo-atividade.component';
+import { RelatorioParcialComponent } from './estagio/relatorio-parcial/relatorio-parcial.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { TipoAtividadeComponent } from './estagio/tipo-atividade/tipo-atividade.
     AssociarContratoComponent,
     AssociarAlunoComponent,
     TipoAtividadeComponent,
+    RelatorioParcialComponent,
     AssociarEmpresaComponent
   ],
   imports: [
