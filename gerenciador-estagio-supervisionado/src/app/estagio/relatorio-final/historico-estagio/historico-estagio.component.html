@@ -3,7 +3,20 @@
       <div class="col-md-12 d-flex justify-content-end espacamento-top">
         <br/>
         <button id="btn-historico-total" type="button" class="btn btn-info">Histórico de Estágios</button>
-        <button id="btn-estagio-atual" type="button" class="btn btn-info espacamento-left">Estágio Atual</button>
+        <button id="btn-estagio-atual" type="button" (click)="openModal(atual)" class="btn btn-info espacamento-left">Estágio Atual</button>
       </div>
   </div>
+
+  <ng-template #atual>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Estágio Atual</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      This is a modal.
+    </div>
+  </ng-template>
+
 </form>

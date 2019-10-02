@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { MenuComponent } from './menu/menu.component';
 import { AlunosComponent } from './cadastros/alunos/alunos.component';
@@ -47,6 +48,7 @@ import { HistoricoEstagioComponent } from './estagio/relatorio-final/historico-e
     HistoricoEstagioComponent
   ],
   imports: [
+    ModalModule.forRoot(),
     BrowserModule,
     AppRoutingModule
   ],
