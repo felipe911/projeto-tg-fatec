@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef} from '@angular/core';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 
 
 @Component({
@@ -13,7 +13,8 @@ export class HistoricoEstagioComponent implements OnInit {
   constructor(private modalService: BsModalService) {}
  
   openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+    const config: ModalOptions = { class: 'modal-lg' }
+    this.modalRef = this.modalService.show(template, config);
   }
 
   ngOnInit() {

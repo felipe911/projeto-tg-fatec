@@ -23,10 +23,13 @@ import { RelatorioParcialComponent } from './estagio/relatorio-parcial/relatorio
 import { RelatorioFinalComponent } from './estagio/relatorio-final/relatorio-final.component';
 import { AdicionarRegistroEstagioComponent } from './estagio/relatorio-final/adicionar-registro-estagio/adicionar-registro-estagio.component';
 import { HistoricoEstagioComponent } from './estagio/relatorio-final/historico-estagio/historico-estagio.component';
+import { AlunoGerenciamentoComponent } from './aluno-gerenciamento/aluno-gerenciamento.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     MenuComponent,
     AlunosComponent,
     EmpresasComponent,
@@ -45,7 +48,8 @@ import { HistoricoEstagioComponent } from './estagio/relatorio-final/historico-e
     RelatorioFinalComponent,
     AssociarEmpresaComponent,
     AdicionarRegistroEstagioComponent,
-    HistoricoEstagioComponent
+    HistoricoEstagioComponent,
+    AlunoGerenciamentoComponent
   ],
   imports: [
     ModalModule.forRoot(),

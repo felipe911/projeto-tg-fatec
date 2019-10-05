@@ -6,11 +6,12 @@
         <div class="item">
           <i class="fa fa-graduation-cap" style="color: white"></i>
           <input class="nav-text" type="checkbox" id="check-estagio">
-          <label class="nav-text" for="check-estagio">Estágio</label>
+          <label class="nav-text" for="check-estagio">Aluno</label>
           <ul>
-            <li><a class="item-sub" href="estagio/tipo-atividade">Tipo de Atividade</a></li>
-            <li><a class="item-sub" href="estagio/relatorio-parcial">Relatório Parcial</a></li>
-            <li><a class="item-sub" href="estagio/relatorio-final">Relatório Final</a></li>
+            <li><a class="item-sub" routerLink="aluno/gerenciar-estagios">Gerenciar Estágios</a></li>
+            <li><a class="item-sub" routerLink="estagio/tipo-atividade">Tipo de Atividade</a></li>
+            <li><a class="item-sub" routerLink="estagio/relatorio-parcial">Relatório Parcial</a></li>
+            <li><a class="item-sub" routerLink="estagio/relatorio-final">Relatório Final</a></li>
           </ul>
         </div>
       </li>
@@ -23,8 +24,8 @@
           <input class="nav-text" type="checkbox" id="check-cadastrar">
           <label class="nav-text" for="check-cadastrar">Cadastrar</label>
           <ul>
-            <li><a class="item-sub" href="cadastrar/aluno">Aluno</a></li>
-            <li><a class="item-sub" href="cadastrar/empresa">Empresa</a></li>
+            <li><a class="item-sub" routerLink="cadastrar/aluno">Aluno</a></li>
+            <li><a class="item-sub" routerLink="cadastrar/empresa">Empresa</a></li>
           </ul>
         </div>
       </li>
@@ -37,10 +38,10 @@
           <input class="nav-text" type="checkbox" id="check-consultar">
           <label class="nav-text" for="check-consultar">Consultar</label>
           <ul>
-            <li><a class="item-sub" href="consultar/alunos">Alunos</a></li>
-            <li><a class="item-sub" href="consultar/contratos">Contratos</a></li>
-            <li><a class="item-sub" href="consultar/empresas">Empresas</a></li>
-            <li><a class="item-sub" href="consultar/relatorios">Relatórios</a></li>
+            <li><a class="item-sub" routerLink="consultar/alunos">Alunos</a></li>
+            <li><a class="item-sub" routerLink="consultar/contratos">Contratos</a></li>
+            <li><a class="item-sub" routerLink="consultar/empresas">Empresas</a></li>
+            <li><a class="item-sub" routerLink="consultar/relatorios">Relatórios</a></li>
           </ul>
         </div>
       </li>
@@ -53,29 +54,10 @@
           <input class="nav-text" type="checkbox" id="check-associar">
           <label class="nav-text" for="check-associar">Associar</label>
           <ul>
-            <li><a class="item-sub" href="contrato/associar">Contrato</a></li>
+            <li><a class="item-sub" routerLink="contrato/associar">Contrato</a></li>
           </ul>
         </div>
       </li>
     </ul>
-
-
-    <!--
-    <li>
-      <a href="http://startific.com">
-        <i class="fa fa-user fa-lg"></i>
-        <span class="nav-text">Login</span>
-      </a>
-    </li>
-
-    <li>
-      <a href="http://startific.com">
-        <i class="fa fa-envelope-o fa-lg"></i>
-        <span class="nav-text">Contact</span>
-      </a>
-    </li>
-
-  -->
-
   </div>
 </nav>

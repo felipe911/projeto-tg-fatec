@@ -1,19 +1,18 @@
-
 <div class="container">
   <div class="row">
     <div class="col-md-9">
-      <h1>Relatório Final de Estágio</h1>
+      <h1>Gerenciar Estágios</h1>
     </div>
   </div>
   <form id="form-relatorio-final">
     <div class="row row-margin">
 
       <div class="col-md-12 indentificacao-border">
-        <p>Identificação do Estagiário</p>
+        <p>Identificação do Aluno</p>
       </div>
 
       <div class="col-md-3">
-        <label for="nome">Estagiário(a):</label>
+        <label for="nome">Aluno(a):</label>
         <label id="nome" class="label-block">Felipe Augusto de Oliveira</label>
       </div>
 
@@ -62,7 +61,9 @@
         <label id="contatos-orientador" class="label-block">maria-angelica@fatec.com.br</label>
       </div>
 
-      <div class="col-md-12">
+      <div class="col-md-12 d-flex justify-content-end" style="margin-top: 30px">
+        <button id="btn-adicionar-atividade" type="button" class="btn btn-success">Adicionar Atividade</button>
+        <button id="btn-tipo-atividade" type="button" class="btn btn-success espacamento-left" routerLink="estagio/tipo-atividade">Tipo de Atividade</button>
         <app-historico-estagio></app-historico-estagio>
       </div>
 

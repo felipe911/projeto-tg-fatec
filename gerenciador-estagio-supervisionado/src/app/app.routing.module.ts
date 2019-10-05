@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
+import { HomeComponent } from "./home/home.component";
 import { MenuComponent } from './menu/menu.component';
 import { AlunosComponent } from "./cadastros/alunos/alunos.component";
 import { EmpresasComponent } from './cadastros/empresas/empresas.component';
@@ -15,9 +16,11 @@ import { RelatoriosComponent } from './cadastros/relatorios/relatorios.component
 import { RelatorioParcialComponent } from './estagio/relatorio-parcial/relatorio-parcial.component';
 import { TipoAtividadeComponent } from './estagio/tipo-atividade/tipo-atividade.component';
 import { RelatorioFinalComponent } from './estagio/relatorio-final/relatorio-final.component';
+import { AlunoGerenciamentoComponent } from "./aluno-gerenciamento/aluno-gerenciamento.component";
 
 const rotas: Routes = [
 
+    { path: '' , component: HomeComponent},
     { path: 'menu', component: MenuComponent },
     { path: 'cadastrar/aluno', component: AlunosComponent },
     { path: 'cadastrar/empresa', component: EmpresasComponent },
@@ -31,7 +34,8 @@ const rotas: Routes = [
     { path: 'contrato/associar/empresa', component: AssociarEmpresaComponent },
     { path: 'estagio/relatorio-parcial', component: RelatorioParcialComponent },
     { path: 'estagio/tipo-atividade', component: TipoAtividadeComponent },
-    { path: 'estagio/relatorio-final', component: RelatorioFinalComponent }
+    { path: 'estagio/relatorio-final', component: RelatorioFinalComponent },
+    { path: 'aluno/gerenciar-estagios', component: AlunoGerenciamentoComponent }
 
 ]
 
