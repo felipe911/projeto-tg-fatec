@@ -1,16 +1,17 @@
-h1, h3{
+.espacamento-left{
+    margin: 0 0 0 10px;
+}
+
+h1{
     margin-bottom: 20px;
 }
 
-#form-relatorio-adicionar{
+#form-cadastro{
     border: 1px solid #ced4da;
     padding: 30px;
-    margin-top: 30px;
 }
 
-#btn-salvar{
-    margin: 25px 0 25px 0;
-    padding: 10px 30px 10px 30px;
+#btn-concluir-estagio, #btn-add-estagio{
     float: right;
 }
 
@@ -23,26 +24,27 @@ h1, h3{
     text-align: left;
 }
 
-.btn-full-width-center{
-    width: 100%;
-    text-align: center;
-}
-
 .row-margin{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.bloco-centro{
-    border: 1px solid #ced4da;
-    padding: 30px;
+.modal-content{
+    width: 700px !important;
 }
 
-.espacamento{
-    margin-left: 10px;
+.descricao-atividade{
+    text-align: justify;
 }
 
-.espacamento-top{
-    margin-top: 15px;
+.barra{
+    height: 2px;
+    width: 100%;
+    border: 2px solid #ced4da;
+    margin: 10px 0 10px 0;
+}
+
+.bold{
+    font-weight: bold;
 }
 
 /* Sobrescrita Bootstrap */
