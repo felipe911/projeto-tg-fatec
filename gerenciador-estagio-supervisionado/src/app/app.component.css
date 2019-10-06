@@ -10,7 +10,7 @@
     background-color: #990000;
     position: absolute;
     top: 0%;
-    box-shadow: 3px 3px 3px rgb(161, 160, 160);
+    box-shadow: 0 3px 0 rgb(161, 160, 160);
   }
   
   .settings {
