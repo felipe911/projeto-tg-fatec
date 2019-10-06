@@ -11,7 +11,7 @@ h1{
     padding: 30px;
 }
 
-#btn-concluir-estagio{
+#btn-concluir-estagio, #btn-add-estagio{
     float: right;
 }
 

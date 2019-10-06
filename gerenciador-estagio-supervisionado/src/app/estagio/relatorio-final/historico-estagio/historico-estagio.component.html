@@ -1,6 +1,7 @@
 <form id="form-historico-estagio">
 
-  <button id="btn-historico-total" type="button" class="btn btn-info espacamento-left">Histórico de Estágios</button>
+  <button id="btn-historico-total" type="button" (click)="openModalHistorico(modalHistorico)"
+    class="btn btn-info espacamento-left">Histórico de Estágios</button>
   <button id="btn-estagio-atual" type="button" (click)="openModal(atual)" class="btn btn-info espacamento-left">Estágio
     Atual</button>
 
@@ -92,13 +93,51 @@
 
       <div class="row row-margin">
         <div class="col-md-12 justify-content-end">
-          <button id="btn-concluir-estagio" type="button" class="btn btn-info" (click)="modalRef.hide()">Concluir
+          <button id="btn-concluir-estagio" type="button" class="btn btn-info"
+            (click)="openModalConfirm(modalConfirm)">Concluir
             Estágio</button>
 
           <button id="btn-imprimir" type="button" class="btn btn-info">Imprimir</button>
-          <button id="btn-adicionar" type="button" class="btn btn-success espacamento-left">Adicionar Atividade</button>
+          <button id="btn-adicionar" type="button" class="btn btn-success espacamento-left"
+            (click)="openModalAddAtividade(modalAddAtividade)">Adicionar Atividade</button>
         </div>
       </div>
+    </div>
+  </ng-template>
+
+  <ng-template #modalConfirm>
+    <div class="modal-body text-center">
+      <p>Gostaria de utilizar este estágio para conclusão do seu curso ?</p>
+      <button type="button" class="btn btn-info" (click)="confirm()">Sim</button>
+      <button type="button" class="btn btn-info" (click)="decline()" style="margin-left: 10px">Não</button>
+    </div>
+  </ng-template>
+
+  <ng-template #modalAddAtividade>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Adicionar Atividade </h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRefChild.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <app-adicionar-registro-estagio></app-adicionar-registro-estagio>
+      <br />
+      <button id="btn-limpar" type="button" class="btn btn-info">Limpar</button>
+      <button id="btn-add-estagio" type="button" class="btn btn-success"
+        (click)="modalRefChild.hide()" style="margin-left: 10px;">Adicionar</button>
+    </div>
+  </ng-template>
+
+  <ng-template #modalHistorico>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Histórico de Estágios</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRefHist.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <app-dados-estagio></app-dados-estagio>
     </div>
   </ng-template>
 </form>
