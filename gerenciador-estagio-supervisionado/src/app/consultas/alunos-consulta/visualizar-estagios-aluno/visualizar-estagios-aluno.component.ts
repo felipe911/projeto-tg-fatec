@@ -2,11 +2,11 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ModalOptions, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
-  selector: 'app-visualizar',
-  templateUrl: './visualizar.component.html',
-  styleUrls: ['./visualizar.component.css']
+  selector: 'app-visualizar-estagios-aluno',
+  templateUrl: './visualizar-estagios-aluno.component.html',
+  styleUrls: ['./visualizar-estagios-aluno.component.css']
 })
-export class VisualizarComponent implements OnInit {
+export class VisualizarEstagiosAlunoComponent implements OnInit {
 
   modalVisuAtividades: BsModalRef;
 

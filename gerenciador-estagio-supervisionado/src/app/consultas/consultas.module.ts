@@ -5,7 +5,8 @@ import { AlunosConsultaComponent } from './alunos-consulta/alunos-consulta.compo
 import { EmpresasConsultaComponent } from './empresas-consulta/empresas-consulta.component';
 import { ContratosConsultaComponent } from './contratos-consulta/contratos-consulta.component';
 import { RelatoriosConsultaComponent } from './relatorios-consulta/relatorios-consulta.component';
-import { VisualizarComponent } from './alunos-consulta/visualizar/visualizar.component';
+import { VisualizarEstagiosAlunoComponent } from './alunos-consulta/visualizar-estagios-aluno/visualizar-estagios-aluno.component';
+import { VisualizarDadosAlunoComponent } from './alunos-consulta/visualizar-dados-aluno/visualizar-dados-aluno.component';
 
 @NgModule({
 
@@ -14,7 +15,8 @@ import { VisualizarComponent } from './alunos-consulta/visualizar/visualizar.com
         EmpresasConsultaComponent,
         ContratosConsultaComponent,
         RelatoriosConsultaComponent,
-        VisualizarComponent
+        VisualizarDadosAlunoComponent,
+        VisualizarEstagiosAlunoComponent
     ],
     exports: [ 
         AlunosConsultaComponent,

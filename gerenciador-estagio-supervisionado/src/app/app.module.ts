@@ -23,7 +23,8 @@ import { AlunoGerenciamentoComponent } from './aluno-gerenciamento/aluno-gerenci
 import { HomeComponent } from './home/home.component';
 import { DadosEstagioComponent } from './estagio/relatorio-final/historico-estagio/dados-estagio/dados-estagio.component';
 import { VisualizarAtividadesComponent } from './estagio/relatorio-final/historico-estagio/visualizar-atividades/visualizar-atividades.component';
-import { VisualizarComponent } from './consultas/alunos-consulta/visualizar/visualizar.component';
+import { VisualizarEstagiosAlunoComponent } from './consultas/alunos-consulta/visualizar-estagios-aluno/visualizar-estagios-aluno.component';
+import { VisualizarDadosAlunoComponent } from './consultas/alunos-consulta/visualizar-dados-aluno/visualizar-dados-aluno.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { VisualizarComponent } from './consultas/alunos-consulta/visualizar/visu
     AlunoGerenciamentoComponent,
     DadosEstagioComponent,
     VisualizarAtividadesComponent,
-    VisualizarComponent
+    VisualizarDadosAlunoComponent,
+    VisualizarEstagiosAlunoComponent
   ],
   imports: [
     ModalModule.forRoot(),

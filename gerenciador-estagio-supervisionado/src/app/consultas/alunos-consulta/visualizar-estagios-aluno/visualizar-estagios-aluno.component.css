@@ -1,0 +1,76 @@
+.espacamento-left{
+    margin: 0 0 0 10px;
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+#form-cadastro{
+    border: 1px solid #ced4da;
+    padding: 30px;
+}
+
+#btn-concluir-estagio, #btn-add-estagio{
+    float: right;
+}
+
+.label-block{
+    display: block !important;
+}
+
+.btn-full-width{
+    width: 100%;
+    text-align: left;
+}
+
+.row-margin{
+    margin-bottom: 10px;
+}
+
+.modal-content{
+    width: 700px !important;
+}
+
+.descricao-atividade{
+    text-align: justify;
+}
+
+.barra{
+    height: 2px;
+    width: 100%;
+    border: 2px solid #ced4da;
+    margin: 10px 0 10px 0;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.identificacao-border{
+    border: 2px solid #ced4da;
+    padding: 20px 0 20px 0;
+    margin: 30px 0 30px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 17px;
+}
+
+/* Sobrescrita Bootstrap */
+
+.dropdown-toggle::after {
+    margin-left: 120px;
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-left: .3em solid transparent;
+}
+
+.dropdown-item:hover{
+    background-color: rgb(93, 190, 235);
+}
+
+.btn-primary {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border-color: #ced4da;
+}

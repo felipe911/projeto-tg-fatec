@@ -119,7 +119,7 @@
         <td>28</td>
         <td style="text-align: center">
           
-          <a id="btn-visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar)" class="fa fa-eye"></a>
+          <a id="btn-visualizar" title="Visualizar Estágios" (click)="openModalVisualizar(modalVisualizar)" class="fa fa-eye"></a>
 
         </td>
       </tr>
@@ -169,12 +169,13 @@
 
 <ng-template #modalVisualizar>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Visualizar Aluno - Felipe Augusto de Oliveira</h4>
+    <h4 class="modal-title pull-left">Visualizar Aluno</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalVis.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <app-visualizar></app-visualizar>
+      <app-visualizar-dados-aluno></app-visualizar-dados-aluno>
+      <app-visualizar-estagios-aluno></app-visualizar-estagios-aluno>
   </div>
 </ng-template>
