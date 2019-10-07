@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-/*
-declare var $: JQuery ;
-$("#input-cep").mask("00000-000");
-*/
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-empresas',
@@ -12,11 +8,15 @@ $("#input-cep").mask("00000-000");
 })
 export class EmpresasComponent implements OnInit {
 
-  titulo = 'Empresa';
+  titulo = 'Cadastrar Empresa';
   
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    const id = this.activatedRoute.snapshot.params.id;
+    if(id){
+      this.titulo = 'Editar Empresa';
+    }
   }
 
 }

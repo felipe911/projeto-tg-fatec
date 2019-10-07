@@ -71,7 +71,7 @@
         <tr>
           <th scope="row">1</th>
           <td>Fatec Sorocaba</td>
-          <td>20/07/1991</td>
+          <td>05/07/2018</td>
           <td>Sorocaba</td>
           <td>5</td>
           <td style="text-align: center">
@@ -115,3 +115,24 @@
       </tbody>
     </table>
   </div>
+
+<ng-template #modalVisualizar>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Visualizar Empresa</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalVis.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-visualizar-dados-empresa></app-visualizar-dados-empresa>
+    <app-visualizar-estagiarios-empresa></app-visualizar-estagiarios-empresa>
+  </div>
+</ng-template>
+
+<ng-template #modalConfirm>
+  <div class="modal-body text-center">
+    <p>Tem certeza que deseja excluir este registro ?</p>
+    <button type="button" class="btn btn-danger" (click)="confirm()">Sim</button>
+    <button type="button" class="btn btn-danger" (click)="decline()" style="margin-left: 10px">Não</button>
+  </div>
+</ng-template>

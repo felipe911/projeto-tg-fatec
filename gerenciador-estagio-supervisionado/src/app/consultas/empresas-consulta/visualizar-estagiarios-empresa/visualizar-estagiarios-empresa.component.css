@@ -1,5 +1,13 @@
+.espacamento-left{
+    margin: 0 0 0 10px;
+}
+
 h1{
     margin-bottom: 20px;
+}
+
+.alinhamento{
+    text-align: center;
 }
 
 #form-cadastro{
@@ -7,22 +15,9 @@ h1{
     padding: 30px;
 }
 
-#btn-cadastrar-aluno{
-    margin-top: 10px;
-    padding: 10px 30px 10px 30px;
+#btn-concluir-estagio, #btn-add-estagio{
     float: right;
 }
-
-#btn-pesquisar{
-    margin-top: 20px;
-    padding: 10px 30px 10px 30px;
-    float: right;
-}
-
-.modal-lg {
-max-width: 1000px !important;
-}
-
 
 .label-block{
     display: block !important;
@@ -37,13 +32,33 @@ max-width: 1000px !important;
     margin-bottom: 10px;
 }
 
-.alinhamento{
-    text-align: center;
+.modal-content{
+    width: 700px !important;
 }
 
-.fa-eye:hover, .fa-edit:hover, .fa-trash:hover{
-    color: #990000 !important;
-    cursor: pointer;
+.descricao-atividade{
+    text-align: justify;
+}
+
+.barra{
+    height: 2px;
+    width: 100%;
+    border: 2px solid #ced4da;
+    margin: 10px 0 10px 0;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.identificacao-border{
+    padding: 7px 0 7px 0;
+    margin: 30px 0 30px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 17px;
+    background-color: #990000;
+    color: white;
 }
 
 /* Sobrescrita Bootstrap */
@@ -72,8 +87,4 @@ max-width: 1000px !important;
     color: rgb(0, 0, 0);
     background-color: #ffffff;
     border-color: #ced4da;
-}
-
-.table-bordered{
-    margin-top: 40px !important;
 }
