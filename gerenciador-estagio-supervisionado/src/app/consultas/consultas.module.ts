@@ -5,6 +5,7 @@ import { AlunosConsultaComponent } from './alunos-consulta/alunos-consulta.compo
 import { EmpresasConsultaComponent } from './empresas-consulta/empresas-consulta.component';
 import { ContratosConsultaComponent } from './contratos-consulta/contratos-consulta.component';
 import { RelatoriosConsultaComponent } from './relatorios-consulta/relatorios-consulta.component';
+import { VisualizarComponent } from './alunos-consulta/visualizar/visualizar.component';
 
 @NgModule({
 
@@ -12,7 +13,8 @@ import { RelatoriosConsultaComponent } from './relatorios-consulta/relatorios-co
         AlunosConsultaComponent,
         EmpresasConsultaComponent,
         ContratosConsultaComponent,
-        RelatoriosConsultaComponent
+        RelatoriosConsultaComponent,
+        VisualizarComponent
     ],
     exports: [ 
         AlunosConsultaComponent,

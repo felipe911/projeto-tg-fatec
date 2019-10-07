@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-empresas-consulta',
@@ -9,9 +10,13 @@ export class EmpresasConsultaComponent implements OnInit {
 
   titulo = 'Empresas'
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  getCadastrarEmpresa(){
+    this.router.navigate(['cadastrar/empresa']);
   }
 
 }

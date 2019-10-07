@@ -1,0 +1,87 @@
+<form id="form-dados-estagio">
+    <div class="row row-margin">
+      <div class="col-md-12">
+        <div class="row row-margin">
+          <div class="col-md-3">
+            <label for="empresa" class="label-block bold">Estágio na Empresa:</label>
+            <label id="empresa">Fatec Sorocaba</label>
+          </div>
+          <div class="col-md-3">
+            <label for="dt-inicio" class="label-block bold">Data Início Estágio:</label>
+            <label id="dt-inicio">01/01/2018</label>
+          </div>
+          <div class="col-md-3">
+            <label for="dt-fim" class="label-block bold">Data Fim Estágio:</label>
+            <label id="dt-fim">01/06/2018</label>
+          </div>
+          <div class="col-md-3">
+            <label for="supervisor" class="label-block bold">Supervisor de Estágio:</label>
+            <label id="supervisor">Maria Angélica</label>
+          </div>
+          <div class="col-md-3">
+            <label for="qtd-horas" class="label-block bold">Qtd. de Horas Registradas:</label>
+            <label id="qtd-horas">200</label>
+          </div>
+          <div class="col-md-3">
+            <label for="status-estagio" class="label-block bold">Status:</label>
+            <label id="status-estagio">Finalizado</label>
+          </div>
+          <div class="col-md-6">
+            <label for="utilizar-estagio" style="margin-top: 20px; color:red;">Utilizou este estágio para conclusão do Curso</label>
+          </div>
+          <div class="col-md-12 d-flex justify-content-end">
+            <button id="btn-visualiza-atividades" type="button" class="btn btn-info" style="margin-top:20px"
+              (click)="openModalVisualizar(modalVisualizar)">Visualizar
+              Atividades</button>
+          </div>
+          <div class="barra"></div>
+  
+          <div class="col-md-3">
+            <label for="empresa" class="label-block bold">Empresa:</label>
+            <label id="empresa">Ventron Informática</label>
+          </div>
+          <div class="col-md-3">
+            <label for="dt-inicio" class="label-block bold">Data Início Estágio:</label>
+            <label id="dt-inicio">01/01/2019</label>
+          </div>
+          <div class="col-md-3">
+            <label for="dt-fim" class="label-block bold">Data Fim Estágio:</label>
+            <label id="dt-fim">01/12/2019</label>
+          </div>
+          <div class="col-md-3">
+            <label for="supervisor" class="label-block bold">Supervisor de Estágio:</label>
+            <label id="supervisor">João</label>
+          </div>
+          <div class="col-md-3">
+            <label for="qtd-horas" class="label-block bold">Qtd. de Horas Registradas:</label>
+            <label id="qtd-horas">200</label>
+          </div>
+          <div class="col-md-3">
+            <label for="status-estagio" class="label-block bold">Status:</label>
+            <label id="status-estagio">Finalizado</label>
+          </div>
+          <div class="col-md-6">
+           
+          </div>
+          <div class="col-md-12 d-flex justify-content-end">
+            <button id="btn-visualiza-atividades" type="button" class="btn btn-info" style="margin-top:20px"
+              (click)="openModalVisualizar(modalVisualizar)">Visualizar
+              Atividades</button>
+          </div>
+        </div>
+  
+        <ng-template #modalVisualizar>
+          <div class="modal-header">
+            <h4 class="modal-title pull-left">Visualizar Atividades</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalVisuAtividades.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <app-visualizar-atividades></app-visualizar-atividades>
+          </div>
+        </ng-template>
+  
+      </div>
+    </div>
+  </form>
