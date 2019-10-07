@@ -27,6 +27,7 @@ import { VisualizarEstagiosAlunoComponent } from './consultas/alunos-consulta/vi
 import { VisualizarDadosAlunoComponent } from './consultas/alunos-consulta/visualizar-dados-aluno/visualizar-dados-aluno.component';
 import { VisualizarDadosEmpresaComponent } from './consultas/empresas-consulta/visualizar-dados-empresa/visualizar-dados-empresa.component';
 import { VisualizarEstagiariosEmpresaComponent } from './consultas/empresas-consulta/visualizar-estagiarios-empresa/visualizar-estagiarios-empresa.component';
+import { VisualizarContratoComponent } from './consultas/contratos-consulta/visualizar-contrato/visualizar-contrato.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { VisualizarEstagiariosEmpresaComponent } from './consultas/empresas-cons
     VisualizarDadosAlunoComponent,
     VisualizarEstagiosAlunoComponent,
     VisualizarDadosEmpresaComponent,
-    VisualizarEstagiariosEmpresaComponent
+    VisualizarEstagiariosEmpresaComponent,
+    VisualizarContratoComponent
   ],
   imports: [
     ModalModule.forRoot(),

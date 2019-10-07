@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-associar-contrato',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssociarContratoComponent implements OnInit {
 
-  constructor() { }
+  titulo = 'Associar Contrato - Aluno e Empresa';
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    const id = this.activatedRoute.snapshot.params.id;
+    if(id){
+      this.titulo = 'Editar Contrato - Aluno e Empresa';
+    }
   }
-
 }

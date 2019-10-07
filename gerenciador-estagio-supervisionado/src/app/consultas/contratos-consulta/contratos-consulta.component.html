@@ -97,7 +97,6 @@
           <th scope="col">Nome Aluno</th>
           <th scope="col">Empresa Associada</th>
           <th scope="col">Curso</th>
-          <th scope="col">Id Contrato</th>
           <th scope="col">Data Início</th>
           <th scope="col">Data Fim</th>
           <th scope="col">Agente de Integração</th>
@@ -111,16 +110,18 @@
           <td>Felipe Augusto de Oliveira</td>
           <td>Toyota</td>
           <td>ADS</td>
-          <td>1234</td>
           <td>05/05/2015</td>
           <td>05/05/2016</td>
           <td>CIEE</td>
           <td>Maria Angélica</td>
-          <td></td>
+          <td style="text-align: center">
+              <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar)" class="fa fa-eye"></a>
+              <a id="editar" title="Editar" (click)="editarContrato()" class="fa fa-edit" style="padding-left: 10px"></a>
+              <a id="excluir" title="Excluir" (click)="openModalConfirm(modalConfirm)" class="fa fa-trash" style="padding-left: 10px"></a>
+          </td>
         </tr>
         <tr>
           <th scope="row">2</th>
-          <td></td>
           <td></td>
           <td></td>
           <td></td>
@@ -140,11 +141,9 @@
           <td></td>
           <td></td>
           <td></td>
-          <td></td>
         </tr>
         <tr>
           <th scope="row">4</th>
-          <td></td>
           <td></td>
           <td></td>
           <td></td>
@@ -164,8 +163,27 @@
           <td></td>
           <td></td>
           <td></td>
-          <td></td>
         </tr>
       </tbody>
     </table>
   </div>
+
+<ng-template #modalVisualizar>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Visualizar Contrato</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalVis.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-visualizar-contrato></app-visualizar-contrato>
+  </div>
+</ng-template>
+
+<ng-template #modalConfirm>
+  <div class="modal-body text-center">
+    <p>Tem certeza que deseja excluir este registro ?</p>
+    <button type="button" class="btn btn-danger" (click)="confirm()">Sim</button>
+    <button type="button" class="btn btn-danger" (click)="decline()" style="margin-left: 10px">Não</button>
+  </div>
+</ng-template>

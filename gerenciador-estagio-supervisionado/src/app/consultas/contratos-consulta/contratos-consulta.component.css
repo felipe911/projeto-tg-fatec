@@ -32,6 +32,11 @@ h1{
     margin-bottom: 10px;
 }
 
+.fa-eye:hover, .fa-edit:hover, .fa-trash:hover{
+    color: #990000 !important;
+    cursor: pointer;
+}
+
 /* Sobrescrita Bootstrap */
 
 .dropdown-toggle::after {
@@ -53,4 +58,13 @@ h1{
 
 .table-bordered{
     margin-top: 40px !important;
+}
+
+.btn-danger{
+    background-color: #990000;
+    color: white;
+}
+
+.btn-danger:hover{
+    background-color: #c53030;
 }

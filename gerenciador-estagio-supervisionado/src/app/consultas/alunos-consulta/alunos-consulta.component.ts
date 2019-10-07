@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AlunosConsultaComponent implements OnInit {
 
-  titulo = 'Alunos'
+  titulo: String = 'Alunos'
 
   modalVis: BsModalRef;
   modalConfirm: BsModalRef;

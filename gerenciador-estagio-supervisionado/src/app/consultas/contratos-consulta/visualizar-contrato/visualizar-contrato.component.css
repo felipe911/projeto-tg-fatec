@@ -1,16 +1,18 @@
+.espacamento-left{
+    margin: 0 0 0 10px;
+}
+
 h1{
     margin-bottom: 20px;
 }
 
-#form-associar{
+#form-cadastro{
     border: 1px solid #ced4da;
     padding: 30px;
 }
 
-#btn-salvar{
+#btn-concluir-estagio, #btn-add-estagio{
     float: right;
-    margin-top: 10px;
-    padding: 10px 30px 10px 30px;
 }
 
 .label-block{
@@ -26,13 +28,43 @@ h1{
     margin-bottom: 10px;
 }
 
-#btn-salvar{
-    padding: 10px 30px 10px 30px;
-    margin: 0 0 0 10px;
+.modal-content{
+    width: 700px !important;
 }
 
-.espacamento-top{
-    margin-top: 10px;
+.descricao-atividade{
+    text-align: justify;
+}
+
+.barra{
+    height: 2px;
+    width: 100%;
+    border: 2px solid #ced4da;
+    margin: 10px 0 10px 0;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.identificacao-border{
+    padding: 7px 0 7px 0;
+    margin: 20px 0 30px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 17px;
+    background-color: #990000;
+    color: white;
+}
+
+.identificacao-titulo{
+    background-color: grey;
+    color: white;
+    padding: 5px 0 5px 15px;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    text-align: center;
 }
 
 /* Sobrescrita Bootstrap */

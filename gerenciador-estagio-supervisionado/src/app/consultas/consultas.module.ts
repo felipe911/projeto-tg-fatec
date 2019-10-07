@@ -9,6 +9,7 @@ import { VisualizarEstagiosAlunoComponent } from './alunos-consulta/visualizar-e
 import { VisualizarDadosAlunoComponent } from './alunos-consulta/visualizar-dados-aluno/visualizar-dados-aluno.component';
 import { VisualizarDadosEmpresaComponent } from './empresas-consulta/visualizar-dados-empresa/visualizar-dados-empresa.component';
 import { VisualizarEstagiariosEmpresaComponent } from './empresas-consulta/visualizar-estagiarios-empresa/visualizar-estagiarios-empresa.component';
+import { VisualizarContratoComponent } from './contratos-consulta/visualizar-contrato/visualizar-contrato.component';
 
 @NgModule({
 
@@ -20,7 +21,8 @@ import { VisualizarEstagiariosEmpresaComponent } from './empresas-consulta/visua
         VisualizarDadosAlunoComponent,
         VisualizarEstagiosAlunoComponent,
         VisualizarDadosEmpresaComponent,
-        VisualizarEstagiariosEmpresaComponent
+        VisualizarEstagiariosEmpresaComponent,
+        VisualizarContratoComponent
     ],
     exports: [ 
         AlunosConsultaComponent,

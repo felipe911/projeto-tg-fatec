@@ -11,7 +11,7 @@ export class EmpresasConsultaComponent implements OnInit {
  
   modalConfirm: BsModalRef;
   modalVis: BsModalRef;
-  titulo = 'Empresas'
+  titulo: String = 'Empresas'
   message: String;
 
   constructor(private modalService: BsModalService,private router: Router) { }
