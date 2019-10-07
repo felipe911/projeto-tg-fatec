@@ -4,7 +4,7 @@
         <h1>Consultar {{ titulo }}</h1>
       </div>
       <div class="col-md-3">
-        <button id="btn-cadastrar-aluno" type="button" class="btn btn-success" (click)="getCadastrarEmpresa()">Cadastrar Empresa</button>
+        <button id="btn-cadastrar-aluno" type="button" class="btn btn-danger" (click)="getCadastrarEmpresa()">Cadastrar Empresa</button>
       </div>
     </div>
     <form id="form-cadastro">
@@ -51,7 +51,7 @@
   
       <div class="row row-margin">
         <div class="col-md-12">
-          <button id="btn-pesquisar" type="button" class="btn btn-info">Pesquisar</button>
+          <button id="btn-pesquisar" type="button" class="btn btn-secondary">Pesquisar</button>
         </div>
       </div>
     </form>
@@ -74,7 +74,11 @@
           <td>20/07/1991</td>
           <td>Sorocaba</td>
           <td>5</td>
-          <td></td>
+          <td style="text-align: center">
+            <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar)" class="fa fa-eye"></a>
+            <a id="editar" title="Editar" (click)="editarAluno()" class="fa fa-edit" style="padding-left: 15px"></a>
+            <a id="excluir" title="Excluir" (click)="openModalConfirm(modalConfirm)" class="fa fa-trash" style="padding-left: 15px"></a>
+          </td>
         </tr>
         <tr>
           <th scope="row">2</th>

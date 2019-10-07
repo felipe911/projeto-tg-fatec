@@ -8,9 +8,8 @@ h1{
 }
 
 #btn-salvar{
-    float: right;
-    margin-top: 10px;
     padding: 10px 30px 10px 30px;
+    margin: 0 0 0 10px;
 }
 
 .label-block{
@@ -26,7 +25,20 @@ h1{
     margin-bottom: 10px;
 }
 
+.espacamento-top{
+    margin-top: 10px;
+}
+
 /* Sobrescrita Bootstrap */
+
+.btn-danger{
+    background-color: #990000;
+    color: white;
+}
+
+.btn-danger:hover{
+    background-color: #c53030;
+}
 
 .dropdown-toggle::after {
     margin-left: 10px;

@@ -1,7 +1,7 @@
 <div class="container" style="margin-top:150px">
   <div class="row">
     <div class="col-md-9">
-      <h1>Cadastrar {{ titulo }}</h1>
+      <h1>{{ titulo }}</h1>
     </div>
   </div>
   <form id="form-cadastro">
@@ -9,7 +9,7 @@
 
       <div class="col-md-3">
         <label for="input-ra">RA:</label>
-        <input type="text" class="form-control" id="input-ra">
+        <input type="text" class="form-control" id="input-ra" style="margin-bottom: 15px;">
       </div>
 
       <div class="col-md-3">
@@ -47,9 +47,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="row row-margin">
 
       <div class="col-md-3">
         <div class="dropdown">
@@ -68,7 +65,7 @@
 
       <div class="col-md-3">
         <label for="input-email" class="label-block">Email:</label>
-        <input type="email" class="form-control" id="input-email">
+        <input type="email" class="form-control" id="input-email" style="margin-bottom: 15px;">
       </div>
 
       <div class="col-md-3">
@@ -87,14 +84,17 @@
           <label class="custom-control-label" for="customRadioInline2">Feminino</label>
         </div>
       </div>
-    </div>
 
-    <div class="row row-margin">
       <div class="col-md-3">
         <label for="input-data-vestibular" class="label-block">Data Vestibular:</label>
         <input type="date" class="form-control" id="input-data-vestibular">
       </div>
     </div>
   </form>
-  <button id="btn-salvar" type="button" class="btn btn-success">Salvar</button>
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-end espacamento-top">
+        <button id="btn-limpar" type="button" class="btn btn-secondary">Limpar</button>
+        <button id="btn-salvar" type="button" class="btn btn-danger">Salvar</button>
+    </div>
+  </div>
 </div>

@@ -1,8 +1,8 @@
 <form id="form-historico-estagio">
 
   <button id="btn-historico-total" type="button" (click)="openModalHistorico(modalHistorico)"
-    class="btn btn-info espacamento-left">Histórico de Estágios</button>
-  <button id="btn-estagio-atual" type="button" (click)="openModal(atual)" class="btn btn-info espacamento-left">Estágio
+    class="btn btn-danger espacamento-left">Histórico de Estágios</button>
+  <button id="btn-estagio-atual" type="button" (click)="openModal(atual)" class="btn btn-danger espacamento-left">Estágio
     Atual</button>
 
   <ng-template #atual>
@@ -93,12 +93,12 @@
 
       <div class="row row-margin">
         <div class="col-md-12 justify-content-end">
-          <button id="btn-concluir-estagio" type="button" class="btn btn-info"
+          <button id="btn-concluir-estagio" type="button" class="btn btn-danger"
             (click)="openModalConfirm(modalConfirm)">Concluir
             Estágio</button>
 
-          <button id="btn-imprimir" type="button" class="btn btn-info">Imprimir</button>
-          <button id="btn-adicionar" type="button" class="btn btn-success espacamento-left"
+          <button id="btn-imprimir" type="button" class="btn btn-secondary">Imprimir</button>
+          <button id="btn-adicionar" type="button" class="btn btn-danger espacamento-left"
             (click)="openModalAddAtividade(modalAddAtividade)">Adicionar Atividade</button>
         </div>
       </div>
@@ -108,8 +108,8 @@
   <ng-template #modalConfirm>
     <div class="modal-body text-center">
       <p>Gostaria de utilizar este estágio para conclusão do seu curso ?</p>
-      <button type="button" class="btn btn-info" (click)="confirm()">Sim</button>
-      <button type="button" class="btn btn-info" (click)="decline()" style="margin-left: 10px">Não</button>
+      <button type="button" class="btn btn-danger" (click)="confirm()">Sim</button>
+      <button type="button" class="btn btn-danger" (click)="decline()" style="margin-left: 10px">Não</button>
     </div>
   </ng-template>
 
@@ -123,8 +123,8 @@
     <div class="modal-body">
       <app-adicionar-registro-estagio></app-adicionar-registro-estagio>
       <br />
-      <button id="btn-limpar" type="button" class="btn btn-info">Limpar</button>
-      <button id="btn-add-estagio" type="button" class="btn btn-success"
+      <button id="btn-limpar" type="button" class="btn btn-secondary">Limpar</button>
+      <button id="btn-add-estagio" type="button" class="btn btn-danger"
         (click)="modalRefChild.hide()" style="margin-left: 10px;">Adicionar</button>
     </div>
   </ng-template>

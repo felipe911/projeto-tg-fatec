@@ -48,15 +48,25 @@ h1{
 }
 
 .identificacao-border{
-    border: 2px solid #ced4da;
-    padding: 20px 0 20px 0;
+    padding: 7px 0 7px 0;
     margin: 30px 0 30px 0;
     font-weight: bold;
     text-align: center;
     font-size: 17px;
+    background-color: #990000;
+    color: white;
 }
 
 /* Sobrescrita Bootstrap */
+
+.btn-danger{
+    background-color: #990000;
+    color: white;
+}
+
+.btn-danger:hover{
+    background-color: #c53030;
+}
 
 .dropdown-toggle::after {
     margin-left: 120px;

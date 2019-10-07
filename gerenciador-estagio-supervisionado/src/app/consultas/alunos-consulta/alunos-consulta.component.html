@@ -4,7 +4,7 @@
       <h1>Consultar {{ titulo }}</h1>
     </div>
     <div class="col-md-3">
-      <button id="btn-cadastrar-aluno" type="button" class="btn btn-success" (click)="getCadastrarAluno()">Cadastrar Aluno</button>
+      <button id="btn-cadastrar-aluno" type="button" class="btn btn-danger" (click)="getCadastrarAluno()">Cadastrar Aluno</button>
     </div>
   </div>
   <form id="form-cadastro">
@@ -90,7 +90,7 @@
         </div>
       </div>
       <div class="col-md-3">
-        <button id="btn-pesquisar" type="button" class="btn btn-info">Pesquisar</button>
+        <button id="btn-pesquisar" type="button" class="btn btn-secondary">Pesquisar</button>
       </div>
     </div>
   </form>
@@ -118,9 +118,9 @@
         <td>Noite</td>
         <td>28</td>
         <td style="text-align: center">
-          
-          <a id="btn-visualizar" title="Visualizar Estágios" (click)="openModalVisualizar(modalVisualizar)" class="fa fa-eye"></a>
-
+          <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar)" class="fa fa-eye"></a>
+          <a id="editar" title="Editar" (click)="editarAluno()" class="fa fa-edit" style="padding-left: 15px"></a>
+          <a id="excluir" title="Excluir" (click)="openModalConfirm(modalConfirm)" class="fa fa-trash" style="padding-left: 15px"></a>
         </td>
       </tr>
       <tr>
@@ -177,5 +177,13 @@
   <div class="modal-body">
       <app-visualizar-dados-aluno></app-visualizar-dados-aluno>
       <app-visualizar-estagios-aluno></app-visualizar-estagios-aluno>
+  </div>
+</ng-template>
+
+<ng-template #modalConfirm>
+  <div class="modal-body text-center">
+    <p>Tem certeza que deseja excluir este registro ?</p>
+    <button type="button" class="btn btn-danger" (click)="confirm()">Sim</button>
+    <button type="button" class="btn btn-danger" (click)="decline()" style="margin-left: 10px">Não</button>
   </div>
 </ng-template>

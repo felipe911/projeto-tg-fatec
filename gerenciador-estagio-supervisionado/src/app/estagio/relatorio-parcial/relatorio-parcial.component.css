@@ -39,6 +39,16 @@ h1{
 
 /* Sobrescrita Bootstrap */
 
+.btn-danger{
+    background-color: #990000;
+    color: white;
+}
+
+.btn-danger:hover{
+    background-color: #c53030;
+}
+
+
 .dropdown-toggle::after {
     margin-left: 120px;
     border-top: .3em solid;
