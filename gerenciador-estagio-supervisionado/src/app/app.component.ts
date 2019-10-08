@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './login/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,9 @@ export class AppComponent {
   title = 'Gerenciador de Estágio Supervisionado';
   mostrarMenu: boolean = false;
 
-  constructor(private authService: AuthService){
-
-  }
+  constructor(
+    private authService: AuthService
+    ){}
 
   ngOnInit(){
     this.authService.mostrarMenuEmitter.subscribe(
