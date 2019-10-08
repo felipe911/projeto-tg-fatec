@@ -1,12 +1,12 @@
-<div class="espacamento">
+<div class="espacamento" *ngIf="mostrarMenu">
     <div class="row" style="width: 100%;">
         <div class="col-md-10 d-flex logo">
             <a routerLink="/"><img src="assets/img/logo-fatec.png" width="226px" style="margin-top: 10px;"></a>
         </div>
         <div class="col-md-1">
-            <a routerLink="/"><img src="assets/img/logout.png" width="30px;" title="Sair" style="margin-top: 30px;"></a>
+            <a routerLink="login"><img src="assets/img/logout.png" width="30px;" title="Sair" style="margin-top: 30px;"></a>
         </div>
     </div>
 </div>
-<menu></menu>
+<menu *ngIf="mostrarMenu"></menu>
 <router-outlet></router-outlet>

@@ -14,11 +14,12 @@ import { RelatorioParcialComponent } from './estagio/relatorio-parcial/relatorio
 import { TipoAtividadeComponent } from './estagio/tipo-atividade/tipo-atividade.component';
 import { RelatorioFinalComponent } from './estagio/relatorio-final/relatorio-final.component';
 import { AlunoGerenciamentoComponent } from "./aluno-gerenciamento/aluno-gerenciamento.component";
+import { LoginComponent } from "./login/login.component";
 
 const rotas: Routes = [
 
     { path: '' , component: HomeComponent},
-    { path: 'menu', component: MenuComponent },
+    { path: 'login', component: LoginComponent },
     { path: 'cadastrar/aluno', component: AlunosComponent },
     { path: 'editar/aluno/:id', component: AlunosComponent },
     { path: 'cadastrar/empresa', component: EmpresasComponent },

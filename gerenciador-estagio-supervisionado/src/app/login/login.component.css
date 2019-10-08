@@ -1,0 +1,166 @@
+div.main {
+    background: #990000;
+    /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #990000 1%, #570000 100%);
+    /* FF3.6+ */
+    background: -webkit-radial-gradient(center, ellipse cover, #990000 1%, #570000 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, #990000 1%, #570000 100%);
+    /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #990000 1%, #570000 100%);
+    /* IE10+ */
+    background: radial-gradient(ellipse at center, #990000 1%, #570000 100%);
+    /* W3C */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#990000', endColorstr='#570000', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    height: calc(100vh);
+    width: 100%;
+}
+
+
+/* ---------- GENERAL ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0px auto;
+}
+
+body {
+    color: #606468;
+    font: 87.5%/1.5em 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+a {
+    color: #eee;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input {
+    border: none;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    padding: 0;
+    -webkit-appearance: none;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+.container {
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* ---------- LOGIN ---------- */
+
+#logo-fatec-login {
+    margin-bottom: 50px;
+}
+
+#login #form {
+    width: 250px;
+}
+
+#login,
+.logo {
+    display: inline-block;
+    width: 40%;
+}
+
+#login {
+    border-right: 1px solid #fff;
+    padding: 0px 22px 0 50px;
+    width: 59%;
+}
+
+.logo {
+    color: #fff;
+    font-size: 100px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 125px;
+}
+
+#login #form span.fa {
+    background-color: #fff;
+    border-radius: 3px 0px 0px 3px;
+    color: #000;
+    display: block;
+    float: left;
+    height: 50px;
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    width: 50px;
+}
+
+#login #form input {
+    height: 50px;
+}
+
+#login #form input[type="text"],
+input[type="password"] {
+    background-color: #fff;
+    border-radius: 0px 3px 3px 0px;
+    color: rgb(48, 45, 45);
+    margin-bottom: 1em;
+    padding: 0 16px;
+    width: 200px;
+}
+
+#login #form input[type="submit"] {
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+    color: #990000;
+    font-weight: bold;
+    /* margin-bottom: 2em; */
+    text-transform: uppercase;
+    padding: 5px 10px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#btn-submit {
+    margin: 10px 0 0 0;
+    background-color: white;
+    border-radius: 5px;
+    color: #990000;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: right;
+    border: none;
+}
+
+#btn-submit:hover {
+    background-color: rgb(48, 45, 45);
+    color: white;
+}
+
+#login form input[type="submit"]:hover {
+    background-color: #292124;
+    color: white;
+}
+
+#login>p {
+    text-align: center;
+}
+
+#login>p span {
+    padding-left: 5px;
+}
+
+.middle {
+    display: flex;
+    width: 600px;
+}
