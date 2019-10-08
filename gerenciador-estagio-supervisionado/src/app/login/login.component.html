@@ -1,0 +1,25 @@
+<div class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <img id="logo-fatec-login" src="assets/img/logo-fatec-login.png" width="60%">
+            </div>
+        </div>
+        <div class="middle">
+            <div id="login">
+                <div id="form">
+                    <p><span class="fa fa-user"></span><input id="usuario" [(ngModel)]="usuario.nome" type="text" Placeholder="Usuário" required></p>
+                    <p><span class="fa fa-lock"></span><input id="senha" [(ngModel)]="usuario.senha" type="password" Placeholder="Senha" required></p>
+                    <div>
+                        <span style="width:100%; text-align:right;  display: inline-block;"><a class="small-text" routerLink="teste/login">Esqueceu a senha?</a></span>
+                        <button id="btn-submit" type="submit" (click)="login()">Login</button>
+                    </div>
+                </div>
+            </div>
+            <!-- end login -->
+            <div class="col-md-6 logo">GES
+                <p style="font-size: 20px; padding-left: 5px;">Gerenciador de Estágio Supervisionado</p>
+            </div>
+        </div>
+    </div>
+</div>

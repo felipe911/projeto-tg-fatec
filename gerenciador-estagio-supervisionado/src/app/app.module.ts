@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { FormsModule } from '@angular/forms';
 
 import { MenuComponent } from './menu/menu.component';
 import { AlunosComponent } from './cadastros/alunos/alunos.component';
@@ -28,6 +29,8 @@ import { VisualizarDadosAlunoComponent } from './consultas/alunos-consulta/visua
 import { VisualizarDadosEmpresaComponent } from './consultas/empresas-consulta/visualizar-dados-empresa/visualizar-dados-empresa.component';
 import { VisualizarEstagiariosEmpresaComponent } from './consultas/empresas-consulta/visualizar-estagiarios-empresa/visualizar-estagiarios-empresa.component';
 import { VisualizarContratoComponent } from './consultas/contratos-consulta/visualizar-contrato/visualizar-contrato.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './login/auth.service';
 
 @NgModule({
   declarations: [
@@ -55,14 +58,18 @@ import { VisualizarContratoComponent } from './consultas/contratos-consulta/visu
     VisualizarEstagiosAlunoComponent,
     VisualizarDadosEmpresaComponent,
     VisualizarEstagiariosEmpresaComponent,
-    VisualizarContratoComponent
+    VisualizarContratoComponent,
+    LoginComponent
   ],
   imports: [
     ModalModule.forRoot(),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [
     AppComponent,
   ]
