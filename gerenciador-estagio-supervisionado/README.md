@@ -4,8 +4,17 @@ Projeto desenvolvido como Trabalho de Graduação do curso Tecnológico em Anál
 
 ## Principais Tecnologias Utilizadas
 
-Angular 6.1.10 (Front-End), Java 8 (Back-End), SQL Server 2008 (Banco de Dados compatível com a faculdade)
+* Angular 6.1.10 (Front-End)
+* Java 8 (Back-End)
+* SQL Server 2008 (Banco de Dados compatível com a faculdade)
 
 ## Utilizando a aplicação
 
-Realizar o download ou clonar o repositório, abrir o terminal na pasta raiz do projeto e importar as dependências com: npm install, caso ocorra algum erro de rxjs, realizar o downgrade da versão instalada, executar o comando: npm install rxjs@6.0.0 --save
+Realizar o download ou clonar o repositório, abrir o terminal na pasta raiz do projeto e importar as dependências com: 
+* npm install
+
+Caso ocorra algum erro de rxjs, realizar o downgrade da versão instalada, executar o comando: 
+* npm install rxjs@6.0.0 --save
+
+Por fim, basta executar a aplicação:
+* ng serve --open
