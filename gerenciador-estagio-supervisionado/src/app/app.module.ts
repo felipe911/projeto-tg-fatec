@@ -32,6 +32,7 @@ import { VisualizarContratoComponent } from './consultas/contratos-consulta/visu
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/auth.service';
 import { AuthGuard } from './guards/auth-guard';
+import { GraficosComponent } from './home/graficos/graficos.component';
 
 @NgModule({
   declarations: [
@@ -60,13 +61,14 @@ import { AuthGuard } from './guards/auth-guard';
     VisualizarDadosEmpresaComponent,
     VisualizarEstagiariosEmpresaComponent,
     VisualizarContratoComponent,
-    LoginComponent
+    LoginComponent,
+    GraficosComponent
   ],
   imports: [
     ModalModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     AuthService,
