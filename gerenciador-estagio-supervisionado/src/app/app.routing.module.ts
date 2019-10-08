@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
 import { HomeComponent } from "./home/home.component";
-import { MenuComponent } from './menu/menu.component';
 import { AlunosComponent } from "./cadastros/alunos/alunos.component";
 import { EmpresasComponent } from './cadastros/empresas/empresas.component';
 import { AlunosConsultaComponent } from './consultas/alunos-consulta/alunos-consulta.component';
@@ -15,25 +14,26 @@ import { TipoAtividadeComponent } from './estagio/tipo-atividade/tipo-atividade.
 import { RelatorioFinalComponent } from './estagio/relatorio-final/relatorio-final.component';
 import { AlunoGerenciamentoComponent } from "./aluno-gerenciamento/aluno-gerenciamento.component";
 import { LoginComponent } from "./login/login.component";
+import { AuthGuard } from "./guards/auth-guard";
 
 const rotas: Routes = [
 
-    { path: '' , component: HomeComponent},
+    { path: '' , component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
-    { path: 'cadastrar/aluno', component: AlunosComponent },
-    { path: 'editar/aluno/:id', component: AlunosComponent },
-    { path: 'cadastrar/empresa', component: EmpresasComponent },
-    { path: 'editar/empresa/:id', component: EmpresasComponent },
-    { path: 'consultar/alunos', component: AlunosConsultaComponent },
-    { path: 'consultar/empresas', component: EmpresasConsultaComponent },
-    { path: 'consultar/contratos', component: ContratosConsultaComponent },
-    { path: 'consultar/relatorios', component: RelatoriosConsultaComponent },
-    { path: 'contrato/associar', component: AssociarContratoComponent },
-    { path: 'contrato/editar/:id', component: AssociarContratoComponent },
-    { path: 'estagio/relatorio-parcial', component: RelatorioParcialComponent },
-    { path: 'estagio/tipo-atividade', component: TipoAtividadeComponent },
-    { path: 'estagio/relatorio-final', component: RelatorioFinalComponent },
-    { path: 'aluno/gerenciar-estagios', component: AlunoGerenciamentoComponent }
+    { path: 'cadastrar/aluno', component: AlunosComponent, canActivate: [AuthGuard] },
+    { path: 'editar/aluno/:id', component: AlunosComponent, canActivate: [AuthGuard] },
+    { path: 'cadastrar/empresa', component: EmpresasComponent, canActivate: [AuthGuard] },
+    { path: 'editar/empresa/:id', component: EmpresasComponent, canActivate: [AuthGuard] },
+    { path: 'consultar/alunos', component: AlunosConsultaComponent, canActivate: [AuthGuard] },
+    { path: 'consultar/empresas', component: EmpresasConsultaComponent, canActivate: [AuthGuard] },
+    { path: 'consultar/contratos', component: ContratosConsultaComponent, canActivate: [AuthGuard] },
+    { path: 'consultar/relatorios', component: RelatoriosConsultaComponent, canActivate: [AuthGuard] },
+    { path: 'contrato/associar', component: AssociarContratoComponent, canActivate: [AuthGuard] },
+    { path: 'contrato/editar/:id', component: AssociarContratoComponent, canActivate: [AuthGuard] },
+    { path: 'estagio/relatorio-parcial', component: RelatorioParcialComponent, canActivate: [AuthGuard] },
+    { path: 'estagio/tipo-atividade', component: TipoAtividadeComponent, canActivate: [AuthGuard] },
+    { path: 'estagio/relatorio-final', component: RelatorioFinalComponent, canActivate: [AuthGuard] },
+    { path: 'aluno/gerenciar-estagios', component: AlunoGerenciamentoComponent, canActivate: [AuthGuard] }
 
 ]
 

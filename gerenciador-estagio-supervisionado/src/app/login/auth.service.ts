@@ -11,22 +11,26 @@ export class AuthService {
   private usuarioAutenticado: boolean = false;
   mostrarMenuEmitter = new EventEmitter<boolean>();
 
-  constructor(private router: Router) { 
+  constructor(private router: Router) {
 
   }
 
-  fazerLogin(usuario: Usuario){
-    if(usuario.nome === 'admin' && usuario.senha === 'admin'){
+  fazerLogin(usuario: Usuario) {
+    if (usuario.nome === 'admin' && usuario.senha === 'admin') {
 
       this.usuarioAutenticado = true;
       this.router.navigate(['/']);
       this.mostrarMenuEmitter.emit(true);
 
-    } else{
-      
+    } else {
+
       this.usuarioAutenticado = false;
       this.mostrarMenuEmitter.emit(false);
 
     }
+  }
+
+  usuarioEstaAutenticado() : boolean {
+    return this.usuarioAutenticado;
   }
 }
