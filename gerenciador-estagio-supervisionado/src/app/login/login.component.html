@@ -12,7 +12,7 @@
                     <p><span class="fa fa-lock"></span><input id="senha" [(ngModel)]="usuario.senha" type="password" Placeholder="Senha" required></p>
                     <div>
                         <span style="width:100%; text-align:right;  display: inline-block;"><a class="small-text" routerLink="">Esqueceu a senha?</a></span>
-                        <button id="btn-submit" type="submit" (click)="login()">Login</button>
+                        <button id="btn-submit" type="submit" (click)="login(modalErroAutenticacao)">Login</button>
                     </div>
                 </div>
             </div>
@@ -23,3 +23,10 @@
         </div>
     </div>
 </div>
+
+<ng-template #modalErroAutenticacao>
+    <div class="modal-body text-center">
+        <p>Login ou Senha incorreto(s).</p>
+        <button type="button" class="btn btn-danger" (click)="modalErroLogin.hide()" style="margin-top:10px;">Ok</button>
+    </div>
+</ng-template>
