@@ -27,6 +27,8 @@ export class AuthService {
       this.usuarioAutenticado = false;
       this.mostrarMenuEmitter.emit(false);
 
+      alert("Login ou Senha inválido(s)");
+
     }
   }
 

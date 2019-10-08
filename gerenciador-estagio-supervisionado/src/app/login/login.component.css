@@ -1,17 +1,17 @@
 div.main {
     background: #990000;
     /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover, #990000 1%, #570000 100%);
+    background: -moz-radial-gradient(center, ellipse cover, #d10202 1%, #570000 100%);
     /* FF3.6+ */
-    background: -webkit-radial-gradient(center, ellipse cover, #990000 1%, #570000 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #d10202 1%, #570000 100%);
     /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover, #990000 1%, #570000 100%);
+    background: -o-radial-gradient(center, ellipse cover, #d10202 1%, #570000 100%);
     /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover, #990000 1%, #570000 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #d10202 1%, #570000 100%);
     /* IE10+ */
-    background: radial-gradient(ellipse at center, #990000 1%, #570000 100%);
+    background: radial-gradient(ellipse at center, #d10202 1%, #570000 100%);
     /* W3C */
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#990000', endColorstr='#570000', GradientType=1);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#d10202', endColorstr='#570000', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
     height: calc(100vh);
     width: 100%;
