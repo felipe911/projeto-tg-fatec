@@ -35,6 +35,7 @@ import { AuthGuard } from './guards/auth-guard';
 import { AdminGerenciamentoComponent } from './admin-gerenciamento/admin-gerenciamento.component';
 import { DashboardComponent } from './admin-gerenciamento/dashboard/dashboard.component';
 import { GraficosComponent } from './admin-gerenciamento/dashboard/graficos/graficos.component';
+import { EntregaRelatorioComponent } from './admin-gerenciamento/entrega-relatorio/entrega-relatorio.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { GraficosComponent } from './admin-gerenciamento/dashboard/graficos/graf
     LoginComponent,
     GraficosComponent,
     AdminGerenciamentoComponent,
-    DashboardComponent
+    DashboardComponent,
+    EntregaRelatorioComponent
   ],
   imports: [
     ModalModule.forRoot(),
