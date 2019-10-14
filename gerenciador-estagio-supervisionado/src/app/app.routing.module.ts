@@ -15,6 +15,7 @@ import { RelatorioFinalComponent } from './estagio/relatorio-final/relatorio-fin
 import { AlunoGerenciamentoComponent } from "./aluno-gerenciamento/aluno-gerenciamento.component";
 import { LoginComponent } from "./login/login.component";
 import { AuthGuard } from "./guards/auth-guard";
+import { DashboardComponent } from "./admin-gerenciamento/dashboard/dashboard.component";
 
 const rotas: Routes = [
 
@@ -33,7 +34,8 @@ const rotas: Routes = [
     { path: 'estagio/relatorio-parcial', component: RelatorioParcialComponent, canActivate: [AuthGuard] },
     { path: 'estagio/tipo-atividade', component: TipoAtividadeComponent, canActivate: [AuthGuard] },
     { path: 'estagio/relatorio-final', component: RelatorioFinalComponent, canActivate: [AuthGuard] },
-    { path: 'aluno/gerenciar-estagios', component: AlunoGerenciamentoComponent, canActivate: [AuthGuard] }
+    { path: 'aluno/gerenciar-estagios', component: AlunoGerenciamentoComponent, canActivate: [AuthGuard] },
+    { path: 'gerenciamento/dashboard', component: DashboardComponent, canActivate: [AuthGuard] }
 
 ]
 

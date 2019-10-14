@@ -3,13 +3,26 @@
         <ul>
             <li>
                 <div class="item">
-                    <i class="fa fa-graduation-cap" style="color: white"></i>
-                    <input class="nav-text" type="checkbox" id="check-estagio">
-                    <label class="nav-text" for="check-estagio">Aluno</label>
+                    <i class="fa fa-bar-chart" style="color: white"></i>
+                    <input class="nav-text" type="checkbox" id="check-gerenciar">
+                    <label class="nav-text" for="check-gerenciar">Gerenciar Estágios</label>
                     <ul>
-                        <li><a routerLink="aluno/gerenciar-estagios">Gerenciar Estágios</a></li>
+                        <li><a routerLink="gerenciamento/dashboard">Dashboard</a></li>
+                        <li><a routerLink="estagio/relatorio-parcial" style="font-size: 10px !important;">Registrar Entrega de Relatórios</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <div class="item">
+                    <i class="fa fa-graduation-cap" style="color: white"></i>
+                    <input class="nav-text" type="checkbox" id="check-aluno">
+                    <label class="nav-text" for="check-aluno">Aluno</label>
+                    <ul>
+                        <li><a routerLink="aluno/gerenciar-estagios">Visualizar Estágio</a></li>
                         <li><a routerLink="estagio/relatorio-parcial">Relatório Parcial</a></li>
-                        <li><a routerLink="estagio/tipo-atividade">Tipo Atividade</a></li>
+                        <li><a routerLink="estagio/tipo-atividade" style="font-size: 12px !important;">Validar Horas de Estágio</a></li>
                     </ul>
                 </div>
             </li>
