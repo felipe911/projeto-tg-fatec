@@ -16,7 +16,7 @@
   background-color: #990000;
 }
 
-#check-cadastrar, #check-consultar, #check-associar, #check-estagio{
+#check-cadastrar, #check-consultar, #check-associar, #check-aluno, #check-gerenciar{
   display: none;
 }
 

@@ -32,7 +32,9 @@ import { VisualizarContratoComponent } from './consultas/contratos-consulta/visu
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/auth.service';
 import { AuthGuard } from './guards/auth-guard';
-import { GraficosComponent } from './home/graficos/graficos.component';
+import { AdminGerenciamentoComponent } from './admin-gerenciamento/admin-gerenciamento.component';
+import { DashboardComponent } from './admin-gerenciamento/dashboard/dashboard.component';
+import { GraficosComponent } from './admin-gerenciamento/dashboard/graficos/graficos.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { GraficosComponent } from './home/graficos/graficos.component';
     VisualizarEstagiariosEmpresaComponent,
     VisualizarContratoComponent,
     LoginComponent,
-    GraficosComponent
+    GraficosComponent,
+    AdminGerenciamentoComponent,
+    DashboardComponent
   ],
   imports: [
     ModalModule.forRoot(),
