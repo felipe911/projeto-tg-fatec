@@ -45,6 +45,15 @@ h1{
     cursor: pointer;
 }
 
+.titulo{
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-style: italic;
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(70, 69, 69);
+}
+
 /* Sobrescrita Bootstrap */
 
 .btn-danger{

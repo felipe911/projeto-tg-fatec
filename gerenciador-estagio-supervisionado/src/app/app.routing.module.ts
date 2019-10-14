@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
+import { AuthGuard } from "./guards/auth-guard";
+import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
 import { AlunosComponent } from "./cadastros/alunos/alunos.component";
 import { EmpresasComponent } from './cadastros/empresas/empresas.component';
@@ -13,9 +15,8 @@ import { RelatorioParcialComponent } from './estagio/relatorio-parcial/relatorio
 import { TipoAtividadeComponent } from './estagio/tipo-atividade/tipo-atividade.component';
 import { RelatorioFinalComponent } from './estagio/relatorio-final/relatorio-final.component';
 import { AlunoGerenciamentoComponent } from "./aluno-gerenciamento/aluno-gerenciamento.component";
-import { LoginComponent } from "./login/login.component";
-import { AuthGuard } from "./guards/auth-guard";
 import { DashboardComponent } from "./admin-gerenciamento/dashboard/dashboard.component";
+import { EntregaRelatorioComponent } from './admin-gerenciamento/entrega-relatorio/entrega-relatorio.component';
 
 const rotas: Routes = [
 
@@ -29,13 +30,14 @@ const rotas: Routes = [
     { path: 'consultar/empresas', component: EmpresasConsultaComponent, canActivate: [AuthGuard] },
     { path: 'consultar/contratos', component: ContratosConsultaComponent, canActivate: [AuthGuard] },
     { path: 'consultar/relatorios', component: RelatoriosConsultaComponent, canActivate: [AuthGuard] },
-    { path: 'contrato/associar', component: AssociarContratoComponent, canActivate: [AuthGuard] },
+    { path: 'associar/contrato', component: AssociarContratoComponent, canActivate: [AuthGuard] },
     { path: 'contrato/editar/:id', component: AssociarContratoComponent, canActivate: [AuthGuard] },
-    { path: 'estagio/relatorio-parcial', component: RelatorioParcialComponent, canActivate: [AuthGuard] },
-    { path: 'estagio/tipo-atividade', component: TipoAtividadeComponent, canActivate: [AuthGuard] },
-    { path: 'estagio/relatorio-final', component: RelatorioFinalComponent, canActivate: [AuthGuard] },
-    { path: 'aluno/gerenciar-estagios', component: AlunoGerenciamentoComponent, canActivate: [AuthGuard] },
-    { path: 'gerenciamento/dashboard', component: DashboardComponent, canActivate: [AuthGuard] }
+    { path: 'aluno/relatorio-parcial', component: RelatorioParcialComponent, canActivate: [AuthGuard] },
+    { path: 'aluno/validar-horas-estagio', component: TipoAtividadeComponent, canActivate: [AuthGuard] },
+    { path: 'aluno/relatorio-final', component: RelatorioFinalComponent, canActivate: [AuthGuard] },
+    { path: 'aluno/visualizar-estagio', component: AlunoGerenciamentoComponent, canActivate: [AuthGuard] },
+    { path: 'gerenciar-estagios/estatisticas', component: DashboardComponent, canActivate: [AuthGuard] },
+    { path: 'gerenciar-estagios/entrega-relatorio', component: EntregaRelatorioComponent, canActivate: [AuthGuard] }
 
 ]
 
