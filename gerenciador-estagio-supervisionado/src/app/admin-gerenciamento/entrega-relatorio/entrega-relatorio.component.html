@@ -3,5 +3,205 @@
     <div class="col-md-12" style="margin-bottom: 10px;">
       <p class="titulo">Registro de Entrega de Relatório</p>
     </div>
+
+    <div class="col-md-6">
+      <label for="ra">RA:</label>
+      <input type="text" class="form-control" id="ra">
+    </div>
+    <div class="col-md-6">
+      <label for="nome">Nome:</label>
+      <input type="text" class="form-control" id="nome">
+    </div>
+
+    <div class="col-md-12 d-flex justify-content-end" style="margin-top: 20px;">
+      <button id="btn-buscar" type="button" class="btn btn-secondary">Buscar</button>
+    </div>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead class="alinhamento">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">RA</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Relatórios</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>0030481521009</td>
+            <td>Felipe Augusto de Oliveira</td>
+            <td>ADS</td>
+            <td style="text-align: center">
+              <a id="visualizar" title="Visualizar" (click)="openModalVisualizarRelatorios(modalVisualizarRelatorios)"
+                class="fa fa-eye"></a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
+
+<ng-template #modalVisualizarRelatorios>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Relatórios</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalVis.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row row-margin">
+      <div class="identificacao-titulo">
+        Relatórios Parciais
+      </div>
+
+      <div class="col-md-3">
+        <label for="ra" class="bold">RA:</label>
+        <label id="ra" class="label-block" style="margin-bottom: 20px">0030481521009</label>
+      </div>
+
+      <div class="col-md-3">
+        <label for="nome" class="bold">Aluno:</label>
+        <label id="nome" class="label-block">Felipe Augusto de Oliveira</label>
+      </div>
+
+      <div class="col-md-3">
+        <label for="curso" class="bold">Curso:</label>
+        <label id="curso" class="label-block">ADS</label>
+      </div>
+
+      <div class="col-md-3">
+        <label for="semestre" class="bold">Empresa:</label>
+        <label id="semestre" class="label-block" style="margin-bottom: 20px">Ventron</label>
+      </div>
+
+      <div class="col-md-4">
+        <label for="periodo" class="bold">Período de Avaliação:</label>
+        <label id="periodo" class="label-block">01/01/2018 até 01/06/2018</label>
+      </div>
+
+      <div class="col-md-4">
+        <label for="periodo" class="bold">Este relatório foi entregue ?</label>
+        <input type="radio" class="check" id="acordo-plano-sim" name="plano1">Sim
+        <input type="radio" class="check" id="acordo-plano-nao" name="plano1">Não
+      </div>
+      <div class="col-md-4" style="margin-top: 20px;">
+        <button id="btn-buscar" type="button" class="btn btn-danger" title="Visualizar Relatório Parcial"
+          (click)="visualizarRelatorioParcial()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="col-md-4">
+        <label for="periodo" class="bold">Período de Avaliação:</label>
+        <label id="periodo" class="label-block">01/06/2018 até 01/12/2018</label>
+      </div>
+
+      <div class="col-md-4">
+        <label for="periodo" class="bold">Este relatório foi entregue ?</label>
+        <input type="radio" class="check" id="acordo-plano-sim" name="plano2">Sim
+        <input type="radio" class="check" id="acordo-plano-nao" name="plano2">Não
+      </div>
+      <div class="col-md-4" style="margin-top: 20px;">
+        <button id="btn-buscar" type="button" class="btn btn-danger" title="Visualizar Relatório Parcial"
+          (click)="visualizarRelatorioParcial()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="col-md-4">
+        <label for="periodo" class="bold">Período de Avaliação:</label>
+        <label id="periodo" class="label-block">01/01/2019 até 01/06/2019</label>
+      </div>
+
+      <div class="col-md-4">
+        <label for="periodo" class="bold">Este relatório foi entregue ?</label>
+        <input type="radio" class="check" id="acordo-plano-sim" name="plano3">Sim
+        <input type="radio" class="check" id="acordo-plano-nao" name="plano3">Não
+      </div>
+      <div class="col-md-4" style="margin-top: 20px;">
+        <button id="btn-buscar" type="button" class="btn btn-danger" title="Visualizar Relatório Parcial"
+          (click)="visualizarRelatorioParcial()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="identificacao-titulo" style="margin-top: 10px;">
+        Relatório Final
+      </div>
+
+      <div class="col-md-12">
+        <label for="tipo-atividade" class="bold">Tipo de Atividade desenvolida e forma de comprovação:</label>
+        <label id="tipo-atividade" class="label-block" style="margin-bottom: 20px">Como Estagiário, Realizado no setor
+          privado (indústria/comércio/serviços)</label>
+      </div>
+
+      <div class="col-md-3">
+        <label for="local" class="bold">Local:</label>
+        <label id="local" class="label-block">Ventron</label>
+      </div>
+
+      <div class="col-md-3">
+        <label for="de" class="bold">De:</label>
+        <label id="de" class="label-block">01/01/2018</label>
+      </div>
+
+      <div class="col-md-3">
+        <label for="ate" class="bold">Até:</label>
+        <label id="ate" class="label-block">01/12/2019</label>
+      </div>
+
+      <div class="col-md-3">
+        <label for="area" class="bold">Área da Atividade:</label>
+        <label id="area" class="label-block" style="margin-bottom: 20px">Desenvolvimento</label>
+      </div>
+
+      <div class="col-md-4">
+        <label for="horas" class="bold">Total de Horas Cumpridas:</label>
+        <label id="horas" class="label-block" style="margin-bottom: 20px">200 horas</label>
+      </div>
+
+      <div class="col-md-4">
+        <label for="periodo" class="bold">Este relatório foi entregue ?</label>
+        <input type="radio" class="check" id="acordo-plano-sim" name="plano4">Sim
+        <input type="radio" class="check" id="acordo-plano-nao" name="plano4">Não
+      </div>
+
+      <div class="col-md-12 d-flex justify-content-end">
+          <button id="btn-salvar" type="button" class="btn btn-danger" title="Salvar">Salvar</button>
+      </div>
+
+    </div>
+  </div>
+</ng-template>
