@@ -1,3 +1,69 @@
+h1{
+    margin-bottom: 20px;
+}
+
+#form-cadastro{
+    border: 1px solid #ced4da;
+    padding: 30px;
+}
+
+#btn-cadastrar-aluno{
+    margin-top: 10px;
+    padding: 10px 30px 10px 30px;
+    float: right;
+}
+
+#btn-pesquisar{
+    margin-top: 20px;
+    padding: 10px 30px 10px 30px;
+    float: right;
+}
+
+.label-block{
+    display: block !important;
+}
+
+.check{
+    margin: 0 10px 0 10px;
+}
+
+.btn-full-width{
+    width: 100%;
+    text-align: left;
+}
+
+.row-margin{
+    margin-bottom: 10px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.alinhamento{
+    text-align: center;
+}
+
+#btn-visualizar{
+    text-align: center;
+}
+
+.fa-eye:hover, .fa-edit:hover, .fa-trash:hover{
+    color: #990000 !important;
+    cursor: pointer;
+}
+
+.identificacao-titulo{
+    background-color: #990000;
+    color: white;
+    padding: 5px 0 5px 15px;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
 .titulo{
     font-family: 'Open Sans', Arial, sans-serif;
     font-style: italic;
@@ -5,4 +71,36 @@
     font-weight: bold;
     text-transform: uppercase;
     color: rgb(70, 69, 69);
+}
+
+/* Sobrescrita Bootstrap */
+
+.btn-danger{
+    background-color: #990000;
+    color: white;
+}
+
+.btn-danger:hover{
+    background-color: #c53030;
+}
+
+.dropdown-toggle::after {
+    margin-left: 120px;
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-left: .3em solid transparent;
+}
+
+.dropdown-item:hover{
+    background-color: rgb(93, 190, 235);
+}
+
+.btn-primary {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border-color: #ced4da;
+}
+
+.table-bordered{
+    margin-top: 40px !important;
 }

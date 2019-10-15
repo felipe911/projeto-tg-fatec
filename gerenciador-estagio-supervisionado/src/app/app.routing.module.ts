@@ -33,6 +33,7 @@ const rotas: Routes = [
     { path: 'associar/contrato', component: AssociarContratoComponent, canActivate: [AuthGuard] },
     { path: 'contrato/editar/:id', component: AssociarContratoComponent, canActivate: [AuthGuard] },
     { path: 'aluno/relatorio-parcial', component: RelatorioParcialComponent, canActivate: [AuthGuard] },
+    { path: 'aluno/relatorio-parcial/:id', component: RelatorioParcialComponent, canActivate: [AuthGuard] },
     { path: 'aluno/validar-horas-estagio', component: TipoAtividadeComponent, canActivate: [AuthGuard] },
     { path: 'aluno/relatorio-final', component: RelatorioFinalComponent, canActivate: [AuthGuard] },
     { path: 'aluno/visualizar-estagio', component: AlunoGerenciamentoComponent, canActivate: [AuthGuard] },
