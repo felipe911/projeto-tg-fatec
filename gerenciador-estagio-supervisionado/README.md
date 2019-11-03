@@ -5,7 +5,7 @@ Projeto desenvolvido como Trabalho de Graduação do curso Tecnológico em Anál
 ## Principais Tecnologias Utilizadas
 
 * Angular 6.1.10 (Front-End)
-* Java 8 (Back-End)
+* Java 8 (GES-API - Back-End)
 * SQL Server 2008 (Banco de Dados compatível com a faculdade)
 
 ## Utilizando a aplicação
