@@ -1,8 +1,11 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AlunosComponent } from "./alunos/alunos.component";
 import { EmpresasComponent } from './empresas/empresas.component';
+
 
 @NgModule({
 
@@ -15,7 +18,9 @@ import { EmpresasComponent } from './empresas/empresas.component';
         EmpresasComponent,
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        BrowserAnimationsModule,
+        BsDropdownModule.forRoot(),
     ]
 })
 

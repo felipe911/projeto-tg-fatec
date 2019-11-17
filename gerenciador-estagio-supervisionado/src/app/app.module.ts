@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MenuComponent } from './menu/menu.component';
 import { AlunosComponent } from './cadastros/alunos/alunos.component';
@@ -36,6 +37,8 @@ import { AdminGerenciamentoComponent } from './admin-gerenciamento/admin-gerenci
 import { DashboardComponent } from './admin-gerenciamento/dashboard/dashboard.component';
 import { GraficosComponent } from './admin-gerenciamento/dashboard/graficos/graficos.component';
 import { EntregaRelatorioComponent } from './admin-gerenciamento/entrega-relatorio/entrega-relatorio.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { AlunosService } from './cadastros/alunos/alunos.service';
 
 @NgModule({
   declarations: [
@@ -73,12 +76,15 @@ import { EntregaRelatorioComponent } from './admin-gerenciamento/entrega-relator
   imports: [
     ModalModule.forRoot(),
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    BsDropdownModule.forRoot(),
   ],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    AlunosService
   ],
   bootstrap: [
     AppComponent,

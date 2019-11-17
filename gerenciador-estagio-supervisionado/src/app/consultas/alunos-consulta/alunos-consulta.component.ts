@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-alunos-consulta',
   templateUrl: './alunos-consulta.component.html',
@@ -13,8 +14,22 @@ export class AlunosConsultaComponent implements OnInit {
 
   modalVis: BsModalRef;
   modalConfirm: BsModalRef;
-
   message: String;
+
+  alunos = [ 
+    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
+    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
+    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
+    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
+    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
+    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
+    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
+    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
+    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
+    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'}
+  ];
+
+
 
   constructor(private modalService: BsModalService, private router: Router) { }
 
