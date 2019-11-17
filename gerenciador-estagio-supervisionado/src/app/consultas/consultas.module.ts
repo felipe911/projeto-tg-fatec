@@ -31,7 +31,7 @@ import { VisualizarContratoComponent } from './contratos-consulta/visualizar-con
         RelatoriosConsultaComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
     ]
 })
 
