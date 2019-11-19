@@ -27,7 +27,11 @@ export class AlunosComponent implements OnInit {
   periodos = ['Manhã', 'Tarde', 'Noite'];
 
   salvar(){
-    this.alunosService.salvar(this.aluno);
+    this.alunosService.salvar(this.aluno).subscribe(
+      sucess => console.log('sucesso'),
+      error => console.error(error),
+      () => console.log('Request Completo')
+    );
   }
 
   limpar(form: NgForm){

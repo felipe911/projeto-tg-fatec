@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MenuComponent } from './menu/menu.component';
 import { AlunosComponent } from './cadastros/alunos/alunos.component';
@@ -80,6 +81,7 @@ import { AlunosService } from './cadastros/alunos/alunos.service';
     AppRoutingModule,
     FormsModule,
     BsDropdownModule.forRoot(),
+    HttpClientModule
   ],
   providers: [
     AuthService,
