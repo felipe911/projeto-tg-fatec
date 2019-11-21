@@ -11,7 +11,7 @@ export class AlunosService{
 
     constructor(private http: HttpClient){}
 
-    private baseUrl = 'https://localhost:9400/aluno/';
+    private baseUrl = '/api/aluno';
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -22,7 +22,25 @@ export class AlunosService{
     alunos = [];
 
     salvar(aluno: Aluno): Observable<Aluno> {
-        return this.http.post<Aluno>(`${this.baseUrl}`, aluno);
+        debugger
+
+
+        return this.http.post<Aluno>(`${this.baseUrl}`, this.formataParaApi(aluno));
+    }
+
+    formataParaApi(aluno: Aluno): Aluno{
+
+        aluno.semestre = Number((aluno.semestre).toString().substr(0,1));
+
+        if(aluno.periodo.toString() == 'Manhã'){
+            aluno.periodo = 1;
+        } else if(aluno.periodo.toString() == 'Tarde'){
+            aluno.periodo = 2;
+        } else if(aluno.periodo.toString() == 'Noite'){
+            aluno.periodo = 3;
+        }
+
+        return aluno;
     }
 
 }
