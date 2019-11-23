@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  TemplateRef  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 
 import { Aluno } from './Aluno';
-import { AlunosService } from './alunos.service';
+import { AlunoService } from 'src/app/service/aluno.service';
 
 @Component({
   selector: 'app-alunos',
@@ -13,11 +14,14 @@ import { AlunosService } from './alunos.service';
 
 export class AlunosComponent implements OnInit {
 
+  constructor(private activatedRoute: ActivatedRoute, private alunoService: AlunoService, private modalService: BsModalService) { }
+
   titulo: String = 'Cadastrar Aluno';
-
-  constructor(private activatedRoute: ActivatedRoute, private alunosService: AlunosService) { }
-
   aluno = new Aluno();
+  modalPosReq: BsModalRef;
+  mensagemPosReq: String;
+
+
   cursos = ['Análise e Desenvolvimento de Sistemas', 'Eletrônica Automotiva',
             'Fabricação Mecânica', 'Logistica', 'Manufatura Avançada', 'Polímeros',
             'Processos Metalúrgicos', 'Projetos Mecânicos', 'Sistemas Biomédicos'];
@@ -26,18 +30,30 @@ export class AlunosComponent implements OnInit {
 
   periodos = ['Manhã', 'Tarde', 'Noite'];
 
-  salvar(){
-    this.alunosService.salvar(this.aluno).subscribe(
-      sucess => console.log('sucesso'),
-      error => console.error(error),
-      () => console.log('Request Completo')
+  salvar(template: TemplateRef<any>, form: NgForm){
+
+    this.alunoService.salvar(this.aluno).subscribe(
+      
+      sucess => {
+        this.mensagemPosReq = 'Aluno cadastrado com sucesso.'
+        this.modalPosRequisicao(template);
+
+        form.reset();
+        this.aluno = new Aluno();
+
+      },
+      error => alert(error)
     );
+  }
+
+  modalPosRequisicao(template: TemplateRef<any>){
+    const config: ModalOptions = { class: 'modal-md' }
+    this.modalPosReq = this.modalService.show(template, config);
   }
 
   limpar(form: NgForm){
     form.reset();
   }
-
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.params.id;
