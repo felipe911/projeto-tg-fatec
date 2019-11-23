@@ -1,7 +1,8 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 import { Router } from '@angular/router';
-
+import { AlunoService } from 'src/app/service/aluno.service';
+import { Aluno } from 'src/app/cadastros/alunos/Aluno';
 
 @Component({
   selector: 'app-alunos-consulta',
@@ -10,30 +11,32 @@ import { Router } from '@angular/router';
 })
 export class AlunosConsultaComponent implements OnInit {
 
+
+  constructor(private modalService: BsModalService, private router: Router, private alunoService: AlunoService) { }
+
   titulo: String = 'Alunos'
 
   modalVis: BsModalRef;
   modalConfirm: BsModalRef;
   message: String;
 
-  alunos = [ 
-    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
-    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
-    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
-    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
-    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
-    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
-    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
-    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
-    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'},
-    {nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6.Semestre', periodo: 'Noite', idade: '28'}
+  alunos = [
+      { nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6',
+      periodo: 3, dataVestibular: '01/01/2015'},
+      { nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6',
+      periodo: 3, dataVestibular: '01/01/2015'},
+      { nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6',
+      periodo: 3, dataVestibular: '01/01/2015'},
+      { nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6',
+      periodo: 3, dataVestibular: '01/01/2015'},
+      { nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6',
+      periodo: 3, dataVestibular: '01/01/2015'},
+
   ];
+  cabecalhoElementos = ['Nome', 'RA', 'Curso', 'Semestre', 'Período', 'Data Vestibular', 'Ações'];
 
-
-
-  constructor(private modalService: BsModalService, private router: Router) { }
-
-  ngOnInit() {
+  ngOnInit(){
+   
   }
 
   openModalVisualizar(template: TemplateRef<any>) {

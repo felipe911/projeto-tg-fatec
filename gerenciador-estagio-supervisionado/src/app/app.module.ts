@@ -39,7 +39,7 @@ import { DashboardComponent } from './admin-gerenciamento/dashboard/dashboard.co
 import { GraficosComponent } from './admin-gerenciamento/dashboard/graficos/graficos.component';
 import { EntregaRelatorioComponent } from './admin-gerenciamento/entrega-relatorio/entrega-relatorio.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { AlunosService } from './cadastros/alunos/alunos.service';
+import { AlunoService } from './service/aluno.service';
 
 @NgModule({
   declarations: [
@@ -81,12 +81,12 @@ import { AlunosService } from './cadastros/alunos/alunos.service';
     AppRoutingModule,
     FormsModule,
     BsDropdownModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     AuthService,
     AuthGuard,
-    AlunosService
+    AlunoService
   ],
   bootstrap: [
     AppComponent,

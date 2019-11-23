@@ -98,70 +98,22 @@
   <table class="table table-bordered">
     <thead class="alinhamento">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nome</th>
-        <th scope="col">RA</th>
-        <th scope="col">Curso</th>
-        <th scope="col">Semestre</th>
-        <th scope="col">Período</th>
-        <th scope="col">Idade</th>
-        <th scope="col">Ações</th>
+        <th *ngFor="let cabecalho of cabecalhoElementos" scope="col">{{ cabecalho }}</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Felipe Augusto de Oliveira</td>
-        <td>0030481521009</td>
-        <td>ADS</td>
-        <td>6. Semestre</td>
-        <td>Noite</td>
-        <td>28</td>
+      <tr *ngFor="let aluno of alunos">
+        <td> {{ aluno.nome }}</td>
+        <td> {{ aluno.ra }}</td>
+        <td> {{ aluno.curso }} </td>
+        <td> {{ aluno.semestre }}. Semestre </td>
+        <td> {{ aluno.periodo }} </td>
+        <td> {{ aluno.dataVestibular }}</td>
         <td style="text-align: center">
           <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar)" class="fa fa-eye"></a>
           <a id="editar" title="Editar" (click)="editarAluno()" class="fa fa-edit" style="padding-left: 15px"></a>
           <a id="excluir" title="Excluir" (click)="openModalConfirm(modalConfirm)" class="fa fa-trash" style="padding-left: 15px"></a>
         </td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">5</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
       </tr>
     </tbody>
   </table>

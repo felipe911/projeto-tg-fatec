@@ -1,15 +1,14 @@
-import { Aluno } from "./Aluno";
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Aluno } from '../cadastros/alunos/Aluno';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
+export class AlunoService {
 
-export class AlunosService{
-
-    constructor(private http: HttpClient){}
+  constructor(private http: HttpClient){}
 
     private baseUrl = '/api/aluno';
 
@@ -22,10 +21,11 @@ export class AlunosService{
     alunos = [];
 
     salvar(aluno: Aluno): Observable<Aluno> {
-        debugger
-
-
         return this.http.post<Aluno>(`${this.baseUrl}`, this.formataParaApi(aluno));
+    }
+
+    listar(){
+        return this.http.get(`${this.baseUrl}`);
     }
 
     formataParaApi(aluno: Aluno): Aluno{
@@ -42,5 +42,4 @@ export class AlunosService{
 
         return aluno;
     }
-
 }
