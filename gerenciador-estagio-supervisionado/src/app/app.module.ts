@@ -6,6 +6,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxMaskModule } from 'ngx-mask'
 
 import { MenuComponent } from './menu/menu.component';
 import { AlunosComponent } from './cadastros/alunos/alunos.component';
@@ -82,6 +83,7 @@ import { AlunoService } from './service/aluno.service';
     FormsModule,
     BsDropdownModule.forRoot(),
     HttpClientModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [
     AuthService,
