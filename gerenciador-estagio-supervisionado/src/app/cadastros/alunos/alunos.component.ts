@@ -32,18 +32,51 @@ export class AlunosComponent implements OnInit {
 
   salvar(template: TemplateRef<any>, form: NgForm){
 
-    this.alunoService.salvar(this.aluno).subscribe(
-      
-      sucess => {
-        this.mensagemPosReq = 'Aluno cadastrado com sucesso.'
-        this.modalPosRequisicao(template);
+    if(this.verificaCamposObrigatorios()){
+      if(this.verificaRa()){
 
-        form.reset();
-        this.aluno = new Aluno();
+        this.alunoService.salvar(this.aluno).subscribe(
+        
+          sucess => {
+            this.mensagemPosReq = 'Aluno cadastrado com sucesso.'
+            this.modalPosRequisicao(template);
+            
+            form.reset();
+            this.aluno = new Aluno();
+            
+          },
+          error => {
+            this.mensagemPosReq = 'Já existe um aluno registrado com este RA.'
+            this.modalPosRequisicao(template);
+          }
+          );
+        } else{
+          this.mensagemPosReq = 'O RA precisa de no mínimo 13 números.'
+          this.modalPosRequisicao(template);
+      }
+    } else {
+      this.mensagemPosReq = 'Existe campos obrigatórios que não foram preenchidos/selecionados.'
+      this.modalPosRequisicao(template);
+    }
+  }
 
-      },
-      error => alert(error)
-    );
+  verificaRa(): Boolean{
+    if(this.aluno.ra.length == 13)
+      return true;
+
+    return false
+  }
+
+  verificaCamposObrigatorios(): Boolean{
+
+    debugger
+
+    if(this.aluno.nome == undefined || this.aluno.nome == "" || this.aluno.ra == undefined ||  this.aluno.ra == "" || this.aluno.curso == undefined || this.aluno.semestre == undefined ||
+       this.aluno.periodo == undefined || this.aluno.email == undefined || this.aluno.email == "" || this.aluno.telefone == undefined || this.aluno.telefone == "" || this.aluno.sexo == undefined ||
+       this.aluno.dataVestibular == undefined )
+      return false;
+
+    return true;
   }
 
   modalPosRequisicao(template: TemplateRef<any>){

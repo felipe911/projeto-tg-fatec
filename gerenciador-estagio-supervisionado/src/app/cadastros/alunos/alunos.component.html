@@ -8,19 +8,19 @@
     <div class="row row-margin">
 
       <div class="col-md-3">
-        <label for="input-ra">RA:</label>
+        <label for="input-ra">RA<span class="asterisco">*</span>:</label>
         <input name="ra" [(ngModel)]="aluno.ra" type="text" class="form-control" id="input-ra" style="margin-bottom: 15px;"
         onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" maxlength="13">
       </div>
 
       <div class="col-md-3">
-        <label for="input-nome">Nome:</label>
+        <label for="input-nome">Nome<span class="asterisco">*</span>:</label>
         <input name="nome" [(ngModel)]="aluno.nome" type="text" class="form-control" id="input-nome">
       </div>
 
       <div class="col-md-3">
         <div class="dropdown">
-          <label for="dropdown-curso" class="label-block">Curso:</label>
+          <label for="dropdown-curso" class="label-block">Curso<span class="asterisco">*</span>:</label>
           <select id="curso" name="curso" [(ngModel)]="aluno.curso" class="form-control">
             <option *ngFor="let curso of cursos" [value]="curso">{{ curso }} </option>
           </select>
@@ -29,7 +29,7 @@
 
       <div class="col-md-3">
         <div class="dropdown">
-          <label for="dropdown-semestre" class="label-block">Semestre:</label>
+          <label for="dropdown-semestre" class="label-block">Semestre<span class="asterisco">*</span>:</label>
           <select id="semestre" name="semestre" [(ngModel)]="aluno.semestre" class="form-control">
             <option *ngFor="let semestre of semestres" [value]="semestre">{{ semestre }} </option>
           </select>
@@ -38,7 +38,7 @@
 
       <div class="col-md-3">
         <div class="dropdown">
-          <label for="dropdown-periodo" class="label-block">Período:</label>
+          <label for="dropdown-periodo" class="label-block">Período<span class="asterisco">*</span>:</label>
           <select id="periodo" name="periodo" [(ngModel)]="aluno.periodo" class="form-control">
             <option *ngFor="let periodo of periodos" [value]="periodo">{{ periodo }} </option>
           </select>
@@ -46,17 +46,17 @@
       </div>
 
       <div class="col-md-3">
-        <label for="input-email" class="label-block">Email:</label>
+        <label for="input-email" class="label-block">Email<span class="asterisco">*</span>:</label>
         <input name="email" [(ngModel)]="aluno.email" type="email" class="form-control" id="input-email" style="margin-bottom: 15px;">
       </div>
 
       <div class="col-md-3">
-        <label for="input-telefone" class="label-block">Telefone:</label>
-        <input name="telefone" [(ngModel)]="aluno.telefone" type="text" class="form-control" id="input-telefone">
+        <label for="input-telefone" class="label-block">Telefone<span class="asterisco">*</span>:</label>
+        <input name="telefone" [(ngModel)]="aluno.telefone" type="text" class="form-control" id="input-telefone" mask="(00) 00000-0000">
       </div>
 
       <div class="col-md-3">
-        <label for="checkbox-sexo" class="label-block">Sexo:</label>
+        <label for="checkbox-sexo" class="label-block">Sexo<span class="asterisco">*</span>:</label>
         <div class="custom-control custom-radio custom-control-inline">
           <input [(ngModel)]="aluno.sexo" type="radio" id="customRadioInline1" name="sexo" class="custom-control-input" value="M">
           <label class="custom-control-label" for="customRadioInline1">Masculino</label>
@@ -68,7 +68,7 @@
       </div>
 
       <div class="col-md-3">
-        <label for="input-data-vestibular" class="label-block">Data Vestibular:</label>
+        <label for="input-data-vestibular" class="label-block">Data Vestibular<span class="asterisco">*</span>:</label>
         <input [(ngModel)]="aluno.dataVestibular" name="dataVestibular" type="date" class="form-control" id="input-data-vestibular">
       </div>
     </div>
@@ -76,6 +76,9 @@
       <div class="col-md-12 d-flex justify-content-end espacamento-top">
           <button id="btn-limpar" type="button" class="btn btn-secondary" (click)="limpar(alunoCadastroForm)" >Limpar</button>
           <button id="btn-salvar" type="submit" class="btn btn-danger"  (click)="salvar(modalPosRequisicao, alunoCadastroForm)" >Salvar</button>
+      </div>
+      <div class="col-md-12">
+          <p class="asterisco">* Campos Obrigatórios</p>
       </div>
     </div>
   </form>

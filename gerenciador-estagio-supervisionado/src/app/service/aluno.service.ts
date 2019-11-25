@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable } from "rxjs";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable, throwError  } from "rxjs";
+import { retry, catchError } from 'rxjs/operators';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpEvent } from "@angular/common/http";
 import { Aluno } from '../cadastros/alunos/Aluno';
+import 'rxjs/add/operator/catch';
 
 @Injectable({
   providedIn: 'root'

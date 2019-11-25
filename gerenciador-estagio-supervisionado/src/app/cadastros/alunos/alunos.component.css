@@ -42,6 +42,11 @@ h1{
     text-align: center;
 }
 
+.asterisco{
+    color: red;
+    margin-right: 2px;
+    margin-left: 1px;
+}
 /* Sobrescrita Bootstrap */
 
 .btn-danger{
