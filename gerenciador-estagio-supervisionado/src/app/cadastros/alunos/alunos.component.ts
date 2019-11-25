@@ -55,7 +55,7 @@ export class AlunosComponent implements OnInit {
           this.modalPosRequisicao(template);
       }
     } else {
-      this.mensagemPosReq = 'Existe campos obrigatórios que não foram preenchidos/selecionados.'
+      this.mensagemPosReq = 'Existem campos obrigatórios que não foram preenchidos/selecionados.'
       this.modalPosRequisicao(template);
     }
   }
@@ -68,8 +68,6 @@ export class AlunosComponent implements OnInit {
   }
 
   verificaCamposObrigatorios(): Boolean{
-
-    debugger
 
     if(this.aluno.nome == undefined || this.aluno.nome == "" || this.aluno.ra == undefined ||  this.aluno.ra == "" || this.aluno.curso == undefined || this.aluno.semestre == undefined ||
        this.aluno.periodo == undefined || this.aluno.email == undefined || this.aluno.email == "" || this.aluno.telefone == undefined || this.aluno.telefone == "" || this.aluno.sexo == undefined ||

@@ -1,88 +1,103 @@
 <div class="container" style="margin-top:150px">
-  <div class="row">
-    <div class="col-md-9">
-      <p class="titulo">{{ titulo }}</p>
+    <div class="row">
+      <div class="col-md-9">
+        <p class="titulo">{{ titulo }}</p>
+      </div>
+    </div>
+    <form #empresaCadastroForm ="ngForm" id="form-cadastro">
+      <div class="row row-margin">
+  
+        <div class="col-md-4">
+          <label for="input-razao-social">Razão Social<span class="asterisco">*</span>:</label>
+          <input name="razao"  [(ngModel)]="empresa.razaoSocial" type="text" class="form-control" id="input-razao-social">
+        </div>
+  
+        <div class="col-md-4">
+          <label for="input-cnpj">CNPJ<span class="asterisco">*</span>:</label>
+          <input name="cnpj"  [(ngModel)]="empresa.cnpj" type="text" class="form-control" id="input-cnpj" mask="00.000.000/0000-00">
+        </div>
+  
+        <div class="col-md-4">
+          <label for="input-nome">Contato<span class="asterisco">*</span>:</label>
+          <input name="contato" [(ngModel)]="empresa.contatoResponsavel" type="text" class="form-control" id="input-nome">
+        </div>
+      </div>
+      <div class="row row-margin">
+        
+        <div class="col-md-3">
+          <label for="input-data-prazo-convenio" class="label-block">Prazo Convênio<span class="asterisco">*</span>:</label>
+          <input name="prazoConvenio" [(ngModel)]="empresa.prazoConvenio" type="date" class="form-control" id="input-data-prazo-convenio">
+        </div>
+  
+        <div class="col-md-2">
+          <label for="input-cep">CEP<span class="asterisco">*</span>:</label>
+          <input name="cep" [(ngModel)]="empresa.cep" type="text" class="form-control" id="input-cep" mask="00000-000">
+        </div>
+  
+        <div class="col-md-2">
+          <div class="dropdown">
+            <label for="dropdown-uf" class="label-block">UF<span class="asterisco">*</span>:</label>
+            <select id="uf" name="uf" [(ngModel)]="empresa.uf" class="form-control">
+              <option *ngFor="let uf of ufs" [value]="uf">{{ uf }} </option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="col-md-2">
+          <label for="input-cidade" class="label-block">Cidade<span class="asterisco">*</span>:</label>
+          <input name="cidade" [(ngModel)]="empresa.cidade" type="text" class="form-control" id="input-cidade">
+        </div>
+  
+        <div class="col-md-3">
+          <label for="input-bairro" class="label-block">Bairro<span class="asterisco">*</span>:</label>
+          <input name="bairro" [(ngModel)]="empresa.bairro" type="text" class="form-control" id="input-bairro">
+        </div> 
+      </div>
+      
+      <div class="row row-margin">
+        <div class="col-md-6">
+          <label for="input-endereco" class="label-block">Endereço<span class="asterisco">*</span>:</label>
+          <input name="endereco" [(ngModel)]="empresa.endereco" type="text" class="form-control" id="input-endereco">
+        </div>
+        <div class="col-md-2">
+          <label for="input-numero" class="label-block">Número:</label>
+          <input name="numero" [(ngModel)]="empresa.numero" type="text" class="form-control" id="input-numero">
+        </div>
+  
+        <div class="col-md-4">
+          <label for="input-telefone" class="label-block">Telefone<span class="asterisco">*</span>:</label>
+          <input name="telefone" [(ngModel)]="empresa.telefone" type="text" class="form-control" id="input-telefone" mask="(00) 00000-0000">
+        </div>
+  
+      </div>
+      <div class="row row-margin">
+        <div class="col-md-6">
+          <label for="input-email" class="label-block">E-mail<span class="asterisco">*</span>:</label>
+          <input name="email" [(ngModel)]="empresa.email" type="email" class="form-control" id="input-email">
+        </div>
+      </div>
+    </form>
+  
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-end espacamento-top">
+          <button id="btn-limpar" type="button" class="btn btn-secondary" (click)="limpar(empresaCadastroForm)">Limpar</button>
+          <button id="btn-salvar" type="button" class="btn btn-danger" (click)="salvar(modalPosRequisicao, empresaCadastroForm)">Salvar</button>
+      </div>
+      <div class="col-md-12">
+          <p class="asterisco">* Campos Obrigatórios</p>
+      </div>
     </div>
   </div>
-  <form id="form-cadastro">
-    <div class="row row-margin">
 
-      <div class="col-md-5">
-        <label for="input-razao-social">Razão Social:</label>
-        <input type="text" class="form-control" id="input-razao-social">
-      </div>
-
-      <div class="col-md-4">
-        <label for="input-nome">Contato:</label>
-        <input type="text" class="form-control" id="input-nome">
-      </div>
-
-      <div class="col-md-3">
-        <label for="input-data-prazo-convenio" class="label-block">Prazo Convênio:</label>
-        <input type="date" class="form-control" id="input-data-prazo-convenio">
-      </div>
-    </div>
-
-    <div class="row row-margin">
-
-      <div class="col-md-2">
-        <label for="input-cep">CEP:</label>
-        <input type="text" class="form-control" id="input-cep" >
-      </div>
-
-      <div class="col-md-1">
-        <div class="dropdown">
-          <label for="dropdown-uf" class="label-block">UF:</label>
-          <button id="dropdown-uf" class="btn btn-primary dropdown-toggle btn-full-width" type="button"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            --
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdown-uf">
-            <a class="dropdown-item" href="#">SP</a>
-            <a class="dropdown-item" href="#">RJ</a>
-            <a class="dropdown-item" href="#">SC</a>
+  <ng-template #modalPosRequisicao>
+      <div class="modal-body">
+        <div class="row row-margin">
+          <div class="col-md-12">
+            <h4 class="modal-title align-center">{{ mensagemPosReq }}</h4>
+          </div>
+          <div class="col-md-12 d-flex justify-content-center">
+            <button id="btnOK" type="button" class="btn btn-danger" (click)="modalPosReq.hide()" style="margin-top:10px; width: 100px">Ok</button>
           </div>
         </div>
       </div>
-
-      <div class="col-md-2">
-        <label for="input-cidade" class="label-block">Cidade:</label>
-        <input type="text" class="form-control" id="input-cidade">
-      </div>
-
-      <div class="col-md-5">
-        <label for="input-endereco" class="label-block">Endereço:</label>
-        <input type="text" class="form-control" id="input-endereco">
-      </div>
-
-      <div class="col-md-2">
-        <label for="input-bairro" class="label-block">Bairro:</label>
-        <input type="text" class="form-control" id="input-bairro">
-      </div>
-    </div>
-
-    <div class="row row-margin">
-      <div class="col-md-2">
-        <label for="input-numero" class="label-block">Número:</label>
-        <input type="text" class="form-control" id="input-numero">
-      </div>
-
-      <div class="col-md-3">
-        <label for="input-telefone" class="label-block">Telefone:</label>
-        <input type="text" class="form-control" id="input-telefone">
-      </div>
-
-      <div class="col-md-5">
-        <label for="input-email" class="label-block">E-mail:</label>
-        <input type="email" class="form-control" id="input-email">
-      </div>
-    </div>
-  </form>
-
-  <div class="row">
-    <div class="col-md-12 d-flex justify-content-end espacamento-top">
-        <button id="btn-limpar" type="button" class="btn btn-secondary">Limpar</button>
-        <button id="btn-salvar" type="button" class="btn btn-danger">Salvar</button>
-    </div>
-  </div>
-</div>
+    </ng-template>
