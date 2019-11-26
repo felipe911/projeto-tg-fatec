@@ -41,6 +41,7 @@ import { GraficosComponent } from './admin-gerenciamento/dashboard/graficos/graf
 import { EntregaRelatorioComponent } from './admin-gerenciamento/entrega-relatorio/entrega-relatorio.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AlunoService } from './service/aluno.service';
+import { EmpresaService } from './service/empresa.service';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { AlunoService } from './service/aluno.service';
   providers: [
     AuthService,
     AuthGuard,
-    AlunoService
+    AlunoService,
+    EmpresaService
   ],
   bootstrap: [
     AppComponent,
