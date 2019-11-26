@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 
 import { Empresa } from './Empresa';
+import { EmpresaService } from 'src/app/service/empresa.service';
 
 @Component({
   selector: 'app-empresas',
@@ -12,7 +13,7 @@ import { Empresa } from './Empresa';
 })
 export class EmpresasComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private modalService: BsModalService) { }
+  constructor(private activatedRoute: ActivatedRoute, private modalService: BsModalService, private empresaService: EmpresaService) { }
 
   titulo: String  = 'Cadastrar Empresa';
   empresa = new Empresa();
@@ -36,27 +37,29 @@ export class EmpresasComponent implements OnInit {
     salvar(template: TemplateRef<any>, form: NgForm){
 
       if(this.verificaCamposObrigatorios()){
-       /* if(this.verificaRa()){
+        if(this.verificaCnpj()){
   
-          this.alunoService.salvar(this.aluno).subscribe(
+          this.empresaService.salvar(this.empresa).subscribe(
           
             sucess => {
-              this.mensagemPosReq = 'Aluno cadastrado com sucesso.'
+              this.mensagemPosReq = 'Empresa cadastrada com sucesso.'
               this.modalPosRequisicao(template);
               
               form.reset();
-              this.aluno = new Aluno();
+              this.empresa = new Empresa();
               
             },
             error => {
-              this.mensagemPosReq = 'Já existe um aluno registrado com este RA.'
+              this.mensagemPosReq = 'Já existe empresa uma registrada com este CNPJ.'
               this.modalPosRequisicao(template);
             }
             );
-          } else{
-            this.mensagemPosReq = 'O RA precisa de no mínimo 13 números.'
+          } 
+          
+          else{
+            this.mensagemPosReq = 'O CNPJ precisa de no mínimo 14 números.'
             this.modalPosRequisicao(template);
-        } */
+        }
       } else {
         this.mensagemPosReq = 'Existem campos obrigatórios que não foram preenchidos/selecionados.'
         this.modalPosRequisicao(template);
@@ -64,8 +67,6 @@ export class EmpresasComponent implements OnInit {
     }
 
     verificaCamposObrigatorios(): Boolean{
-
-      debugger
 
       if(this.empresa.razaoSocial == undefined || this.empresa.razaoSocial == "" ||
          this.empresa.cnpj == undefined ||  this.empresa.cnpj == "" ||
@@ -89,6 +90,14 @@ export class EmpresasComponent implements OnInit {
     if(id){
       this.titulo = 'Editar Empresa';
     }
+  }
+
+  verificaCnpj(): Boolean{
+    let valor = this.empresa.cnpj;
+    if(valor.replace(/[^\d]+/g,'').length == 14)
+      return true;
+
+    return false
   }
 
 }
