@@ -8,33 +8,34 @@
 
     <div class="col-md-8">
       <label for="input-ra">RA:</label>
-      <input type="text" class="form-control" id="input-ra">
+      <input type="text" name="ra" [(ngModel)]="aluno.ra" class="form-control" id="input-ra"
+      onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" maxlength="13">
     </div>
 
     <div class="col-md-4">
-      <button id="btn-buscar" type="button" class="btn btn-secondary btn-full-width-center">Buscar</button>
+      <button id="btn-buscar" type="button" class="btn btn-secondary btn-full-width-center" (click)="buscaPorRa()">Buscar</button>
     </div>
   </div>
     <div class="col-md-12 bloco-centro">
       <div class="row">
       <div class="col-md-6">
         <label class="label">Nome:</label>
-        <label id="label-nome" class="label espacamento">Felipe Augusto</label>
+        <label id="label-nome" name="nome" [(ngModel)]="aluno.nome" class="label espacamento" ngDefaultControl>{{ nome }}</label>
       </div>
 
       <div class="col-md-6">
         <label class="label">Semestre:</label>
-        <label id="label-semestre" class="label espacamento">6. Semestre</label>
+        <label id="label-semestre" name="semestre" [(ngModel)]="aluno.semestre" class="label espacamento" ngDefaultControl>{{ semestre }} </label>
       </div>
 
       <div class="col-md-6">
         <label class="label">Curso:</label>
-        <label id="label-curso" class="label espacamento">ADS</label>
+        <label id="label-curso" name="curso" [(ngModel)]="aluno.curso" class="label espacamento" ngDefaultControl>{{ curso }}</label>
       </div>
 
       <div class="col-md-6">
         <label class="label">Período:</label>
-        <label id="label-periodo" class="label espacamento">Noite</label>
+        <label id="label-periodo" name="periodo" [(ngModel)]="aluno.periodo" class="label espacamento" ngDefaultControl>{{ periodo }}</label>
       </div>
       </div>
     </div>

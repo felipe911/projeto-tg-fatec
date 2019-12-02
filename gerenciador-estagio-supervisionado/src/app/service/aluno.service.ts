@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError  } from "rxjs";
 import { retry, catchError } from 'rxjs/operators';
-import { HttpClient, HttpHeaders, HttpErrorResponse, HttpEvent } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpEvent, HttpParams } from "@angular/common/http";
 import { Aluno } from '../cadastros/alunos/Aluno';
 import 'rxjs/add/operator/catch';
 
@@ -43,5 +43,13 @@ export class AlunoService {
         }
 
         return aluno;
+    }
+
+    buscaPorRa(aluno: Aluno): Observable<Aluno> {
+
+        debugger
+
+        let paramsAluno = new HttpParams().set("requestData", encodeURIComponent(JSON.stringify(aluno)));
+        return this.http.get<Aluno>(`${this.baseUrl}` + '/busca-por-ra', {params: paramsAluno});
     }
 }
