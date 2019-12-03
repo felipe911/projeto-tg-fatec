@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Empresa } from 'src/app/cadastros/empresas/Empresa';
+import { EmpresaService } from 'src/app/service/empresa.service';
 
 @Component({
   selector: 'app-associar-empresa',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssociarEmpresaComponent implements OnInit {
 
-  constructor() { }
+  empresas: Empresa[];
+  empresa: Empresa = new Empresa();
+
+  constructor(private empresaService: EmpresaService) { }
 
   ngOnInit() {
+    this.empresaService.listar()
+    .then(
+      empresas => {
+        this.empresas = empresas.content;
+      }
+    )
+    ;
+
   }
 
 }
