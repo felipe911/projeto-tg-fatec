@@ -7,21 +7,11 @@
     </div>
     <div class="row row-margin">
 
-        <div class="col-md-2">
-            <label for="input-id">ID:</label>
-            <input type="text" class="form-control" id="input-id">
-        </div>
-
-        <div class="col-md-6">
-            <div class="dropdown">
-                <label for="dropdown-razao-social" class="label-block">Razão Social:</label>
-                <button id="dropdown-razao-social" class="btn btn-primary dropdown-toggle btn-full-width" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Selecione
-        </button>
-                <div class="dropdown-menu" aria-labelledby="dropdown-razao-social">
-                    <a class="dropdown-item" href="">Fatec Sorocaba</a>
-                </div>
-            </div>
+        <div class="col-md-8">
+            <label for="razao" class="label-block">Razão Social:</label>
+            <select id="empresa" name="empresa" [(ngModel)]="empresa.razaoSocial" class="form-control">
+                <option *ngFor="let empresa of empresas" [value]="empresa">{{ empresa.razaoSocial }} </option>
+            </select>
         </div>
         <div class="col-md-4">
             <button id="btn-buscar" type="button" class="btn btn-secondary btn-full-width-center">Buscar</button>

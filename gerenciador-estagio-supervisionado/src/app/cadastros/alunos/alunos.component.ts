@@ -22,7 +22,7 @@ export class AlunosComponent implements OnInit {
   mensagemPosReq: String;
 
 
-  cursos = ['Análise e Desenvolvimento de Sistemas', 'Eletrônica Automotiva',
+  cursos = ['ADS', 'Eletrônica Automotiva',
             'Fabricação Mecânica', 'Logistica', 'Manufatura Avançada', 'Polímeros',
             'Processos Metalúrgicos', 'Projetos Mecânicos', 'Sistemas Biomédicos'];
 
