@@ -23,34 +23,14 @@ export class AlunoService {
     alunos = [];
 
     salvar(aluno: Aluno): Observable<Aluno> {
-        return this.http.post<Aluno>(`${this.baseUrl}`, this.formataParaApi(aluno));
+        return this.http.post<Aluno>(`${this.baseUrl}`, aluno);
     }
 
     listar(){
         return this.http.get(`${this.baseUrl}`);
     }
 
-    formataParaApi(aluno: Aluno): Aluno{
-
-        aluno.semestre = Number((aluno.semestre).toString().substr(0,1));
-
-        if(aluno.periodo.toString() == 'Manhã'){
-            aluno.periodo = 1;
-        } else if(aluno.periodo.toString() == 'Tarde'){
-            aluno.periodo = 2;
-        } else if(aluno.periodo.toString() == 'Noite'){
-            aluno.periodo = 3;
-        }
-
-        return aluno;
-    }
-
-    buscaPorRa(aluno: Aluno): Promise<any>{
-        let paramsAluno = new HttpParams().set("aluno", encodeURIComponent(JSON.stringify(aluno)));
-        
-        return this.http.get<Aluno>(`${this.baseUrl}` + '/busca-por-ra', {params: paramsAluno}).toPromise()
-        .then(response => {
-            console.log(response);
-        });
+    buscaPorRa(aluno: Aluno): Observable<Aluno>{
+        return this.http.post<Aluno>(`${this.baseUrl}` + '/busca-por-ra', aluno);
     }
 }

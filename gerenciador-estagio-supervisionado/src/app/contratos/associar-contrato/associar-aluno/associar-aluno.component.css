@@ -38,6 +38,10 @@ h1, h3{
 .espacamento{
     margin-left: 10px;
 }
+
+.align-center{
+    text-align: center;
+}
 /* Sobrescrita Bootstrap */
 
 .dropdown-toggle::after {

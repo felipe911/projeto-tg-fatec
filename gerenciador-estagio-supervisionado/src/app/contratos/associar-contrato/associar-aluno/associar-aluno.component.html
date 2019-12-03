@@ -13,30 +13,43 @@
     </div>
 
     <div class="col-md-4">
-      <button id="btn-buscar" type="button" class="btn btn-secondary btn-full-width-center" (click)="buscaPorRa()">Buscar</button>
+      <button id="btn-buscar" type="button" class="btn btn-secondary btn-full-width-center" (click)="buscaPorRa(modalPosRequisicao)">Buscar</button>
     </div>
   </div>
     <div class="col-md-12 bloco-centro">
       <div class="row">
       <div class="col-md-6">
         <label class="label">Nome:</label>
-        <label id="label-nome" name="nome" [(ngModel)]="aluno.nome" class="label espacamento" ngDefaultControl>{{ nome }}</label>
+        <label id="label-nome" name="nome" [(ngModel)]="aluno.nome" class="label espacamento" ngDefaultControl>{{ aluno.nome }}</label>
       </div>
 
       <div class="col-md-6">
         <label class="label">Semestre:</label>
-        <label id="label-semestre" name="semestre" [(ngModel)]="aluno.semestre" class="label espacamento" ngDefaultControl>{{ semestre }} </label>
+        <label id="label-semestre" name="semestre" [(ngModel)]="aluno.semestre" class="label espacamento" ngDefaultControl>{{ aluno.semestre }} </label>
       </div>
 
       <div class="col-md-6">
         <label class="label">Curso:</label>
-        <label id="label-curso" name="curso" [(ngModel)]="aluno.curso" class="label espacamento" ngDefaultControl>{{ curso }}</label>
+        <label id="label-curso" name="curso" [(ngModel)]="aluno.curso" class="label espacamento" ngDefaultControl>{{ aluno.curso }}</label>
       </div>
 
       <div class="col-md-6">
         <label class="label">Período:</label>
-        <label id="label-periodo" name="periodo" [(ngModel)]="aluno.periodo" class="label espacamento" ngDefaultControl>{{ periodo }}</label>
+        <label id="label-periodo" name="periodo" [(ngModel)]="aluno.periodo" class="label espacamento" ngDefaultControl>{{ aluno.periodo }}</label>
       </div>
       </div>
     </div>
 </form>
+
+<ng-template #modalPosRequisicao>
+  <div class="modal-body">
+    <div class="row row-margin">
+      <div class="col-md-12">
+        <h4 class="modal-title align-center">{{ mensagemPosReq }}</h4>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <button id="btnOK" type="button" class="btn btn-danger" (click)="modalPosReq.hide()" style="margin-top:10px; width: 100px">Ok</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

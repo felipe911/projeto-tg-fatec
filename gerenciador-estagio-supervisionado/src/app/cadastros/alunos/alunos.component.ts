@@ -48,8 +48,7 @@ export class AlunosComponent implements OnInit {
           error => {
             this.mensagemPosReq = 'Já existe um aluno registrado com este RA.'
             this.modalPosRequisicao(template);
-          }
-          );
+          });
         } else{
           this.mensagemPosReq = 'O RA precisa de no mínimo 13 números.'
           this.modalPosRequisicao(template);
