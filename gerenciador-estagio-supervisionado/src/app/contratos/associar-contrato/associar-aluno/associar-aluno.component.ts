@@ -18,14 +18,10 @@ export class AssociarAlunoComponent implements OnInit {
   }
 
   buscaPorRa(){
-   this.alunoService.buscaPorRa(this.aluno).subscribe(
-
-    sucess =>{
-
-    }
-
-
-    );
+   this.alunoService.buscaPorRa(this.aluno).then(
+    dados => {
+      this.aluno = dados;
+    });
   }
 
 }

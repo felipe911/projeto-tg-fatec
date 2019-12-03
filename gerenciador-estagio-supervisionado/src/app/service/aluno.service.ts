@@ -45,11 +45,12 @@ export class AlunoService {
         return aluno;
     }
 
-    buscaPorRa(aluno: Aluno): Observable<Aluno> {
-
-        debugger
-
-        let paramsAluno = new HttpParams().set("requestData", encodeURIComponent(JSON.stringify(aluno)));
-        return this.http.get<Aluno>(`${this.baseUrl}` + '/busca-por-ra', {params: paramsAluno});
+    buscaPorRa(aluno: Aluno): Promise<any>{
+        let paramsAluno = new HttpParams().set("aluno", encodeURIComponent(JSON.stringify(aluno)));
+        
+        return this.http.get<Aluno>(`${this.baseUrl}` + '/busca-por-ra', {params: paramsAluno}).toPromise()
+        .then(response => {
+            console.log(response);
+        });
     }
 }
