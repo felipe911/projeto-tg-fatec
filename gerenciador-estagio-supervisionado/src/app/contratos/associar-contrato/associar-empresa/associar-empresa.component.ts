@@ -20,9 +20,15 @@ export class AssociarEmpresaComponent implements OnInit {
       empresas => {
         this.empresas = empresas.content;
       }
-    )
-    ;
+    );
+  }
 
+  buscaPorRazaoSocial(){
+    this.empresaService.buscaPorRazaoSocial(this.empresa).subscribe(
+      empresaEncontrada => {
+        this.empresa = empresaEncontrada;
+      }
+    )
   }
 
 }

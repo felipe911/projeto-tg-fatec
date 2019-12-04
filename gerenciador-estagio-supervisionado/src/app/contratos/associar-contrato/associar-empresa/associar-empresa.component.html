@@ -10,23 +10,23 @@
         <div class="col-md-8">
             <label for="razao" class="label-block">Razão Social:</label>
             <select id="empresa" name="empresa" [(ngModel)]="empresa.razaoSocial" class="form-control">
-                <option *ngFor="let empresa of empresas" [value]="empresa">{{ empresa.razaoSocial }} </option>
+                <option *ngFor="let empresa of empresas" [value]="empresa.razaoSocial">{{ empresa.razaoSocial }} </option>
             </select>
         </div>
         <div class="col-md-4">
-            <button id="btn-buscar" type="button" class="btn btn-secondary btn-full-width-center">Buscar</button>
+            <button id="btn-buscar" type="button" class="btn btn-secondary btn-full-width-center" (click)="buscaPorRazaoSocial()">Buscar</button>
         </div>
     </div>
 
     <div class="col-md-12 bloco-centro">
         <div class="row">
             <div class="col-md-12">
-                <label for="input-email" class="label">Cidade:</label>
-                <label for="input-email" class="label espacamento">Sorocaba</label>
+                <label class="label">Cidade:</label>
+                <label id="label-cidade" name="curso" [(ngModel)]="empresa.cidade" class="label espacamento" ngDefaultControl>{{ empresa.cidade }}</label>
             </div>
             <div class="col-md-12">
-                <label for="telefone" class="label">Telefone:</label>
-                <label for="telefone" class="label espacamento">(15) 3228-2324</label>
+                <label class="label">Telefone:</label>
+                <label id="label-telefone" name="curso" [(ngModel)]="empresa.telefone" class="label espacamento" ngDefaultControl>{{ empresa.telefone }}</label>
             </div>
         </div>
     </div>

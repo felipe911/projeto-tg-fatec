@@ -28,4 +28,9 @@ export class EmpresaService {
     listar(): Promise<any>{
         return this.http.get<Empresa[]>(`${this.baseUrl}`).toPromise();
     }
+
+    buscaPorRazaoSocial(empresa: Empresa): Observable<Empresa>{
+        debugger
+        return this.http.post<Empresa>(`${this.baseUrl}` + '/busca-por-razao-social', empresa);
+    }
 }
