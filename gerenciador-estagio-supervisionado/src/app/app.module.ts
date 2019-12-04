@@ -42,6 +42,7 @@ import { EntregaRelatorioComponent } from './admin-gerenciamento/entrega-relator
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AlunoService } from './service/aluno.service';
 import { EmpresaService } from './service/empresa.service';
+import { AssociarContratoEstagioComponent } from './contratos/associar-contrato/associar-contrato-estagio/associar-contrato-estagio.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { EmpresaService } from './service/empresa.service';
     RelatoriosConsultaComponent,
     AssociarContratoComponent,
     AssociarAlunoComponent,
+    AssociarContratoEstagioComponent,
     TipoAtividadeComponent,
     RelatorioParcialComponent,
     RelatorioFinalComponent,

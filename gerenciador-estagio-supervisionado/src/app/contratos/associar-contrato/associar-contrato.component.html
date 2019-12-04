@@ -7,67 +7,12 @@
 
   <div class="row row-margin">
     <div class="col-md-6">
-      <app-associar-aluno></app-associar-aluno>
+      <app-associar-aluno #associaAluno></app-associar-aluno>
     </div>
 
     <div class="col-md-6">
-        <app-associar-empresa></app-associar-empresa>
+        <app-associar-empresa #associaEmpresa></app-associar-empresa>
     </div>
   </div>
-
-  <form id="form-associar">
-
-    <div class="row row-margin">
-      <div class="col-md-3">
-        <label for="input-data-inicio">Data Início:</label>
-        <input type="date" class="form-control" id="input-data-inicio">
-      </div>
-
-      <div class="col-md-3">
-        <label for="input-data-fim">Data Fim:</label>
-        <input type="date" class="form-control" id="input-data-fim">
-      </div>
-
-      <div class="col-md-3">
-        <label for="input-prorrogado">Prorrogado até:</label>
-        <input type="date" class="form-control" id="input-prorrogado">
-      </div>
-
-      <div class="col-md-3">
-        <label for="input-agente-integracao">Agente de Integração:</label>
-        <input type="text" class="form-control" id="input-agente-integracao">
-      </div>
-
-    <div class="col-md-3">
-      <label for="input-valor-bolsa">Valor da Bolsa:</label>
-      <input type="number" class="form-control" id="input-valor-bolsa" style="margin-bottom: 20px">
-    </div>
-
-    <div class="col-md-3">
-      <label for="input-supervisor-estagio" class="label-block">Supervisor Estágio:</label>
-      <input type="text" class="form-control" id="input-supervisor-estagio">
-    </div>
-
-    <div class="col-md-3">
-      <label for="cargo-supervisor-estagio" class="label-block">Cargo Supervisor Estágio:</label>
-      <input type="text" class="form-control" id="cargo-supervisor-estagio">
-    </div>
-
-    <div class="col-md-3">
-      <label for="input-email" class="label-block">E-mail:</label>
-      <input type="text" class="form-control" id="input-email" style="margin-bottom:20px;">
-    </div>
-
-    <div class="col-md-12">
-      <label for="input-obs" class="label-block">Observação:</label>
-      <input type="text" class="form-control" id="input-obs">
-    </div>
-  </div>
-  </form>
-  <div class="row">
-    <div class="col-md-12 d-flex justify-content-end espacamento-top">
-        <button id="btn-limpar" type="button" class="btn btn-secondary">Limpar</button>
-        <button id="btn-salvar" type="button" class="btn btn-danger">Salvar</button>
-    </div>
-  </div>
+  <app-associar-contrato-estagio [alunoSelecionado]="associaAluno.aluno" [empresaSelecionada]="associaEmpresa.empresa"></app-associar-contrato-estagio>
 </div>

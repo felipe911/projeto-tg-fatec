@@ -30,7 +30,6 @@ export class EmpresaService {
     }
 
     buscaPorRazaoSocial(empresa: Empresa): Observable<Empresa>{
-        debugger
         return this.http.post<Empresa>(`${this.baseUrl}` + '/busca-por-razao-social', empresa);
     }
 }

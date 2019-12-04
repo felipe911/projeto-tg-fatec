@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Aluno } from 'src/app/cadastros/alunos/Aluno';
 
 @Component({
   selector: 'app-associar-contrato',
@@ -9,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 export class AssociarContratoComponent implements OnInit {
 
   titulo = 'Associar Contrato - Aluno e Empresa';
+
+  @Input() alunoSelecionado: Aluno;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
