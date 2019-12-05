@@ -1,8 +1,8 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 
-import { Aluno } from 'src/app/cadastros/alunos/Aluno';
 import { AlunoService } from 'src/app/service/aluno.service';
+import { Aluno } from 'src/app/model/Aluno';
 
 @Component({
   selector: 'app-associar-aluno',

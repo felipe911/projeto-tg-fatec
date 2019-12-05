@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 
-import { Aluno } from './Aluno';
 import { AlunoService } from 'src/app/service/aluno.service';
+import { Aluno } from 'src/app/model/Aluno';
 
 @Component({
   selector: 'app-alunos',

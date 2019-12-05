@@ -4,7 +4,7 @@ import { retry, catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpEvent } from "@angular/common/http";
 
 import 'rxjs/add/operator/catch';
-import { Empresa } from '../cadastros/empresas/Empresa';
+import { Empresa } from '../model/Empresa';
 
 @Injectable({
   providedIn: 'root'

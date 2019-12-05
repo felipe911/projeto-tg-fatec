@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Empresa } from 'src/app/cadastros/empresas/Empresa';
 import { EmpresaService } from 'src/app/service/empresa.service';
+import { Empresa } from 'src/app/model/Empresa';
 
 @Component({
   selector: 'app-associar-empresa',
