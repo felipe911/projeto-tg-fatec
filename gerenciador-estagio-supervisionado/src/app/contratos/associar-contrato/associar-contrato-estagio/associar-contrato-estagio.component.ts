@@ -19,7 +19,6 @@ export class AssociarContratoEstagioComponent implements OnInit {
 
   @Input() alunoSelecionado: Aluno;
   @Input() empresaSelecionada: Empresa;
-
   
   contrato: Contrato = new Contrato();
   aluno: Aluno = new Aluno();
