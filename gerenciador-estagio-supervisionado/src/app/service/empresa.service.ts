@@ -11,15 +11,9 @@ import { Empresa } from '../model/Empresa';
 })
 export class EmpresaService {
 
-  constructor(private http: HttpClient){}
+    constructor(private http: HttpClient){}
 
     private baseUrl = '/api/empresa';
-
-    httpOptions = {
-        headers: new HttpHeaders({
-            'Content-Type': 'application/json'
-        })
-    }
 
     salvar(empresa: Empresa): Observable<Empresa> {
         return this.http.post<Empresa>(`${this.baseUrl}`, empresa);

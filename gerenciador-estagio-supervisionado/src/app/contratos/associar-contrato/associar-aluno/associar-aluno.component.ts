@@ -20,8 +20,6 @@ export class AssociarAlunoComponent implements OnInit {
   ngOnInit() {
   }
 
-  
-
   buscaPorRa(template: TemplateRef<any>){
     if(this.verificaRa()){
       this.alunoService.buscaPorRa(this.aluno).subscribe(
