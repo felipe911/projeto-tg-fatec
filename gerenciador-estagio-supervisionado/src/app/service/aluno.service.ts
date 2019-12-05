@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError  } from "rxjs";
 import { retry, catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpEvent, HttpParams } from "@angular/common/http";
-import { Aluno } from '../cadastros/alunos/Aluno';
 import 'rxjs/add/operator/catch';
+import { Aluno } from '../model/Aluno';
 
 @Injectable({
   providedIn: 'root'

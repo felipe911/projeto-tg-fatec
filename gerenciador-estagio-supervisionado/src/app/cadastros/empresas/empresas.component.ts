@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 
-import { Empresa } from './Empresa';
 import { EmpresaService } from 'src/app/service/empresa.service';
+import { Empresa } from 'src/app/model/Empresa';
 
 @Component({
   selector: 'app-empresas',

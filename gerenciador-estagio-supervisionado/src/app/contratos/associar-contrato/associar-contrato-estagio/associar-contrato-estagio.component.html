@@ -1,55 +1,68 @@
-<form id="form-associar">
+<form #associarContratoForm ="ngForm" id="form-associar">
 
   <div class="row">
     <div class="col-md-3">
       <label for="input-data-inicio">Data Início:</label>
-      <input type="date" class="form-control" id="input-data-inicio">
+      <input name="data-inicio" [(ngModel)]="contrato.dataInicio" type="date" class="form-control" id="input-data-inicio">
     </div>
 
     <div class="col-md-3">
       <label for="input-data-fim">Data Fim:</label>
-      <input type="date" class="form-control" id="input-data-fim">
+      <input name="data-fim" [(ngModel)]="contrato.dataFim" type="date" class="form-control" id="input-data-fim">
     </div>
 
     <div class="col-md-3">
       <label for="input-prorrogado">Prorrogado até:</label>
-      <input type="date" class="form-control" id="input-prorrogado">
+      <input name="prorrogado-ate" [(ngModel)]="contrato.prorrogadoAte" type="date" class="form-control" id="input-prorrogado">
     </div>
 
     <div class="col-md-3">
       <label for="input-agente-integracao">Agente de Integração:</label>
-      <input type="text" class="form-control" id="input-agente-integracao">
+      <input name="agente-integracao" [(ngModel)]="contrato.agenteIntegracao" type="text" class="form-control" id="input-agente-integracao">
     </div>
 
-  <div class="col-md-3">
+  <div class="col-md-3 espacamento-top">
     <label for="input-valor-bolsa">Valor da Bolsa:</label>
-    <input type="number" class="form-control" id="input-valor-bolsa" style="margin-bottom: 20px">
+    <input name="valor-bolsa" [(ngModel)]="contrato.valorBolsa" type="number" class="form-control" id="input-valor-bolsa" style="margin-bottom: 20px">
   </div>
 
-  <div class="col-md-3">
+  <div class="col-md-3 espacamento-top">
     <label for="input-supervisor-estagio" class="label-block">Supervisor Estágio:</label>
-    <input type="text" class="form-control" id="input-supervisor-estagio">
+    <input name="supervisor-estagio" [(ngModel)]="contrato.supervisorEstagio" type="text" class="form-control" id="input-supervisor-estagio">
   </div>
 
-  <div class="col-md-3">
+  <div class="col-md-3 espacamento-top" >
     <label for="cargo-supervisor-estagio" class="label-block">Cargo Supervisor Estágio:</label>
-    <input type="text" class="form-control" id="cargo-supervisor-estagio">
+    <input name="cargo-supervisor-estagio" [(ngModel)]="contrato.cargoSupervisorEstagio" type="text" class="form-control" id="cargo-supervisor-estagio">
   </div>
 
-  <div class="col-md-3">
+  <div class="col-md-3 espacamento-top">
     <label for="input-email" class="label-block">E-mail:</label>
-    <input type="text" class="form-control" id="input-email" style="margin-bottom:20px;">
+    <input name="email" [(ngModel)]="contrato.emailSupervisor" type="text" class="form-control" id="input-email" style="margin-bottom:20px;">
   </div>
 
   <div class="col-md-12">
     <label for="input-obs" class="label-block">Observação:</label>
-    <input type="text" class="form-control" id="input-obs">
+    <input name="observacao" [(ngModel)]="contrato.observacao" type="text" class="form-control" id="input-obs">
   </div>
 </div>
 </form>
 <div class="row">
   <div class="col-md-12 d-flex justify-content-end espacamento-top">
-      <button id="btn-limpar" type="button" class="btn btn-secondary">Limpar</button>
-      <button id="btn-salvar" type="button" class="btn btn-danger" (click)="teste()">Salvar</button>
+      <button id="btn-limpar" type="button" class="btn btn-secondary" (click)="limpar(associarContratoForm)">Limpar</button>
+      <button id="btn-salvar" type="button" class="btn btn-danger" (click)="geraContrato(modalPosRequisicao, associarContratoForm)">Salvar</button>
   </div>
 </div>
+
+<ng-template #modalPosRequisicao>
+  <div class="modal-body">
+    <div class="row row-margin">
+      <div class="col-md-12">
+        <h4 class="modal-title align-center">{{ mensagemPosReq }}</h4>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <button id="btnOK" type="button" class="btn btn-danger" (click)="modalPosReq.hide()" style="margin-top:10px; width: 100px">Ok</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

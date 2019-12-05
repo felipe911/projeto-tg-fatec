@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Aluno } from 'src/app/cadastros/alunos/Aluno';
+import { Aluno } from 'src/app/model/Aluno';
 
 @Component({
   selector: 'app-associar-contrato',
