@@ -10,39 +10,39 @@
     <div class="row row-margin">
 
       <div class="col-md-3">
-        <label for="nome">Estagiário(a):</label>
-        <label id="nome" class="label-block">Felipe Augusto de Oliveira</label>
+        <label for="nome">Aluno(a):</label>
+        <label name="nome" id="nome" [(ngModel)]="aluno.nome" class="label-block" ngDefaultControl>{{ aluno.nome }}</label>
       </div>
 
       <div class="col-md-3">
         <label for="ra">RA:</label>
-        <label id="ra" class="label-block">0030481521009</label>
+        <label name="ra" [(ngModel)]="aluno.ra" id="ra" class="label-block" ngDefaultControl>{{ aluno.ra }}</label>
       </div>
 
       <div class="col-md-3">
         <label for="curso">Curso:</label>
-        <label id="curso" class="label-block">Análise e Desenvolvimento de Sistemas</label>
+        <label name="curso" [(ngModel)]="aluno.curso" id="curso" class="label-block" ngDefaultControl>{{ aluno.curso }}</label>
       </div>
 
       <div class="col-md-3">
         <label for="periodo">Período:</label>
-        <label id="periodo" class="label-block">Noturno</label>
+        <label name="periodo" [(ngModel)]="aluno.periodo" id="periodo" class="label-block" ngDefaultControl>{{ aluno.periodo }}</label>
       </div>
 
       <div class="col-md-3">
         <label for="supervisor">Supervisor(a) de Estágio:</label>
-        <label id="supervisor" class="label-block">João das Neves</label>
+        <label name="supervisor" [(ngModel)]="contrato.supervisorEstagio" id="supervisor" class="label-block" ngDefaultControl>{{ contrato.supervisorEstagio }}</label>
       </div>
 
       <div class="col-md-3">
         <label for="vigencia">Vigência de Estágio:</label>
-        <label id="vigencia" class="label-block">01/12/2020</label>
+        <label name="vigencia" [(ngModel)]="contrato.dataInicio" id="vigencia" class="label-block" ngDefaultControl>{{ contrato.dataFim | date: 'dd/MM/yyyy'}}</label>
       </div>
 
 
       <div class="col-md-3">
         <label for="periodo-avaliacao">Período de Avaliação:</label>
-        <label id="periodo-avaliacao" class="label-block">01/06/2019 até 01/12/2019</label>
+        <label name="periodos-avaliacao" id="periodo-avaliacao" class="label-block">{{ dataPeriodoInicio }}  até {{ dataPeriodoFim }}</label>
       </div>
     </div>
 
@@ -100,6 +100,7 @@
   </form>
   <div class="col-md-12 d-flex justify-content-end" style="margin-bottom:30px">
     <button id="btn-imprimir" type="button" class="btn btn-secondary" (click)="teste()">Imprimir</button>
+    <button id="btn-limpar" type="button" class="btn btn-secondary">Limpar</button>
     <button id="btn-salvar" type="button" class="btn btn-danger">Salvar</button>
   </div>
 </div>

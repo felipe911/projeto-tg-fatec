@@ -7,7 +7,7 @@ h1{
     padding: 30px;
 }
 
-#btn-salvar, #btn-imprimir{
+#btn-salvar, #btn-imprimir, #btn-limpar{
     float: right;
     margin: 10px 0 0 10px;
     padding: 10px 30px 10px 30px;
