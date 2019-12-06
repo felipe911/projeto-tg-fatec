@@ -1,11 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef} from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 import jsPDF from 'jspdf';
 import * as moment from 'moment'
 
 import { Aluno } from 'src/app/model/Aluno';
 import { Contrato } from 'src/app/model/Contrato';
+import { RelatorioParcial } from 'src/app/model/RelatorioParcial';
 import { ContratoService } from 'src/app/service/contrato.service';
 import { AlunoService } from 'src/app/service/aluno.service';
+import { RelatoriosAlunoMediator } from 'src/app/mediators/RelatoriosAlunoMediator';
+import { RelatoriosService } from 'src/app/service/relatorios.service';
 
 @Component({
   selector: 'app-relatorio-parcial',
@@ -14,18 +19,21 @@ import { AlunoService } from 'src/app/service/aluno.service';
 })
 export class RelatorioParcialComponent implements OnInit {
 
-  constructor(private contratoService: ContratoService, private alunoService: AlunoService) { }
+  constructor(private contratoService: ContratoService, private alunoService: AlunoService, private relatorioService: RelatoriosService, private modalService: BsModalService) { }
 
   teste1: String = 'ola';
 
-  seisMeses: number = 6;
+  seisMeses: number = 182;
   aluno: Aluno = new Aluno();
   contrato: Contrato = new Contrato();
+  relatorioParcial: RelatorioParcial = new RelatorioParcial();
+  relatoriosAlunoMediator: RelatoriosAlunoMediator = new RelatoriosAlunoMediator();
+  modalPosReq: BsModalRef;
+  mensagemPosReq: String;
 
   dataAtual = new Date();
-  dataPeriodoInicio: String;
-  dataPeriodoFim: String;
-
+  dataPeriodoInicio: string;
+  dataPeriodoFim: string;
 
   ngOnInit() {
     this.dataPeriodoInicio = moment(this.dataAtual).format('DD/MM/YYYY');
@@ -35,7 +43,7 @@ export class RelatorioParcialComponent implements OnInit {
       aluno => {
         this.aluno = aluno;
 
-        this.carregaContratoDoAluno()
+        this.carregaContratoDoAluno();
 
       },
       err =>{
@@ -56,7 +64,36 @@ export class RelatorioParcialComponent implements OnInit {
     );
   }
 
-  teste(){
+  salvarRelatorioParcial(template: TemplateRef<any>, form: NgForm){
+
+    this.relatoriosAlunoMediator.aluno = this.aluno;
+    this.relatoriosAlunoMediator.relatorioParcial = this.relatorioParcial;
+    this.relatoriosAlunoMediator.relatorioParcial.periodoDe = new Date();
+
+    this.relatorioService.salvarRelatorioParcial(this.relatoriosAlunoMediator).subscribe(
+
+      sucess => {
+        this.mensagemPosReq = 'Relatório Parcial cadastrado com sucesso.'
+        this.modalPosRequisicao(template);
+        
+      },
+      err => {
+        this.mensagemPosReq = err.error.message;
+        this.modalPosRequisicao(template);
+      });
+
+  }
+
+  modalPosRequisicao(template: TemplateRef<any>){
+    const config: ModalOptions = { class: 'modal-md' }
+    this.modalPosReq = this.modalService.show(template, config);
+  }
+
+  limpar(form: NgForm){
+    form.reset();
+  }
+
+  imprimirRelatorioParcial(){
     let documento = new jsPDF();
     documento.setFont("Courier");
     documento.setFontStyle("bold");
