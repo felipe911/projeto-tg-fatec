@@ -46,6 +46,10 @@ h1{
     margin-bottom: 10px;
 }
 
+.align-center{
+    text-align: center;
+}
+
 /* Sobrescrita Bootstrap */
 
 .btn-danger{

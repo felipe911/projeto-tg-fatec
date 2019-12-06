@@ -6,7 +6,7 @@
       <br />
     </div>
   </div>
-  <form id="form-relatorio-parcial">
+  <form #relatorioParcialForm ="ngForm" id="form-relatorio-parcial">
     <div class="row row-margin">
 
       <div class="col-md-3">
@@ -49,7 +49,7 @@
     <div class="row">
       <div class="col-md-12 bloco-atividade">
         <h4>Atividades auxiliadas no estágio de acordo com o termo de compromisso de estágio:</h4>
-        <textarea class="form-control" id="atividade" rows="3"></textarea>
+        <textarea name="atividadesAuxiliadas" [(ngModel)]="relatorioParcial.atividadesAuxiliadas" class="form-control" id="atividade" rows="3"></textarea>
       </div>
     </div>
 
@@ -58,49 +58,62 @@
         <h4>Atividades Realizadas no Estágio:</h4>
         <br />
         <label for="acordo-plano" class="check">Estão de Acordo com o plano de atividades ?</label>
-        <input type="radio" class="check" id="acordo-plano-sim" name="plano">Sim
-        <input type="radio" class="check" id="acordo-plano-nao" name="plano">Não
+        <input [(ngModel)]="relatorioParcial.acordoPlanoAtividades" [value]="true" type="radio" class="check" id="acordo-plano-sim" name="plano">Sim
+        <input [(ngModel)]="relatorioParcial.acordoPlanoAtividades" [value]="false" type="radio" class="check" id="acordo-plano-nao" name="plano">Não
         <br />
         <br />
         <label for="compativel-curso" class="check">São compatíveis com o curso ? </label>
-        <input type="radio" class="check" id="compativel-sim" name="compativel-curso">Sim
-        <input type="radio" class="check" id="compativel-nao" name="compativel-curso">Não
+        <input [(ngModel)]="relatorioParcial.compativelCurso" [value]="true" type="radio" class="check" id="compativel-sim" name="compativel-curso">Sim
+        <input [(ngModel)]="relatorioParcial.compativelCurso" [value]="false" type="radio" class="check" id="compativel-nao" name="compativel-curso">Não
         <br />
         <br />
         <label for="semestre-cursado" class="check">São compatíveis com o semestre cursado ? </label>
-        <input type="radio" class="check" id="cursado-sim" name="semestre-cursado">Sim
-        <input type="radio" class="check" id="cursado-nao" name="semestre-cursado">Não
+        <input [(ngModel)]="relatorioParcial.compativelSemestre" [value]="true" type="radio" class="check" id="cursado-sim" name="semestre-cursado">Sim
+        <input [(ngModel)]="relatorioParcial.compativelSemestre" [value]="false" type="radio" class="check" id="cursado-nao" name="semestre-cursado">Não
         <br />
         <br />
         <label for="permite-aplicar" class="check">Permite que aplique o conhecimento obtido no curso ? </label>
-        <input type="radio" class="check" id="aplicar-sim" name="permite-aplicar">Sim
-        <input type="radio" class="check" id="aplicar-nao" name="permite-aplicar">Não
+        <input [(ngModel)]="relatorioParcial.conhecimentoObtido" [value]="true" type="radio" class="check" id="aplicar-sim" name="permite-aplicar">Sim
+        <input [(ngModel)]="relatorioParcial.conhecimentoObtido" [value]="false" type="radio" class="check" id="aplicar-nao" name="permite-aplicar">Não
         <br />
         <br />
         <label for="instalacoes-adequadas" class="check">As instalações da parte concedente são adequadas à realização
           do estágio ? </label>
-        <input type="radio" class="check" id="instalacoes-sim" name="instalacoes-adequadas">Sim
-        <input type="radio" class="check" id="instalacoes-nao" name="instalacoes-adequadas">Não
+        <input [(ngModel)]="relatorioParcial.instalacoesAdequadas" [value]="true" type="radio" class="check" id="instalacoes-sim" name="instalacoes-adequadas">Sim
+        <input [(ngModel)]="relatorioParcial.instalacoesAdequadas" [value]="false" type="radio" class="check" id="instalacoes-nao" name="instalacoes-adequadas">Não
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12 bloco-atividade">
         <h4>Quando assinalado NÃO, justifique os motivos:</h4>
-        <textarea class="form-control" id="atividade" rows="3"></textarea>
+        <textarea name="motivosNao" [(ngModel)]="relatorioParcial.motivosNao" class="form-control" id="atividade" rows="3"></textarea>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12 bloco-atividade">
         <h4>Apresente as dificuldades encontradas na realização do estágio:</h4>
-        <textarea class="form-control" id="atividade" rows="3"></textarea>
+        <textarea name="dificuldades" [(ngModel)]="relatorioParcial.dificuldades" class="form-control" id="atividade" rows="3"></textarea>
       </div>
     </div>
   </form>
   <div class="col-md-12 d-flex justify-content-end" style="margin-bottom:30px">
-    <button id="btn-imprimir" type="button" class="btn btn-secondary" (click)="teste()">Imprimir</button>
-    <button id="btn-limpar" type="button" class="btn btn-secondary">Limpar</button>
-    <button id="btn-salvar" type="button" class="btn btn-danger">Salvar</button>
+    <button id="btn-imprimir" type="button" class="btn btn-secondary" (click)="imprimirRelatorioParcial()">Imprimir</button>
+    <button id="btn-limpar" type="button" class="btn btn-secondary" (click)="limpar(relatorioParcialForm)" >Limpar</button>
+    <button id="btn-salvar" type="button" class="btn btn-danger" (click)="salvarRelatorioParcial(modalPosRequisicao, relatorioParcialForm)">Salvar</button>
   </div>
 </div>
+
+<ng-template #modalPosRequisicao>
+  <div class="modal-body">
+    <div class="row row-margin">
+      <div class="col-md-12">
+        <h4 class="modal-title align-center">{{ mensagemPosReq }}</h4>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <button id="btnOK" type="button" class="btn btn-danger" (click)="modalPosReq.hide()" style="margin-top:10px; width: 100px">Ok</button>
+      </div>
+    </div>
+  </div>
+</ng-template>
