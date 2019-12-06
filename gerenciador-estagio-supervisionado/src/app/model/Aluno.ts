@@ -3,8 +3,8 @@ export class Aluno {
     nome: string;
     ra: string;
     curso: string;
-    semestre: number;
-    periodo: number;
+    semestre: String;
+    periodo: String;
     email: string;
     telefone: string;
     sexo: string;

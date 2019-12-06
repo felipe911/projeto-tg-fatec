@@ -33,4 +33,8 @@ export class AlunoService {
     buscaPorRa(aluno: Aluno): Observable<Aluno>{
         return this.http.post<Aluno>(`${this.baseUrl}` + '/busca-por-ra', aluno);
     }
+
+    buscaPorId(): Observable<Aluno>{
+        return this.http.get<Aluno>(`${this.baseUrl}` + '/2');
+    }
 }

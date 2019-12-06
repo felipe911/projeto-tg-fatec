@@ -45,8 +45,8 @@ export class AlunosComponent implements OnInit {
             this.aluno = new Aluno();
             
           },
-          error => {
-            this.mensagemPosReq = 'Já existe um aluno registrado com este RA.'
+          err => {
+            this.mensagemPosReq = err.error.message;
             this.modalPosRequisicao(template);
           });
         } else{
