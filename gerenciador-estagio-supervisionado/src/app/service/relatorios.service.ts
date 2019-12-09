@@ -16,4 +16,8 @@ export class RelatoriosService {
   salvarRelatorioParcial(relatoriosAlunoMediator: RelatoriosAlunoMediator): Observable<RelatorioParcial> {
     return this.http.post<RelatorioParcial>(`${this.baseUrl}` + 'relatorio-parcial', relatoriosAlunoMediator);
   }
+
+  salvarRelatorioFinal(relatoriosAlunoMediator: RelatoriosAlunoMediator): Observable<RelatorioParcial> {
+    return this.http.post<RelatorioParcial>(`${this.baseUrl}` + 'relatorio-final', relatoriosAlunoMediator);
+  }
 }
