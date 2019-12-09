@@ -4,19 +4,19 @@
       <p class="titulo">Validação de Horas de Estágio </p>
     </div>
   </div>
-  <form id="form-tipo-atividade">
+  <form  #relatorioFinalForm ="ngForm" id="form-tipo-atividade">
     <div class="row row-margin dados-aluno">
       <div class="col-md-3">
         <label for="ra">RA:</label>
-        <label id="ra" class="label-block">0030481521009</label>
+        <label name="ra" [(ngModel)]="aluno.ra" id="ra" class="label-block" ngDefaultControl>{{ aluno.ra }}</label>
       </div>
       <div class="col-md-3">
         <label for="nome">Nome:</label>
-        <label id="nome" class="label-block">Felipe Augusto de Oliveira</label>
+        <label name="nome" [(ngModel)]="aluno.nome" id="nome" class="label-block" ngDefaultControl>{{ aluno.nome }}</label>
       </div>
       <div class="col-md-3">
         <label for="nome">Estágio Atual:</label>
-        <label id="nome" class="label-block">Ventron Informática</label>
+        <label name="estagioAtual" [(ngModel)]="estagioAtual" id="nome" class="label-block" ngDefaultControl>{{ estagioAtual }}</label>
       </div>
     </div>
 
@@ -24,45 +24,45 @@
       <div class="col-md-12 bloco-atividade">
         <h3>1 - Tipo de Atividade desenvolvida e forma de comprovação</h3>
         <br />
-        <input type="radio" class="check" id="estagiario" name="opcao">
+        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="estagiario" name="opcao" value="estagiario">
         <label for="estagiario">como Estagiário</label>
         <div class="bloco-atividade">
-          <input type="checkbox" class="check" id="setor-privado">
+          <input [(ngModel)]="tipoAtividadeEstagiario" type="radio" class="check" id="setor-privado" name="opcao_estagiario" value="setorPrivado">
           <label for="setor-privado">Realizado no setor privado (indústria/comércio/serviços)</label>
           <br />
-          <input type="checkbox" class="check" id="organizacoes">
+          <input [(ngModel)]="tipoAtividadeEstagiario" type="radio" class="check" id="organizacoes" name="opcao_estagiario" value="organizacaoTerceiroSetor">
           <label for="organizacoes ">Realizado em organizações do 3. setor (ONG's)</label>
           <br />
-          <input type="checkbox" class="check" id="adm">
+          <input [(ngModel)]="tipoAtividadeEstagiario" type="radio" class="check" id="adm" name="opcao_estagiario" value="orgaoAdmPublica">
           <label for="adm ">Realizado em órgãos de administração pública</label>
           <br />
-          <input type="checkbox" class="check" id="extracurricular">
-          <label for="extracurricular ">Realizado em atividades extravurriculares sob supervisão da FATEC</label>
+          <input [(ngModel)]="tipoAtividadeEstagiario" type="radio" class="check" id="extracurricular" name="opcao_estagiario" value="ativExtracurricularesFatec">
+          <label for="extracurricular ">Realizado em atividades extracurriculares sob supervisão da FATEC</label>
         </div>
-        <input type="radio" class="check" id="profissional-liberal" name="opcao">
+        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="profissional-liberal" name="opcao" value="profissional-liberal">
         <label for="profissional-liberal">como Profissional Liberal</label>
         <div class="bloco-atividade">
           <label>Com declaração assinada pelo Contador, especificando ser a área inerente ao curso, informando a
             Inscrição no respectivo Conselho de Classe, e comprovante do cadastro da Prefeitura Municipal (no caso de
             prestador de serviço).</label>
         </div>
-        <input type="radio" class="check" id="empresario" name="opcao">
+        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="empresario" name="opcao" value="empresario">
         <label for="empresario">como Empresário</label>
         <div class="bloco-atividade">
           <label>Com declaração assinada pelo Contador, informando a Razão Social, CNPJ e ramo das atividades
             desenvolvidas pela empresa, ou declaração de firma individual.</label>
         </div>
-        <input type="radio" class="check" id="vinculo-empregaticio" name="opcao">
+        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="vinculo-empregaticio" name="opcao" value="vinculo-empregaticio">
         <label for="vinculo-empregaticio">através de Vínculo Empregatício</label>
         <div class="bloco-atividade">
           <label>Comprovada através de registro em carteira Profissional e com Declaração da empresa, das funções
             desempenhadas.</label>
         </div>
-        <input type="radio" class="check" id="outros" name="opcao">
+        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="outros" name="opcao"  value="outros">
         <label for="outros">Outros</label>
         <div class="bloco-atividade">
           <label for="outros">Especificar:</label>
-          <input type="text" class="form-control" id="outros">
+          <input name="outros" [(ngModel)]="relatorioFinal.especificacaoOutros" type="text" class="form-control" id="outros">
         </div>
       </div>
       <div class="col-md-12 bloco-atividade">
@@ -71,15 +71,15 @@
         <div class="row">
           <div class="col-md-6">
             <label for="local" class="label-block">Local:</label>
-            <input type="text" class="form-control" id="local">
+            <input name="local" [(ngModel)]="relatorioFinal.local" type="text" class="form-control" id="local">
           </div>
           <div class="col-md-3">
             <label for="periodo-de" class="label-block">De:</label>
-            <input type="date" class="form-control" id="periodo-de">
+            <input name="periodoDe" [(ngModel)]="relatorioFinal.periodoDe" type="date" class="form-control" id="periodo-de">
           </div>
           <div class="col-md-3">
             <label for="periodo-ate" class="label-block">Até:</label>
-            <input type="date" class="form-control" id="periodo-ate">
+            <input name="periodoAte" [(ngModel)]="relatorioFinal.periodoAte" type="date" class="form-control" id="periodo-ate">
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@
         <br />
         <div class="row">
           <div class="col-md-12">
-            <input type="text" class="form-control" id="area-atividade">
+            <input name="area-atividade" [(ngModel)]="relatorioFinal.areaAtividade"type="text" class="form-control" id="area-atividade">
           </div>
         </div>
       </div>
@@ -97,14 +97,29 @@
         <br />
         <div class="row">
           <div class="col-md-3">
-            <input type="text" class="form-control" id="horas-cumpridas">
+            <input name="horas-cumpridas" [(ngModel)]="relatorioFinal.totalHorasCumpridas" type="text" class="form-control" id="horas-cumpridas"
+            onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" maxlength="3">
           </div>
         </div>
       </div>
       <div class="col-md-12 d-flex justify-content-end" style="margin-bottom:30px">
         <button id="btn-imprimir" type="button" class="btn btn-secondary">Imprimir</button>
-        <button id="btn-salvar" type="button" class="btn btn-danger">Salvar</button>
+        <button id="btn-limpar" type="button" class="btn btn-secondary" (click)="limpar(relatorioFinalForm)">Limpar</button>
+        <button id="btn-salvar" type="button" class="btn btn-danger" (click)="salvarRelatorioFinal(modalPosRequisicao, relatorioFinalForm)">Salvar</button>
       </div>
     </div>
   </form>
 </div>
+
+<ng-template #modalPosRequisicao>
+  <div class="modal-body">
+    <div class="row row-margin">
+      <div class="col-md-12">
+        <h4 class="modal-title align-center">{{ mensagemPosReq }}</h4>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <button id="btnOK" type="button" class="btn btn-danger" (click)="modalPosReq.hide()" style="margin-top:10px; width: 100px">Ok</button>
+      </div>
+    </div>
+  </div>
+</ng-template>
