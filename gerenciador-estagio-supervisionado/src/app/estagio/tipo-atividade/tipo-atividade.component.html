@@ -27,16 +27,16 @@
         <input type="radio" class="check" id="estagiario" name="opcao" value="estagiario" (change)="verificaAtividade($event)">
         <label for="estagiario">como Estagiário</label>
         <div class="bloco-atividade">
-          <input [(ngModel)]="tipoAtividadeEstagiario" type="radio" class="check" id="setor-privado" name="opcao_estagiario" value="setorPrivado">
+          <input type="radio" class="check" id="setor-privado" name="opcao_estagiario" value="setorPrivado">
           <label for="setor-privado">Realizado no setor privado (indústria/comércio/serviços)</label>
           <br />
-          <input [(ngModel)]="tipoAtividadeEstagiario" type="radio" class="check" id="organizacoes" name="opcao_estagiario" value="organizacaoTerceiroSetor">
+          <input type="radio" class="check" id="organizacoes" name="opcao_estagiario" value="organizacaoTerceiroSetor">
           <label for="organizacoes ">Realizado em organizações do 3. setor (ONG's)</label>
           <br />
-          <input [(ngModel)]="tipoAtividadeEstagiario" type="radio" class="check" id="adm" name="opcao_estagiario" value="orgaoAdmPublica">
+          <input type="radio" class="check" id="adm" name="opcao_estagiario" value="orgaoAdmPublica">
           <label for="adm ">Realizado em órgãos de administração pública</label>
           <br />
-          <input [(ngModel)]="tipoAtividadeEstagiario" type="radio" class="check" id="extracurricular" name="opcao_estagiario" value="ativExtracurricularesFatec">
+          <input type="radio" class="check" id="extracurricular" name="opcao_estagiario" value="ativExtracurricularesFatec">
           <label for="extracurricular ">Realizado em atividades extracurriculares sob supervisão da FATEC</label>
         </div>
         <input type="radio" class="check" id="profissional-liberal" name="opcao" value="profissional-liberal" (change)="verificaAtividade($event)">

@@ -215,8 +215,11 @@ export class TipoAtividadeComponent implements OnInit {
      doc.text("No. Matrícula:", 12, 62);
      doc.text(this.aluno.ra, 42, 62);
      doc.text("1. Tipo de Atividade desenvolvida e forma de comprovação:", 12, 69);
+     doc.setFontSize(11);
+     doc.text(this.tipoAtividadeImpressao, 16, 77)
 
-
+     //Retângulos - (x, y, largura, linha) x = distancia horizontal, y = distancia verticals
+    doc.rect(12, 73, 185, 15);
 
     doc.output("dataurlnewwindow");
 
@@ -229,6 +232,7 @@ export class TipoAtividadeComponent implements OnInit {
     this.verificaAtividadeImpressao();
   }
 
+
   verificaAtividadeImpressao(){
 
     switch(this.tipoAtividadeImpressao){
@@ -239,16 +243,16 @@ export class TipoAtividadeComponent implements OnInit {
       } break;
 
       case "profissional-liberal": {
-        this.tipoAtividadeImpressao = "Como Profissional Liberal, com declaração assinada pelo Contador, especificando ser a área inerente ao curso, informando a Inscrição no respectivo Conselho de Classe, e comprovante do cadastro da Prefeitura Municipal (no caso de prestador de serviço)."
+        this.tipoAtividadeImpressao = "Como Profissional Liberal, com declaração assinada pelo Contador, especificando ser a área inerente ao" + "\n" + "curso, informando a Inscrição no respectivo Conselho de Classe, e comprovante do cadastro da Prefeitu-" + "\n" + "ra Municipal (no caso de prestador de serviço)."
 
       } break;
 
       case "empresario": {
-        this.tipoAtividadeImpressao = "Como Empresário, com declaração assinada pelo Contador, informando a Razão Social, CNPJ e ramo das atividades desenvolvidas pela empresa, ou declaração de firma individual."
+        this.tipoAtividadeImpressao = "Como Empresário, com declaração assinada pelo Contador, informando a Razão Social, CNPJ e ramo das" + "\n" + "atividades desenvolvidas pela empresa, ou declaração de firma individual."
       } break;
 
       case "vinculo-empregaticio": {
-        this.tipoAtividadeImpressao = "Através de Vínculo Empregatício, comprovada através de registro em carteira Profissional e com Declaração da empresa, das funções desempenhadas."
+        this.tipoAtividadeImpressao = "Através de Vínculo Empregatício, comprovada através de registro em carteira Profissional e com Declara-" + "\n" + "ção da empresa, das funções desempenhadas."
 
       } break;
 
@@ -257,9 +261,5 @@ export class TipoAtividadeComponent implements OnInit {
       }
 
     }
-    
-    console.log(this.tipoAtividadeImpressao);
-
   }
-
 }
