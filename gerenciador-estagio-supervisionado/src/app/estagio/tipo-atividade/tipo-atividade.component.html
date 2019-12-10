@@ -24,7 +24,7 @@
       <div class="col-md-12 bloco-atividade">
         <h3>1 - Tipo de Atividade desenvolvida e forma de comprovação</h3>
         <br />
-        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="estagiario" name="opcao" value="estagiario">
+        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="estagiario" name="opcao" value="estagiario" (click)="teste()">
         <label for="estagiario">como Estagiário</label>
         <div class="bloco-atividade">
           <input [(ngModel)]="tipoAtividadeEstagiario" type="radio" class="check" id="setor-privado" name="opcao_estagiario" value="setorPrivado">
@@ -46,19 +46,19 @@
             Inscrição no respectivo Conselho de Classe, e comprovante do cadastro da Prefeitura Municipal (no caso de
             prestador de serviço).</label>
         </div>
-        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="empresario" name="opcao" value="empresario">
+        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="empresario" name="opcao" value="empresario" (click)="verificaTipoAtividade()">
         <label for="empresario">como Empresário</label>
         <div class="bloco-atividade">
           <label>Com declaração assinada pelo Contador, informando a Razão Social, CNPJ e ramo das atividades
             desenvolvidas pela empresa, ou declaração de firma individual.</label>
         </div>
-        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="vinculo-empregaticio" name="opcao" value="vinculo-empregaticio">
+        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="vinculo-empregaticio" name="opcao" value="vinculo-empregaticio" (click)="verificaTipoAtividade()">
         <label for="vinculo-empregaticio">através de Vínculo Empregatício</label>
         <div class="bloco-atividade">
           <label>Comprovada através de registro em carteira Profissional e com Declaração da empresa, das funções
             desempenhadas.</label>
         </div>
-        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="outros" name="opcao"  value="outros">
+        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="outros" name="opcao"  value="outros" (click)="verificaTipoAtividade()">
         <label for="outros">Outros</label>
         <div class="bloco-atividade">
           <label for="outros">Especificar:</label>
@@ -103,7 +103,7 @@
         </div>
       </div>
       <div class="col-md-12 d-flex justify-content-end" style="margin-bottom:30px">
-        <button id="btn-imprimir" type="button" class="btn btn-secondary">Imprimir</button>
+        <button id="btn-imprimir" type="button" class="btn btn-secondary" (click)="imprimirRelatorioFinal()" >Imprimir</button>
         <button id="btn-limpar" type="button" class="btn btn-secondary" (click)="limpar(relatorioFinalForm)">Limpar</button>
         <button id="btn-salvar" type="button" class="btn btn-danger" (click)="salvarRelatorioFinal(modalPosRequisicao, relatorioFinalForm)">Salvar</button>
       </div>

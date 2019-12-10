@@ -35,6 +35,6 @@ export class AlunoService {
     }
 
     buscaPorId(): Observable<Aluno>{
-        return this.http.get<Aluno>(`${this.baseUrl}` + '/2');
+        return this.http.get<Aluno>(`${this.baseUrl}` + '/1');
     }
 }
