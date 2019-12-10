@@ -29,7 +29,7 @@ export class TipoAtividadeComponent implements OnInit {
   estagioAtual: String;
   tipoAtividade: any;
   tipoAtividadeEstagiario: any;
-  tipoAtividadeImpressao: String;
+  tipoAtividadeImpressao: String = "";
   tipoAtividadeEstagiarioObject: TipoAtividadeEstagiario = new TipoAtividadeEstagiario();
   aluno: Aluno = new Aluno();
   contrato: Contrato = new Contrato();
@@ -215,14 +215,51 @@ export class TipoAtividadeComponent implements OnInit {
      doc.text("No. Matrícula:", 12, 62);
      doc.text(this.aluno.ra, 42, 62);
      doc.text("1. Tipo de Atividade desenvolvida e forma de comprovação:", 12, 69);
-     doc.text(this.tipoAtividadeImpressao, 12, 76);
+
 
 
     doc.output("dataurlnewwindow");
 
   }
 
-  teste(){
-    console.log(this.tipoAtividade);
+  verificaAtividade(valor){
+
+    this.tipoAtividadeImpressao = (valor.srcElement.value).toString();
+
+    this.verificaAtividadeImpressao();
   }
+
+  verificaAtividadeImpressao(){
+
+    switch(this.tipoAtividadeImpressao){
+
+      case "estagiario": {
+        this.tipoAtividadeImpressao = "Como Estagiário,"
+
+      } break;
+
+      case "profissional-liberal": {
+        this.tipoAtividadeImpressao = "Como Profissional Liberal, com declaração assinada pelo Contador, especificando ser a área inerente ao curso, informando a Inscrição no respectivo Conselho de Classe, e comprovante do cadastro da Prefeitura Municipal (no caso de prestador de serviço)."
+
+      } break;
+
+      case "empresario": {
+        this.tipoAtividadeImpressao = "Como Empresário, com declaração assinada pelo Contador, informando a Razão Social, CNPJ e ramo das atividades desenvolvidas pela empresa, ou declaração de firma individual."
+      } break;
+
+      case "vinculo-empregaticio": {
+        this.tipoAtividadeImpressao = "Através de Vínculo Empregatício, comprovada através de registro em carteira Profissional e com Declaração da empresa, das funções desempenhadas."
+
+      } break;
+
+      case "outros": {
+        this.tipoAtividadeImpressao = "Outros: " + this.relatorioFinal.especificacaoOutros;
+      }
+
+    }
+    
+    console.log(this.tipoAtividadeImpressao);
+
+  }
+
 }

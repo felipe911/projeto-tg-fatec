@@ -24,7 +24,7 @@
       <div class="col-md-12 bloco-atividade">
         <h3>1 - Tipo de Atividade desenvolvida e forma de comprovação</h3>
         <br />
-        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="estagiario" name="opcao" value="estagiario" (click)="teste()">
+        <input type="radio" class="check" id="estagiario" name="opcao" value="estagiario" (change)="verificaAtividade($event)">
         <label for="estagiario">como Estagiário</label>
         <div class="bloco-atividade">
           <input [(ngModel)]="tipoAtividadeEstagiario" type="radio" class="check" id="setor-privado" name="opcao_estagiario" value="setorPrivado">
@@ -39,26 +39,26 @@
           <input [(ngModel)]="tipoAtividadeEstagiario" type="radio" class="check" id="extracurricular" name="opcao_estagiario" value="ativExtracurricularesFatec">
           <label for="extracurricular ">Realizado em atividades extracurriculares sob supervisão da FATEC</label>
         </div>
-        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="profissional-liberal" name="opcao" value="profissional-liberal">
+        <input type="radio" class="check" id="profissional-liberal" name="opcao" value="profissional-liberal" (change)="verificaAtividade($event)">
         <label for="profissional-liberal">como Profissional Liberal</label>
         <div class="bloco-atividade">
           <label>Com declaração assinada pelo Contador, especificando ser a área inerente ao curso, informando a
             Inscrição no respectivo Conselho de Classe, e comprovante do cadastro da Prefeitura Municipal (no caso de
             prestador de serviço).</label>
         </div>
-        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="empresario" name="opcao" value="empresario" (click)="verificaTipoAtividade()">
+        <input type="radio" class="check" id="empresario" name="opcao" value="empresario" (change)="verificaAtividade($event)">
         <label for="empresario">como Empresário</label>
         <div class="bloco-atividade">
           <label>Com declaração assinada pelo Contador, informando a Razão Social, CNPJ e ramo das atividades
             desenvolvidas pela empresa, ou declaração de firma individual.</label>
         </div>
-        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="vinculo-empregaticio" name="opcao" value="vinculo-empregaticio" (click)="verificaTipoAtividade()">
+        <input type="radio" class="check" id="vinculo-empregaticio" name="opcao" value="vinculo-empregaticio" (change)="verificaAtividade($event)">
         <label for="vinculo-empregaticio">através de Vínculo Empregatício</label>
         <div class="bloco-atividade">
           <label>Comprovada através de registro em carteira Profissional e com Declaração da empresa, das funções
             desempenhadas.</label>
         </div>
-        <input [(ngModel)]="tipoAtividade" type="radio" class="check" id="outros" name="opcao"  value="outros" (click)="verificaTipoAtividade()">
+        <input type="radio" class="check" id="outros" name="opcao"  value="outros" (change)="verificaAtividade($event)">
         <label for="outros">Outros</label>
         <div class="bloco-atividade">
           <label for="outros">Especificar:</label>
