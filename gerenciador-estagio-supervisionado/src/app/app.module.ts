@@ -11,7 +11,6 @@ import { NgxMaskModule } from 'ngx-mask'
 import { MenuComponent } from './menu/menu.component';
 import { AlunosComponent } from './cadastros/alunos/alunos.component';
 import { EmpresasComponent } from './cadastros/empresas/empresas.component';
-import { ContratosConsultaComponent } from './consultas/contratos-consulta/contratos-consulta.component';
 import { RelatoriosConsultaComponent } from './consultas/relatorios-consulta/relatorios-consulta.component';
 import { AssociarContratoComponent } from './contratos/associar-contrato/associar-contrato.component';
 import { AssociarAlunoComponent } from './contratos/associar-contrato/associar-aluno/associar-aluno.component';
@@ -43,6 +42,7 @@ import { EmpresaService } from './service/empresa.service';
 import { AssociarContratoEstagioComponent } from './contratos/associar-contrato/associar-contrato-estagio/associar-contrato-estagio.component';
 import { EmpresaPesquisaDatatableComponent } from './consultas/empresas-consulta/empresa-pesquisa-datatable/empresa-pesquisa-datatable.component';
 import { AlunoPesquisaDatatableComponent } from './consultas/alunos-consulta/aluno-pesquisa-datatable/aluno-pesquisa-datatable.component';
+import { ContratoPesquisaDatatableComponent } from './consultas/contratos-consulta/contrato-pesquisa-datatable/contrato-pesquisa-datatable.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +53,7 @@ import { AlunoPesquisaDatatableComponent } from './consultas/alunos-consulta/alu
     EmpresasComponent,
     AlunoPesquisaDatatableComponent,
     EmpresaPesquisaDatatableComponent,
-    ContratosConsultaComponent,
+    ContratoPesquisaDatatableComponent,
     RelatoriosConsultaComponent,
     AssociarContratoComponent,
     AssociarAlunoComponent,

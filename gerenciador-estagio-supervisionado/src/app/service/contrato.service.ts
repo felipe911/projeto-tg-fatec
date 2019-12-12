@@ -4,6 +4,7 @@ import { AssociarContratoMediator } from '../mediators/AssociarContratoMediator'
 import { Observable } from 'rxjs';
 import { Aluno } from '../model/Aluno';
 import { Contrato } from '../model/Contrato';
+import { ContratoConsultaMediator } from '../mediators/ContratoConsultaMediator';
 
 @Injectable({
   providedIn: 'root'
@@ -21,4 +22,8 @@ export class ContratoService {
   buscaPorAluno(aluno: Aluno): Observable<Contrato>{
     return this.http.post<Contrato>(`${this.baseUrl}` + '/busca-por-aluno', aluno);
   }
+
+  listar(): Observable<ContratoConsultaMediator[]>{
+    return this.http.get<ContratoConsultaMediator[]>(`${this.baseUrl}` + '/contratos-consulta');
+}
 }

@@ -1,23 +1,38 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, ModalOptions, BsModalService } from 'ngx-bootstrap/modal';
 import { Router } from '@angular/router';
+import { ContratoService } from 'src/app/service/contrato.service';
+import { ContratoConsultaMediator } from 'src/app/mediators/ContratoConsultaMediator';
 
 @Component({
-  selector: 'app-contratos-consulta',
-  templateUrl: './contratos-consulta.component.html',
-  styleUrls: ['./contratos-consulta.component.css']
+  selector: 'app-contrato-pesquisa-datatable',
+  templateUrl: './contrato-pesquisa-datatable.component.html',
+  styleUrls: ['./contrato-pesquisa-datatable.component.css']
 })
-export class ContratosConsultaComponent implements OnInit {
+export class ContratoPesquisaDatatableComponent implements OnInit {
+
+  constructor(private modalService: BsModalService, private router: Router, private contratoService: ContratoService) { }
+
+  cabecalhoElementos = ['Aluno', 'Empresa Associada', 'Curso', 'Data Início', 'Data Fim', 'Status', 'Agente de Integração', 'Supervisor', 'Ações'];
 
   titulo: String = 'Contratos'
+
+  contratos: ContratoConsultaMediator[];
 
   modalConfirm: BsModalRef;
   modalVis: BsModalRef;
   message: String;
 
-  constructor(private modalService: BsModalService, private router: Router) { }
 
   ngOnInit() {
+
+    this.contratoService.listar().subscribe(
+
+      contratosConsulta => {
+        this.contratos = contratosConsulta;
+      }
+    )
+
   }
 
   editarContrato(){
