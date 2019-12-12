@@ -6,7 +6,6 @@ import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
 import { AlunosComponent } from "./cadastros/alunos/alunos.component";
 import { EmpresasComponent } from './cadastros/empresas/empresas.component';
-import { EmpresasConsultaComponent } from './consultas/empresas-consulta/empresas-consulta.component';
 import { AssociarContratoComponent } from "./contratos/associar-contrato/associar-contrato.component";
 import { ContratosConsultaComponent } from './consultas/contratos-consulta/contratos-consulta.component';
 import { RelatoriosConsultaComponent } from './consultas/relatorios-consulta/relatorios-consulta.component';
@@ -16,7 +15,8 @@ import { RelatorioFinalComponent } from './estagio/relatorio-final/relatorio-fin
 import { AlunoGerenciamentoComponent } from "./aluno-gerenciamento/aluno-gerenciamento.component";
 import { DashboardComponent } from "./admin-gerenciamento/dashboard/dashboard.component";
 import { EntregaRelatorioComponent } from './admin-gerenciamento/entrega-relatorio/entrega-relatorio.component';
-import { PesquisaDatatableComponent } from "./consultas/alunos-consulta/pesquisa-datatable/pesquisa-datatable.component";
+import { EmpresaPesquisaDatatableComponent } from "./consultas/empresas-consulta/empresa-pesquisa-datatable/empresa-pesquisa-datatable.component";
+import { AlunoPesquisaDatatableComponent } from "./consultas/alunos-consulta/aluno-pesquisa-datatable/aluno-pesquisa-datatable.component";
 
 const rotas: Routes = [
 
@@ -26,8 +26,8 @@ const rotas: Routes = [
     { path: 'editar/aluno/:id', component: AlunosComponent, canActivate: [AuthGuard] },
     { path: 'cadastrar/empresa', component: EmpresasComponent, canActivate: [AuthGuard] },
     { path: 'editar/empresa/:id', component: EmpresasComponent, canActivate: [AuthGuard] },
-    { path: 'consultar/alunos', component: PesquisaDatatableComponent, canActivate: [AuthGuard] },
-    { path: 'consultar/empresas', component: EmpresasConsultaComponent, canActivate: [AuthGuard] },
+    { path: 'consultar/alunos', component: AlunoPesquisaDatatableComponent, canActivate: [AuthGuard] },
+    { path: 'consultar/empresas', component: EmpresaPesquisaDatatableComponent, canActivate: [AuthGuard] },
     { path: 'consultar/contratos', component: ContratosConsultaComponent, canActivate: [AuthGuard] },
     { path: 'consultar/relatorios', component: RelatoriosConsultaComponent, canActivate: [AuthGuard] },
     { path: 'associar/contrato', component: AssociarContratoComponent, canActivate: [AuthGuard] },

@@ -1,22 +1,33 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ModalOptions, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { EmpresaService } from 'src/app/service/empresa.service';
+import { Empresa } from 'src/app/model/Empresa';
 
 @Component({
-  selector: 'app-empresas-consulta',
-  templateUrl: './empresas-consulta.component.html',
-  styleUrls: ['./empresas-consulta.component.css']
+  selector: 'app-empresa-pesquisa-datatable',
+  templateUrl: './empresa-pesquisa-datatable.component.html',
+  styleUrls: ['./empresa-pesquisa-datatable.component.css']
 })
-export class EmpresasConsultaComponent implements OnInit {
- 
+export class EmpresaPesquisaDatatableComponent implements OnInit {
+
+  constructor(private modalService: BsModalService, private router: Router, private empresaService: EmpresaService) { }
+
   modalConfirm: BsModalRef;
   modalVis: BsModalRef;
   titulo: String = 'Empresas'
   message: String;
 
-  constructor(private modalService: BsModalService,private router: Router) { }
+  empresas: Empresa[];
+
+  cabecalhoElementos = ['Razão Social', 'Convênio até', 'Cidade', 'Qtd. Estagiários Ativos', 'Ações'];
 
   ngOnInit() {
+
+    this.empresaService.listar().subscribe(
+      empresas => {
+        this.empresas = empresas;
+      });
   }
 
   editarAluno(){

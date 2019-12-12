@@ -15,12 +15,12 @@ export class AssociarEmpresaComponent implements OnInit {
   constructor(private empresaService: EmpresaService) { }
 
   ngOnInit() {
-    this.empresaService.listar()
-    .then(
+
+    this.empresaService.listar().subscribe(
       empresas => {
-        this.empresas = empresas.content;
+        this.empresas = empresas;
       }
-    );
+    )
   }
 
   buscaPorRazaoSocial(){

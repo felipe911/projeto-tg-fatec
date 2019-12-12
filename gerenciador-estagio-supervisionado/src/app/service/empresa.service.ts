@@ -19,8 +19,8 @@ export class EmpresaService {
         return this.http.post<Empresa>(`${this.baseUrl}`, empresa);
     }
 
-    listar(): Promise<any>{
-        return this.http.get<Empresa[]>(`${this.baseUrl}`).toPromise();
+    listar(): Observable<Empresa[]>{
+        return this.http.get<Empresa[]>(`${this.baseUrl}`);
     }
 
     buscaPorRazaoSocial(empresa: Empresa): Observable<Empresa>{

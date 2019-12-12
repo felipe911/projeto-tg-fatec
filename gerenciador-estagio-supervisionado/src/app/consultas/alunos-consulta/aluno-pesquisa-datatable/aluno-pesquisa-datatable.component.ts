@@ -5,11 +5,11 @@ import { AlunoService } from 'src/app/service/aluno.service';
 import { Aluno } from 'src/app/model/Aluno';
 
 @Component({
-  selector: 'app-pesquisa-datatable',
-  templateUrl: './pesquisa-datatable.component.html',
-  styleUrls: ['./pesquisa-datatable.component.css']
+  selector: 'app-aluno-pesquisa-datatable',
+  templateUrl: './aluno-pesquisa-datatable.component.html',
+  styleUrls: ['./aluno-pesquisa-datatable.component.css']
 })
-export class PesquisaDatatableComponent implements OnInit {
+export class AlunoPesquisaDatatableComponent implements OnInit {
 
   constructor(private modalService: BsModalService, private router: Router, private alunoService: AlunoService) { }
 

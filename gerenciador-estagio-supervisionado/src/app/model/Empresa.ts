@@ -12,4 +12,5 @@ export class Empresa{
     telefone: String;
     email: String;
     prazoConvenio: Date;
+    qtdEstagiariosAtivos: number;
 }

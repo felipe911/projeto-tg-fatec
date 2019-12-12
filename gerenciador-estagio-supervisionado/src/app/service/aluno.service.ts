@@ -20,8 +20,6 @@ export class AlunoService {
         })
     }
 
-    alunos = [];
-
     salvar(aluno: Aluno): Observable<Aluno> {
         return this.http.post<Aluno>(`${this.baseUrl}`, aluno);
     }

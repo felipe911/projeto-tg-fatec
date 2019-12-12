@@ -1,0 +1,98 @@
+<div class="container" style="margin-top:150px">
+  <div class="row">
+    <div class="col-md-9">
+      <p class="titulo">Consultar {{ titulo }}</p>
+    </div>
+    <div class="col-md-3">
+      <button id="btn-cadastrar-aluno" type="button" class="btn btn-danger" (click)="getCadastrarEmpresa()">Cadastrar Empresa</button>
+    </div>
+  </div>
+  <form id="form-cadastro">
+    <div class="row row-margin">
+
+      <div class="col-md-3">
+        <label for="input-razao-social">Razão Social:</label>
+        <input type="text" class="form-control" id="input-razao-social">
+      </div>
+
+      <div class="col-md-3">
+        <div class="dropdown">
+          <label for="dropdown-cidade" class="label-block">Cidade:</label>
+          <button id="dropdown-cidade" class="btn btn-primary dropdown-toggle btn-full-width" type="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Selecione
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdown-cidade">
+            <a class="dropdown-item" href="">Sorocaba</a>
+            <a class="dropdown-item" href="">Votorantim</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="dropdown">
+          <label for="dropdown-curso" class="label-block">Curso:</label>
+          <button id="dropdown-curso" class="btn btn-primary dropdown-toggle btn-full-width" type="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Selecione
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdown-curso">
+            <a class="dropdown-item" href="">Análise e Desenvolvimento de Sistemas</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="input-convenio-partir-de">Convênio a partir de:</label>
+        <input type="date" class="form-control" id="input-convenio-partir-de" >
+      </div>
+
+    </div>
+
+    <div class="row row-margin">
+      <div class="col-md-12">
+        <button id="btn-pesquisar" type="button" class="btn btn-secondary">Pesquisar</button>
+      </div>
+    </div>
+  </form>
+
+  <table class="table table-bordered">
+    <tr>
+      <th *ngFor="let cabecalho of cabecalhoElementos" scope="col">{{ cabecalho }}</th>
+    </tr>
+    <tbody>
+      <tr *ngFor="let empresa of empresas">
+        <td> {{ empresa.razaoSocial }}</td>
+        <td> {{ empresa.prazoConvenio | date: 'dd/MM/yyyy' }} </td>
+        <td> {{ empresa.cidade }} </td>
+        <td> {{ empresa.qtdEstagiariosAtivos }}</td>
+        <td style="text-align: center">
+          <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar)" class="fa fa-eye"></a>
+          <a id="editar" title="Editar" (click)="editarAluno()" class="fa fa-edit" style="padding-left: 15px"></a>
+          <a id="excluir" title="Excluir" (click)="openModalConfirm(modalConfirm)" class="fa fa-trash" style="padding-left: 15px"></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #modalVisualizar>
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Visualizar Empresa</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalVis.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <app-visualizar-dados-empresa></app-visualizar-dados-empresa>
+  <app-visualizar-estagiarios-empresa></app-visualizar-estagiarios-empresa>
+</div>
+</ng-template>
+
+<ng-template #modalConfirm>
+<div class="modal-body text-center">
+  <p>Tem certeza que deseja excluir este registro ?</p>
+  <button type="button" class="btn btn-danger" (click)="confirm()">Sim</button>
+  <button type="button" class="btn btn-danger" (click)="decline()" style="margin-left: 10px">Não</button>
+</div>
+</ng-template>
