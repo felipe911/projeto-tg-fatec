@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError  } from "rxjs";
-import { retry, catchError } from 'rxjs/operators';
+import { retry, catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpEvent, HttpParams } from "@angular/common/http";
 import 'rxjs/add/operator/catch';
 import { Aluno } from '../model/Aluno';
@@ -26,8 +26,8 @@ export class AlunoService {
         return this.http.post<Aluno>(`${this.baseUrl}`, aluno);
     }
 
-    listar(){
-        return this.http.get(`${this.baseUrl}`);
+    listar(): Observable<Aluno[]>{
+        return this.http.get<Aluno[]>(`${this.baseUrl}`);
     }
 
     buscaPorRa(aluno: Aluno): Observable<Aluno>{

@@ -11,7 +11,6 @@ import { NgxMaskModule } from 'ngx-mask'
 import { MenuComponent } from './menu/menu.component';
 import { AlunosComponent } from './cadastros/alunos/alunos.component';
 import { EmpresasComponent } from './cadastros/empresas/empresas.component';
-import { AlunosConsultaComponent } from './consultas/alunos-consulta/alunos-consulta.component';
 import { EmpresasConsultaComponent } from './consultas/empresas-consulta/empresas-consulta.component';
 import { ContratosConsultaComponent } from './consultas/contratos-consulta/contratos-consulta.component';
 import { RelatoriosConsultaComponent } from './consultas/relatorios-consulta/relatorios-consulta.component';
@@ -43,6 +42,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AlunoService } from './service/aluno.service';
 import { EmpresaService } from './service/empresa.service';
 import { AssociarContratoEstagioComponent } from './contratos/associar-contrato/associar-contrato-estagio/associar-contrato-estagio.component';
+import { PesquisaDatatableComponent } from './consultas/alunos-consulta/pesquisa-datatable/pesquisa-datatable.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,7 @@ import { AssociarContratoEstagioComponent } from './contratos/associar-contrato/
     MenuComponent,
     AlunosComponent,
     EmpresasComponent,
-    AlunosConsultaComponent,
+    PesquisaDatatableComponent,
     EmpresasConsultaComponent,
     ContratosConsultaComponent,
     RelatoriosConsultaComponent,

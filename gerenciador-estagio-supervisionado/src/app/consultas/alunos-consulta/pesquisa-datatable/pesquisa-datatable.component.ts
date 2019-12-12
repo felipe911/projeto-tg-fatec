@@ -2,14 +2,14 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 import { Router } from '@angular/router';
 import { AlunoService } from 'src/app/service/aluno.service';
+import { Aluno } from 'src/app/model/Aluno';
 
 @Component({
-  selector: 'app-alunos-consulta',
-  templateUrl: './alunos-consulta.component.html',
-  styleUrls: ['./alunos-consulta.component.css']
+  selector: 'app-pesquisa-datatable',
+  templateUrl: './pesquisa-datatable.component.html',
+  styleUrls: ['./pesquisa-datatable.component.css']
 })
-export class AlunosConsultaComponent implements OnInit {
-
+export class PesquisaDatatableComponent implements OnInit {
 
   constructor(private modalService: BsModalService, private router: Router, private alunoService: AlunoService) { }
 
@@ -18,25 +18,20 @@ export class AlunosConsultaComponent implements OnInit {
   modalVis: BsModalRef;
   modalConfirm: BsModalRef;
   message: String;
+  alunos: Aluno[];
 
-  alunos = [
-      { nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6',
-      periodo: 3, dataVestibular: '01/01/2015'},
-      { nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6',
-      periodo: 3, dataVestibular: '01/01/2015'},
-      { nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6',
-      periodo: 3, dataVestibular: '01/01/2015'},
-      { nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6',
-      periodo: 3, dataVestibular: '01/01/2015'},
-      { nome: 'Felipe Augusto', ra: '0030481521009', curso: 'ADS', semestre: '6',
-      periodo: 3, dataVestibular: '01/01/2015'},
-
-  ];
   cabecalhoElementos = ['Nome', 'RA', 'Curso', 'Semestre', 'Período', 'Data Vestibular', 'Ações'];
 
   ngOnInit(){
    
+    this.alunoService.listar().subscribe(
+      alunos => {
+        this.alunos = alunos;
+      });
   }
+
+
+ 
 
   openModalVisualizar(template: TemplateRef<any>) {
     const config: ModalOptions = { class: 'modal-lg' }

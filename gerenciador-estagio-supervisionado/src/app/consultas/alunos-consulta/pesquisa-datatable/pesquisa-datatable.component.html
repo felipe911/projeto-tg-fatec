@@ -106,9 +106,9 @@
         <td> {{ aluno.nome }}</td>
         <td> {{ aluno.ra }}</td>
         <td> {{ aluno.curso }} </td>
-        <td> {{ aluno.semestre }}. Semestre </td>
+        <td> {{ aluno.semestre }} </td>
         <td> {{ aluno.periodo }} </td>
-        <td> {{ aluno.dataVestibular }}</td>
+        <td> {{ aluno.dataVestibular | date: 'dd/MM/yyyy'}}</td>
         <td style="text-align: center">
           <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar)" class="fa fa-eye"></a>
           <a id="editar" title="Editar" (click)="editarAluno()" class="fa fa-edit" style="padding-left: 15px"></a>
