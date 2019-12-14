@@ -7,7 +7,6 @@ import { HomeComponent } from "./home/home.component";
 import { AlunosComponent } from "./cadastros/alunos/alunos.component";
 import { EmpresasComponent } from './cadastros/empresas/empresas.component';
 import { AssociarContratoComponent } from "./contratos/associar-contrato/associar-contrato.component";
-import { RelatoriosConsultaComponent } from './consultas/relatorios-consulta/relatorios-consulta.component';
 import { RelatorioParcialComponent } from './estagio/relatorio-parcial/relatorio-parcial.component';
 import { TipoAtividadeComponent } from './estagio/tipo-atividade/tipo-atividade.component';
 import { RelatorioFinalComponent } from './estagio/relatorio-final/relatorio-final.component';
@@ -31,7 +30,6 @@ const rotas: Routes = [
     { path: 'consultar/alunos', component: AlunoPesquisaDatatableComponent, canActivate: [AuthGuard] },
     { path: 'consultar/empresas', component: EmpresaPesquisaDatatableComponent, canActivate: [AuthGuard] },
     { path: 'consultar/contratos', component: ContratoPesquisaDatatableComponent, canActivate: [AuthGuard] },
-    { path: 'consultar/relatorios', component: RelatoriosConsultaComponent, canActivate: [AuthGuard] },
     { path: 'aluno/relatorio-parcial', component: RelatorioParcialComponent, canActivate: [AuthGuard] },
     { path: 'aluno/relatorio-parcial/:id', component: RelatorioParcialComponent, canActivate: [AuthGuard] },
     { path: 'aluno/validar-horas-estagio', component: TipoAtividadeComponent, canActivate: [AuthGuard] },

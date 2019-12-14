@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpEvent } from "@angular/
 
 import 'rxjs/add/operator/catch';
 import { Empresa } from '../model/Empresa';
+import { AlunosDaEmpresaMediator } from '../mediators/AlunosDaEmpresaMediator';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,10 @@ export class EmpresaService {
 
     buscaPorIdEditarEmpresa(id): Observable<Empresa>{
         return this.http.get<Empresa>(`${this.baseUrl}` + '/' + id);
+    }
+
+    buscarAlunosDaEmpresa(id): Observable<AlunosDaEmpresaMediator>{
+        return this.http.get<AlunosDaEmpresaMediator>(`${this.baseUrl}` + '/busca-alunos-da-empresa/' + id);
     }
 
     atualizar(empresa: Empresa): Observable<Empresa> {

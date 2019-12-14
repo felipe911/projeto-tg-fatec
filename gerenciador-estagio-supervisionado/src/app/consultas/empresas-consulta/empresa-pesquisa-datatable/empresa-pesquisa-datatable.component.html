@@ -68,7 +68,7 @@
         <td> {{ empresa.cidade }} </td>
         <td> {{ empresa.qtdEstagiariosAtivos }}</td>
         <td style="text-align: center">
-          <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar)" class="fa fa-eye"></a>
+          <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar, empresa.id)" class="fa fa-eye"></a>
           <a id="editar" title="Editar" (click)="editarEmpresa(empresa.id)" class="fa fa-edit" style="padding-left: 15px"></a>
           <a id="excluir" title="Excluir" (click)="openModalConfirm(modalConfirm, empresa.id)" class="fa fa-trash" style="padding-left: 15px"></a>
         </td>
@@ -85,8 +85,87 @@
   </button>
 </div>
 <div class="modal-body">
-  <app-visualizar-dados-empresa></app-visualizar-dados-empresa>
-  <app-visualizar-estagiarios-empresa></app-visualizar-estagiarios-empresa>
+  <form id="form-dados-empresa">
+    <div class="row row-margin">
+  
+      <div class="col-md-4">
+        <label for="razao" class="bold">Razão Social:</label>
+        <label name="razao" id="razao" class="label-block" style="margin-bottom: 20px" [(ngModel)]="empresa.razaoSocial" ngDefaultControl>{{ empresa.razaoSocial }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="contato" class="bold">Contato:</label>
+        <label name="contato" id="contato" class="label-block" [(ngModel)]="empresa.contatoResponsavel" ngDefaultControl>{{ empresa.contatoResponsavel }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="prazo" class="bold">Prazo Convênio:</label>
+        <label name="prazoConvenio" id="prazo" class="label-block" [(ngModel)]="empresa.prazoConvenio" ngDefaultControl>{{ empresa.prazoConvenio | date: 'dd/MM/yyyy' }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="cep" class="bold">CEP:</label>
+        <label name="cep" id="cep" class="label-block" style="margin-bottom: 20px" [(ngModel)]="empresa.cep" ngDefaultControl>{{ empresa.cep }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="uf" class="bold">UF:</label>
+        <label name="uf" id="uf" class="label-block" [(ngModel)]="empresa.uf" ngDefaultControl>{{ empresa.uf }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="cidade" class="bold">Cidade:</label>
+        <label name="cidade" id="cidade" class="label-block" [(ngModel)]="empresa.cidade" ngDefaultControl>{{ empresa.cidade }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="endereco" class="bold">Endereço:</label>
+        <label name="endereco" id="endereco" class="label-block" style="margin-bottom: 20px;" [(ngModel)]="empresa.endereco" ngDefaultControl>{{ empresa.endereco }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="bairro" class="bold">Bairro:</label>
+        <label name="bairro" id="bairro" class="label-block" [(ngModel)]="empresa.bairro" ngDefaultControl>{{ empresa.bairro }}</label>
+      </div>
+
+      <div class="col-md-4">
+        <label for="numero" class="bold">Número:</label>
+        <label name="numero" id="numero" class="label-block" [(ngModel)]="empresa.numero" ngDefaultControl>{{ empresa.numero }}</label>
+      </div>
+
+      <div class="col-md-4">
+        <label for="telefone" class="bold">Telefone:</label>
+        <label name="telefone"  id="telefone" class="label-block" [(ngModel)]="empresa.telefone" ngDefaultControl>{{ empresa.telefone }}</label>
+      </div>
+
+      <div class="col-md-4">
+        <label for="email" class="bold">E-Mail:</label>
+        <label name="email" id="email" class="label-block" [(ngModel)]="empresa.email" ngDefaultControl>{{ empresa.email }}</label>
+      </div>
+    </div>
+  </form>
+  <form id="form-dados-estagio">
+    <div class="row row-margin">
+      <div class="col-md-12 identificacao-border">Estágiarios atuais na empresa</div> 
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead class="alinhamento">
+                  <tr>
+                    <th *ngFor="let cabecalhoE of cabecalhoElementosEstagiarios" scope="col">{{ cabecalhoE }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let aluno of alunos">
+                    <td>{{ aluno.nome }}</td>
+                    <td>{{ aluno.ra }}</td>
+                    <td>{{ aluno.curso }}</td>
+                    <td>{{ aluno.semestre }}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+    </div>
+  </form>
 </div>
 </ng-template>
 

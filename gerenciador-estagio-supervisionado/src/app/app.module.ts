@@ -11,7 +11,6 @@ import { NgxMaskModule } from 'ngx-mask'
 import { MenuComponent } from './menu/menu.component';
 import { AlunosComponent } from './cadastros/alunos/alunos.component';
 import { EmpresasComponent } from './cadastros/empresas/empresas.component';
-import { RelatoriosConsultaComponent } from './consultas/relatorios-consulta/relatorios-consulta.component';
 import { AssociarContratoComponent } from './contratos/associar-contrato/associar-contrato.component';
 import { TipoAtividadeComponent } from './estagio/tipo-atividade/tipo-atividade.component';
 import { RelatorioParcialComponent } from './estagio/relatorio-parcial/relatorio-parcial.component';
@@ -24,9 +23,6 @@ import { DadosEstagioComponent } from './estagio/relatorio-final/historico-estag
 import { VisualizarAtividadesComponent } from './estagio/relatorio-final/historico-estagio/visualizar-atividades/visualizar-atividades.component';
 import { VisualizarEstagiosAlunoComponent } from './consultas/alunos-consulta/visualizar-estagios-aluno/visualizar-estagios-aluno.component';
 import { VisualizarDadosAlunoComponent } from './consultas/alunos-consulta/visualizar-dados-aluno/visualizar-dados-aluno.component';
-import { VisualizarDadosEmpresaComponent } from './consultas/empresas-consulta/visualizar-dados-empresa/visualizar-dados-empresa.component';
-import { VisualizarEstagiariosEmpresaComponent } from './consultas/empresas-consulta/visualizar-estagiarios-empresa/visualizar-estagiarios-empresa.component';
-import { VisualizarContratoComponent } from './consultas/contratos-consulta/visualizar-contrato/visualizar-contrato.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './login/auth.service';
 import { AuthGuard } from './guards/auth-guard';
@@ -51,7 +47,6 @@ import { ContratoPesquisaDatatableComponent } from './consultas/contratos-consul
     AlunoPesquisaDatatableComponent,
     EmpresaPesquisaDatatableComponent,
     ContratoPesquisaDatatableComponent,
-    RelatoriosConsultaComponent,
     AssociarContratoComponent,
     TipoAtividadeComponent,
     RelatorioParcialComponent,
@@ -63,9 +58,6 @@ import { ContratoPesquisaDatatableComponent } from './consultas/contratos-consul
     VisualizarAtividadesComponent,
     VisualizarDadosAlunoComponent,
     VisualizarEstagiosAlunoComponent,
-    VisualizarDadosEmpresaComponent,
-    VisualizarEstagiariosEmpresaComponent,
-    VisualizarContratoComponent,
     LoginComponent,
     GraficosComponent,
     AdminGerenciamentoComponent,

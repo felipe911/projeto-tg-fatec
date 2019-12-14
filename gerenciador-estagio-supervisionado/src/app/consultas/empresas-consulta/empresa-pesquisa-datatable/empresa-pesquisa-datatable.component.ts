@@ -3,6 +3,7 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ModalOptions, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { EmpresaService } from 'src/app/service/empresa.service';
 import { Empresa } from 'src/app/model/Empresa';
+import { Aluno } from 'src/app/model/Aluno';
 
 @Component({
   selector: 'app-empresa-pesquisa-datatable',
@@ -14,6 +15,7 @@ export class EmpresaPesquisaDatatableComponent implements OnInit {
   constructor(private modalService: BsModalService, private router: Router, private empresaService: EmpresaService) { }
 
   cabecalhoElementos = ['Id', 'Razão Social', 'Convênio até', 'Cidade', 'Qtd. Estagiários Ativos', 'Ações'];
+  cabecalhoElementosEstagiarios = ['Nome', 'Ra', 'Curso', 'Semestre'];
   
   idSelecionado: number;
   modalConfirm: BsModalRef;
@@ -26,7 +28,8 @@ export class EmpresaPesquisaDatatableComponent implements OnInit {
   mensagemModal: String;
 
   empresas: Empresa[];
-
+  empresa: Empresa;
+  alunos: Aluno[];
 
   ngOnInit() {
 
@@ -58,9 +61,26 @@ export class EmpresaPesquisaDatatableComponent implements OnInit {
     this.idSelecionado = id;
   }
 
-  openModalVisualizar(template: TemplateRef<any>) {
+  openModalVisualizar(template: TemplateRef<any>, id) {
     const config: ModalOptions = { class: 'modal-lg' }
     this.modalVis = this.modalService.show(template, config);
+
+    this.buscaDadosEmpresa(id);
+  }
+
+  buscaDadosEmpresa(id){
+
+    this.empresaService.buscarAlunosDaEmpresa(id).subscribe(
+
+      dados => {
+        this.empresa = dados.empresa;
+        this.alunos = dados.alunos;
+      },
+      error =>{
+        alert('Erro na Requisição');
+      }
+    )
+
   }
 
   confirmarExclusao(): void {
