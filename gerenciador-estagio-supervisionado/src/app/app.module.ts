@@ -13,8 +13,6 @@ import { AlunosComponent } from './cadastros/alunos/alunos.component';
 import { EmpresasComponent } from './cadastros/empresas/empresas.component';
 import { RelatoriosConsultaComponent } from './consultas/relatorios-consulta/relatorios-consulta.component';
 import { AssociarContratoComponent } from './contratos/associar-contrato/associar-contrato.component';
-import { AssociarAlunoComponent } from './contratos/associar-contrato/associar-aluno/associar-aluno.component';
-import { AssociarEmpresaComponent } from './contratos/associar-contrato/associar-empresa/associar-empresa.component';
 import { TipoAtividadeComponent } from './estagio/tipo-atividade/tipo-atividade.component';
 import { RelatorioParcialComponent } from './estagio/relatorio-parcial/relatorio-parcial.component';
 import { RelatorioFinalComponent } from './estagio/relatorio-final/relatorio-final.component';
@@ -39,7 +37,6 @@ import { EntregaRelatorioComponent } from './admin-gerenciamento/entrega-relator
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AlunoService } from './service/aluno.service';
 import { EmpresaService } from './service/empresa.service';
-import { AssociarContratoEstagioComponent } from './contratos/associar-contrato/associar-contrato-estagio/associar-contrato-estagio.component';
 import { EmpresaPesquisaDatatableComponent } from './consultas/empresas-consulta/empresa-pesquisa-datatable/empresa-pesquisa-datatable.component';
 import { AlunoPesquisaDatatableComponent } from './consultas/alunos-consulta/aluno-pesquisa-datatable/aluno-pesquisa-datatable.component';
 import { ContratoPesquisaDatatableComponent } from './consultas/contratos-consulta/contrato-pesquisa-datatable/contrato-pesquisa-datatable.component';
@@ -56,12 +53,9 @@ import { ContratoPesquisaDatatableComponent } from './consultas/contratos-consul
     ContratoPesquisaDatatableComponent,
     RelatoriosConsultaComponent,
     AssociarContratoComponent,
-    AssociarAlunoComponent,
-    AssociarContratoEstagioComponent,
     TipoAtividadeComponent,
     RelatorioParcialComponent,
     RelatorioFinalComponent,
-    AssociarEmpresaComponent,
     AdicionarRegistroEstagioComponent,
     HistoricoEstagioComponent,
     AlunoGerenciamentoComponent,

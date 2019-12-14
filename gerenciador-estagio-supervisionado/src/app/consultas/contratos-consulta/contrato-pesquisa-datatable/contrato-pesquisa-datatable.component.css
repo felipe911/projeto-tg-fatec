@@ -7,6 +7,14 @@ h1{
     padding: 30px;
 }
 
+.espacamento-left{
+    margin: 0 0 0 10px;
+}
+
+#btn-concluir-estagio, #btn-add-estagio{
+    float: right;
+}
+
 #btn-cadastrar-aluno{
     margin-top: 10px;
     padding: 10px 30px 10px 30px;
@@ -28,6 +36,17 @@ h1{
     color: rgb(70, 69, 69);
 }
 
+.descricao-atividade{
+    text-align: justify;
+}
+
+.barra{
+    height: 2px;
+    width: 100%;
+    border: 2px solid #ced4da;
+    margin: 10px 0 10px 0;
+}
+
 .label-block{
     display: block !important;
 }
@@ -44,6 +63,34 @@ h1{
 .fa-eye:hover, .fa-edit:hover, .fa-trash:hover{
     color: #990000 !important;
     cursor: pointer;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.check{
+    margin: 0 10px 0 10px;
+}
+
+.identificacao-border{
+    padding: 7px 0 7px 0;
+    margin: 20px 0 30px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 17px;
+    background-color: #990000;
+    color: white;
+}
+
+.identificacao-titulo{
+    background-color: grey;
+    color: white;
+    padding: 5px 0 5px 15px;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    text-align: center;
 }
 
 /* Sobrescrita Bootstrap */
