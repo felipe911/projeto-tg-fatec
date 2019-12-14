@@ -51,6 +51,7 @@ export class AlunosComponent implements OnInit {
                 this.mensagemPosReq = err.error.message;
                 this.modalPosRequisicao(template);
               });
+
           } else {
 
             this.alunoService.atualizar(this.aluno).subscribe(
@@ -63,8 +64,6 @@ export class AlunosComponent implements OnInit {
                 this.modalPosRequisicao(template);
               }
             )
-
-
 
         }} else{
           this.mensagemPosReq = 'O RA precisa de no mínimo 13 números.'

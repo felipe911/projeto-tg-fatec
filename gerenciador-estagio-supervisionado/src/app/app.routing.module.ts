@@ -25,7 +25,7 @@ const rotas: Routes = [
     { path: 'cadastrar/aluno', component: AlunosComponent, canActivate: [AuthGuard] },
     { path: 'aluno/editar/:id', component: AlunosComponent, canActivate: [AuthGuard] },
     { path: 'cadastrar/empresa', component: EmpresasComponent, canActivate: [AuthGuard] },
-    { path: 'editar/empresa/:id', component: EmpresasComponent, canActivate: [AuthGuard] },
+    { path: 'empresa/editar/:id', component: EmpresasComponent, canActivate: [AuthGuard] },
     { path: 'consultar/alunos', component: AlunoPesquisaDatatableComponent, canActivate: [AuthGuard] },
     { path: 'consultar/empresas', component: EmpresaPesquisaDatatableComponent, canActivate: [AuthGuard] },
     { path: 'consultar/contratos', component: ContratoPesquisaDatatableComponent, canActivate: [AuthGuard] },

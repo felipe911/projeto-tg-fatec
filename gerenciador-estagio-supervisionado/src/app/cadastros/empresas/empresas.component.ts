@@ -16,6 +16,8 @@ export class EmpresasComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private modalService: BsModalService, private empresaService: EmpresaService) { }
 
   titulo: String  = 'Cadastrar Empresa';
+  btnSubmit: String = 'Salvar';
+
   empresa = new Empresa();
   modalPosReq: BsModalRef;
   mensagemPosReq: String;
@@ -39,22 +41,35 @@ export class EmpresasComponent implements OnInit {
       if(this.verificaCamposObrigatorios()){
         if(this.verificaCnpj()){
   
-          this.empresaService.salvar(this.empresa).subscribe(
-          
-            sucess => {
-              this.mensagemPosReq = 'Empresa cadastrada com sucesso.'
-              this.modalPosRequisicao(template);
-              
-              form.reset();
-              this.empresa = new Empresa();
-              
-            },
-            error => {
-              this.mensagemPosReq = 'Já existe empresa uma registrada com este CNPJ.'
-              this.modalPosRequisicao(template);
-            }
-            );
-          } 
+
+          if(this.btnSubmit == "Salvar"){
+            
+            this.empresaService.salvar(this.empresa).subscribe(
+              sucess => {
+                this.mensagemPosReq = 'Empresa cadastrada com sucesso.'
+                this.modalPosRequisicao(template);
+                
+                form.reset();
+                this.empresa = new Empresa();
+                
+              },
+              error => {
+                this.mensagemPosReq = 'Já existe empresa uma registrada com este CNPJ.'
+                this.modalPosRequisicao(template);
+              });
+
+            } else {
+
+              this.empresaService.atualizar(this.empresa).subscribe(
+                sucess =>{
+                  this.mensagemPosReq = 'Empresa Alterada com sucesso.'
+                  this.modalPosRequisicao(template);
+                },
+                err => {
+                this.mensagemPosReq = err.error.message;
+                this.modalPosRequisicao(template);
+              })
+            }}
           
           else{
             this.mensagemPosReq = 'O CNPJ precisa de no mínimo 14 números.'
@@ -86,10 +101,24 @@ export class EmpresasComponent implements OnInit {
     }
 
   ngOnInit() {
-    const id = this.activatedRoute.snapshot.params.id;
-    if(id){
-      this.titulo = 'Editar Empresa';
-    }
+    this.activatedRoute.params.subscribe(
+      (params: any) => {
+        const id = params['id'];
+        if(id){
+          this.titulo = 'Editar Empresa';
+          this.btnSubmit = "Atualizar";
+          this.empresaService.buscaPorIdEditarEmpresa(id).subscribe(
+
+            empresa => {
+              this.empresa = empresa;
+            },
+            error =>{
+              alert('Erro na Requisição');
+            }
+          )
+        }
+      }
+    );
   }
 
   verificaCnpj(): Boolean{
