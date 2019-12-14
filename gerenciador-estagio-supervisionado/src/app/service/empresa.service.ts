@@ -26,4 +26,16 @@ export class EmpresaService {
     buscaPorRazaoSocial(empresa: Empresa): Observable<Empresa>{
         return this.http.post<Empresa>(`${this.baseUrl}` + '/busca-por-razao-social', empresa);
     }
+
+    buscaPorIdEditarEmpresa(id): Observable<Empresa>{
+        return this.http.get<Empresa>(`${this.baseUrl}` + '/' + id);
+    }
+
+    atualizar(empresa: Empresa): Observable<Empresa> {
+        return this.http.put<Empresa>(`${this.baseUrl}` + '/' + empresa.id, empresa);
+    }
+
+    deletar(id){
+        return this.http.delete(`${this.baseUrl}` + '/' + id)
+    }
 }

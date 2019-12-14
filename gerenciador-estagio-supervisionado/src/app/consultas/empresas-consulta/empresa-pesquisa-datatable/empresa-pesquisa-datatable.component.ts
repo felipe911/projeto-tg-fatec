@@ -13,49 +13,85 @@ export class EmpresaPesquisaDatatableComponent implements OnInit {
 
   constructor(private modalService: BsModalService, private router: Router, private empresaService: EmpresaService) { }
 
+  idSelecionado: number;
   modalConfirm: BsModalRef;
   modalVis: BsModalRef;
   titulo: String = 'Empresas'
-  message: String;
+
+  btnSim: boolean = true;
+  btnNao: boolean = true;
+  btnOk: boolean = false;
+  mensagemModal: String;
 
   empresas: Empresa[];
 
-  cabecalhoElementos = ['Razão Social', 'Convênio até', 'Cidade', 'Qtd. Estagiários Ativos', 'Ações'];
+  cabecalhoElementos = ['Id', 'Razão Social', 'Convênio até', 'Cidade', 'Qtd. Estagiários Ativos', 'Ações'];
 
   ngOnInit() {
 
+    this.listarEmpresas();
+
+  }
+  
+
+  listarEmpresas(){
     this.empresaService.listar().subscribe(
       empresas => {
         this.empresas = empresas;
       });
   }
 
-  editarAluno(){
-    this.router.navigate(['editar/empresa/1']);
-  }
-
-  confirm(): void {
-    this.message = 'Sim';
-    this.modalConfirm.hide();
-  }
- 
-  decline(): void {
-    this.message = 'Não';
-    this.modalConfirm.hide();
+  editarEmpresa(id){
+    this.router.navigate(['empresa/editar/', id]);
   }
 
   getCadastrarEmpresa(){
     this.router.navigate(['cadastrar/empresa']);
   }
 
-  openModalConfirm(template: TemplateRef<any>) {
+  openModalConfirm(template: TemplateRef<any>, id) {
+    this.mensagemModal = "Tem certeza que deseja excluir este registro ?"
     const config: ModalOptions = { class: 'modal-sm' }
     this.modalConfirm = this.modalService.show(template, config);
+
+    this.idSelecionado = id;
   }
 
   openModalVisualizar(template: TemplateRef<any>) {
     const config: ModalOptions = { class: 'modal-lg' }
     this.modalVis = this.modalService.show(template, config);
+  }
+
+  confirmarExclusao(): void {
+    this.empresaService.deletar(this.idSelecionado).subscribe(
+      sucess => {
+        this.mensagemModal = "Empresa deletada com sucesso";
+        this.listarEmpresas();
+        this.renderizaBtnOk();
+      },
+      err => {
+        this.mensagemModal = err.error.message;
+        this.renderizaBtnOk();
+      })
+
+    this.renderizaBtnSimNao();
+  }
+
+  cancelarExclusao(): void {
+    this.modalConfirm.hide();
+    this.renderizaBtnSimNao();
+  }
+
+  renderizaBtnOk(){
+    this.btnNao = false;
+    this.btnSim = false;
+    this.btnOk = true;
+  }
+
+  renderizaBtnSimNao(){
+    this.btnNao = true;
+    this.btnSim = true;
+    this.btnOk = false;
   }
 
 }
