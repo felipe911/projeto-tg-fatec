@@ -24,6 +24,10 @@ export class AlunoService {
         return this.http.post<Aluno>(`${this.baseUrl}`, aluno);
     }
 
+    atualizar(aluno: Aluno): Observable<Aluno> {
+        return this.http.put<Aluno>(`${this.baseUrl}` + '/' + aluno.id, aluno);
+    }
+
     listar(): Observable<Aluno[]>{
         return this.http.get<Aluno[]>(`${this.baseUrl}`);
     }
@@ -34,5 +38,13 @@ export class AlunoService {
 
     buscaPorId(): Observable<Aluno>{
         return this.http.get<Aluno>(`${this.baseUrl}` + '/1');
+    }
+
+    buscaPorIdEditarAluno(id): Observable<Aluno>{
+        return this.http.get<Aluno>(`${this.baseUrl}` + '/' + id);
+    }
+
+    deletar(id){
+        return this.http.delete(`${this.baseUrl}` + '/' + id)
     }
 }

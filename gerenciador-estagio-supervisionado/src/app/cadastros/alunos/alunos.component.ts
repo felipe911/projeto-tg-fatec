@@ -17,6 +17,7 @@ export class AlunosComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private alunoService: AlunoService, private modalService: BsModalService) { }
 
   titulo: String = 'Cadastrar Aluno';
+  btnSubmit: String = 'Salvar';
   aluno = new Aluno();
   modalPosReq: BsModalRef;
   mensagemPosReq: String;
@@ -35,21 +36,37 @@ export class AlunosComponent implements OnInit {
     if(this.verificaCamposObrigatorios()){
       if(this.verificaRa()){
 
-        this.alunoService.salvar(this.aluno).subscribe(
-        
-          sucess => {
-            this.mensagemPosReq = 'Aluno cadastrado com sucesso.'
-            this.modalPosRequisicao(template);
-            
-            form.reset();
-            this.aluno = new Aluno();
-            
-          },
-          err => {
-            this.mensagemPosReq = err.error.message;
-            this.modalPosRequisicao(template);
-          });
-        } else{
+        if(this.btnSubmit == "Salvar"){
+          this.alunoService.salvar(this.aluno).subscribe(
+          
+              sucess => {
+                this.mensagemPosReq = 'Aluno cadastrado com sucesso.'
+                this.modalPosRequisicao(template);
+                
+                form.reset();
+                this.aluno = new Aluno();
+                
+              },
+              err => {
+                this.mensagemPosReq = err.error.message;
+                this.modalPosRequisicao(template);
+              });
+          } else {
+
+            this.alunoService.atualizar(this.aluno).subscribe(
+              sucess => {
+                this.mensagemPosReq = 'Aluno Alterado com sucesso.'
+                this.modalPosRequisicao(template);
+              },
+              err => {
+                this.mensagemPosReq = err.error.message;
+                this.modalPosRequisicao(template);
+              }
+            )
+
+
+
+        }} else{
           this.mensagemPosReq = 'O RA precisa de no mínimo 13 números.'
           this.modalPosRequisicao(template);
       }
@@ -86,10 +103,25 @@ export class AlunosComponent implements OnInit {
   }
 
   ngOnInit() {
-    const id = this.activatedRoute.snapshot.params.id;
-    if(id){
-      this.titulo = 'Editar Aluno';
-    }
+
+    this.activatedRoute.params.subscribe(
+      (params: any) => {
+        const id = params['id'];
+        if(id){
+          this.titulo = 'Editar Aluno';
+          this.btnSubmit = "Atualizar";
+          this.alunoService.buscaPorIdEditarAluno(id).subscribe(
+
+            aluno => {
+              this.aluno = aluno;
+            },
+            error =>{
+              alert('Erro na Requisição');
+            }
+          )
+        }
+      }
+    );
   }
 
 }

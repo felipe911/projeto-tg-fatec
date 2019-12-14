@@ -21,51 +21,18 @@
       <table class="table table-bordered">
         <thead class="alinhamento">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">RA</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Curso</th>
-            <th scope="col">Relatórios</th>
+            <th *ngFor="let cabecalho of cabecalhoElementos" scope="col">{{ cabecalho }}</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>0030481521009</td>
-            <td>Felipe Augusto de Oliveira</td>
-            <td>ADS</td>
+          <tr *ngFor="let entrega of entregas">
+              <td> {{ entrega.estagio.aluno.ra }}</td>
+              <td> {{ entrega.estagio.aluno.nome }}</td>
+              <td> {{ entrega.estagio.aluno.curso }}</td>
             <td style="text-align: center">
               <a id="visualizar" title="Visualizar" (click)="openModalVisualizarRelatorios(modalVisualizarRelatorios)"
                 class="fa fa-eye"></a>
             </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
           </tr>
         </tbody>
       </table>

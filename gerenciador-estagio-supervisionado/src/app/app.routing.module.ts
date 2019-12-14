@@ -23,7 +23,7 @@ const rotas: Routes = [
     { path: '' , component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'cadastrar/aluno', component: AlunosComponent, canActivate: [AuthGuard] },
-    { path: 'editar/aluno/:id', component: AlunosComponent, canActivate: [AuthGuard] },
+    { path: 'aluno/editar/:id', component: AlunosComponent, canActivate: [AuthGuard] },
     { path: 'cadastrar/empresa', component: EmpresasComponent, canActivate: [AuthGuard] },
     { path: 'editar/empresa/:id', component: EmpresasComponent, canActivate: [AuthGuard] },
     { path: 'consultar/alunos', component: AlunoPesquisaDatatableComponent, canActivate: [AuthGuard] },

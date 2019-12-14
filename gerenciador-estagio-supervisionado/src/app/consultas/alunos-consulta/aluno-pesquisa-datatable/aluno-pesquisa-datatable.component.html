@@ -103,6 +103,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let aluno of alunos">
+        <td> {{ aluno.id }}</td>
         <td> {{ aluno.nome }}</td>
         <td> {{ aluno.ra }}</td>
         <td> {{ aluno.curso }} </td>
@@ -111,8 +112,8 @@
         <td> {{ aluno.dataVestibular | date: 'dd/MM/yyyy' }}</td>
         <td style="text-align: center">
           <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar)" class="fa fa-eye"></a>
-          <a id="editar" title="Editar" (click)="editarAluno()" class="fa fa-edit" style="padding-left: 15px"></a>
-          <a id="excluir" title="Excluir" (click)="openModalConfirm(modalConfirm)" class="fa fa-trash" style="padding-left: 15px"></a>
+          <a id="editar" title="Editar" (click)="editarAluno(aluno.id)" class="fa fa-edit" style="padding-left: 15px"></a>
+          <a id="excluir" title="Excluir" (click)="openModalConfirm(modalConfirm, aluno.id)" class="fa fa-trash" style="padding-left: 15px"></a>
         </td>
       </tr>
     </tbody>
@@ -134,8 +135,9 @@
 
 <ng-template #modalConfirm>
   <div class="modal-body text-center">
-    <p>Tem certeza que deseja excluir este registro ?</p>
-    <button type="button" class="btn btn-danger" (click)="confirm()">Sim</button>
-    <button type="button" class="btn btn-danger" (click)="decline()" style="margin-left: 10px">Não</button>
+    <p>{{ mensagemModal }}</p>
+    <button type="button" class="btn btn-danger" (click)="confirmarExclusao()" *ngIf="btnSim">Sim</button>
+    <button type="button" class="btn btn-danger" (click)="cancelarExclusao()" *ngIf="btnNao" style="margin-left: 10px">Não</button>
+    <button type="button" class="btn btn-danger" (click)="cancelarExclusao()" *ngIf="btnOk" style="margin-top:10px; width: 100px">Ok</button>
   </div>
 </ng-template>
