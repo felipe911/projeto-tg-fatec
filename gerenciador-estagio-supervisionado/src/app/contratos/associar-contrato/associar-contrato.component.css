@@ -1,4 +1,4 @@
-h1{
+h1, h3{
     margin-bottom: 20px;
 }
 
@@ -7,10 +7,19 @@ h1{
     padding: 30px;
 }
 
-#btn-salvar{
-    float: right;
-    margin-top: 10px;
+#form-aluno, #form-empresa, #form-associar{
+    border: 1px solid #ced4da;
+    padding: 30px;
+}
+
+#btn-buscar{
+    margin-top: 25px;
     padding: 10px 30px 10px 30px;
+}
+
+#btn-salvar{
+    padding: 10px 30px 10px 30px;
+    margin: 0 0 0 10px;
 }
 
 .titulo{
@@ -35,6 +44,11 @@ h1{
     margin-bottom: 10px;
 }
 
+.bloco-centro{
+    border: 1px solid #ced4da;
+    padding: 30px;
+}
+
 #btn-salvar{
     padding: 10px 30px 10px 30px;
     margin: 0 0 0 10px;
@@ -42,6 +56,14 @@ h1{
 
 .espacamento-top{
     margin-top: 10px;
+}
+
+.espacamento{
+    margin-left: 10px;
+}
+
+.align-center{
+    text-align: center;
 }
 
 /* Sobrescrita Bootstrap */

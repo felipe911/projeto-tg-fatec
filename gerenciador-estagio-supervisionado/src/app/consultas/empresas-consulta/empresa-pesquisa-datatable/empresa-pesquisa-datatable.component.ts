@@ -13,6 +13,8 @@ export class EmpresaPesquisaDatatableComponent implements OnInit {
 
   constructor(private modalService: BsModalService, private router: Router, private empresaService: EmpresaService) { }
 
+  cabecalhoElementos = ['Id', 'Razão Social', 'Convênio até', 'Cidade', 'Qtd. Estagiários Ativos', 'Ações'];
+  
   idSelecionado: number;
   modalConfirm: BsModalRef;
   modalVis: BsModalRef;
@@ -25,7 +27,6 @@ export class EmpresaPesquisaDatatableComponent implements OnInit {
 
   empresas: Empresa[];
 
-  cabecalhoElementos = ['Id', 'Razão Social', 'Convênio até', 'Cidade', 'Qtd. Estagiários Ativos', 'Ações'];
 
   ngOnInit() {
 

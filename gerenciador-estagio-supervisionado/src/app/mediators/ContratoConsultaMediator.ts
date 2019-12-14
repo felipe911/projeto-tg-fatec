@@ -1,5 +1,6 @@
 export class ContratoConsultaMediator{
 
+    private contratoId: number;
     private nomeAluno: String;
     private empresaAssociada: String;
     private curso: String;

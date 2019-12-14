@@ -7,12 +7,152 @@
 
   <div class="row row-margin">
     <div class="col-md-6">
-      <app-associar-aluno #associaAluno></app-associar-aluno>
+      <form id="form-aluno" #associarAlunoForm ="ngForm">
+        <div class="row">
+            <div class="col-md-12">
+              <h3>Aluno</h3>
+            </div>
+          </div>
+          <div class="row row-margin">
+        
+            <div class="col-md-8">
+              <label for="input-ra">RA:</label>
+              <input type="text" name="ra" [(ngModel)]="aluno.ra" class="form-control" id="input-ra"
+              onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" maxlength="13">
+            </div>
+        
+            <div class="col-md-4">
+              <button id="btn-buscar" type="button" class="btn btn-secondary btn-full-width-center" (click)="buscaPorRa(modalPosRequisicao)">Buscar</button>
+            </div>
+          </div>
+            <div class="col-md-12 bloco-centro">
+              <div class="row">
+              <div class="col-md-6">
+                <label class="label">Nome:</label>
+                <label id="label-nome" name="nome" [(ngModel)]="aluno.nome" class="label espacamento" ngDefaultControl>{{ aluno.nome }}</label>
+              </div>
+        
+              <div class="col-md-6">
+                <label class="label">Semestre:</label>
+                <label id="label-semestre" name="semestre" [(ngModel)]="aluno.semestre" class="label espacamento" ngDefaultControl>{{ aluno.semestre }} </label>
+              </div>
+        
+              <div class="col-md-6">
+                <label class="label">Curso:</label>
+                <label id="label-curso" name="curso" [(ngModel)]="aluno.curso" class="label espacamento" ngDefaultControl>{{ aluno.curso }}</label>
+              </div>
+        
+              <div class="col-md-6">
+                <label class="label">Período:</label>
+                <label id="label-periodo" name="periodo" [(ngModel)]="aluno.periodo" class="label espacamento" ngDefaultControl>{{ aluno.periodo }}</label>
+              </div>
+              </div>
+            </div>
+        </form>
     </div>
 
     <div class="col-md-6">
-        <app-associar-empresa #associaEmpresa></app-associar-empresa>
+      <form id="form-empresa" #associarEmpresaForm ="ngForm">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Empresa</h3>
+            </div>
+        </div>
+        <div class="row row-margin">
+    
+            <div class="col-md-8">
+                <label for="razao" class="label-block">Razão Social:</label>
+                <select id="empresa" name="empresa" [(ngModel)]="empresa.razaoSocial" class="form-control">
+                    <option *ngFor="let empresa of empresas" [value]="empresa.razaoSocial">{{ empresa.razaoSocial }} </option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <button id="btn-buscar" type="button" class="btn btn-secondary btn-full-width-center" (click)="buscaPorRazaoSocial()">Buscar</button>
+            </div>
+        </div>
+    
+        <div class="col-md-12 bloco-centro">
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="label">Cidade:</label>
+                    <label id="label-cidade" name="curso" [(ngModel)]="empresa.cidade" class="label espacamento" ngDefaultControl>{{ empresa.cidade }}</label>
+                </div>
+                <div class="col-md-12">
+                    <label class="label">Telefone:</label>
+                    <label id="label-telefone" name="curso" [(ngModel)]="empresa.telefone" class="label espacamento" ngDefaultControl>{{ empresa.telefone }}</label>
+                </div>
+            </div>
+        </div>
+    </form>
     </div>
   </div>
-  <app-associar-contrato-estagio [alunoSelecionado]="associaAluno.aluno" [empresaSelecionada]="associaEmpresa.empresa"></app-associar-contrato-estagio>
+  <form #associarContratoForm ="ngForm" id="form-associar">
+
+    <div class="row">
+      <div class="col-md-3">
+        <label for="input-data-inicio">Data Início:</label>
+        <input name="data-inicio" [(ngModel)]="contrato.dataInicio" type="date" class="form-control" id="input-data-inicio">
+      </div>
+  
+      <div class="col-md-3">
+        <label for="input-data-fim">Data Fim:</label>
+        <input name="data-fim" [(ngModel)]="contrato.dataFim" type="date" class="form-control" id="input-data-fim">
+      </div>
+  
+      <div class="col-md-3">
+        <label for="input-prorrogado">Prorrogado até:</label>
+        <input name="prorrogado-ate" [(ngModel)]="contrato.prorrogadoAte" type="date" class="form-control" id="input-prorrogado">
+      </div>
+  
+      <div class="col-md-3">
+        <label for="input-agente-integracao">Agente de Integração:</label>
+        <input name="agente-integracao" [(ngModel)]="contrato.agenteIntegracao" type="text" class="form-control" id="input-agente-integracao">
+      </div>
+  
+    <div class="col-md-3 espacamento-top">
+      <label for="input-valor-bolsa">Valor da Bolsa:</label>
+      <input name="valor-bolsa" [(ngModel)]="contrato.valorBolsa" type="number" class="form-control" id="input-valor-bolsa" style="margin-bottom: 20px">
+    </div>
+  
+    <div class="col-md-3 espacamento-top">
+      <label for="input-supervisor-estagio" class="label-block">Supervisor Estágio:</label>
+      <input name="supervisor-estagio" [(ngModel)]="contrato.supervisorEstagio" type="text" class="form-control" id="input-supervisor-estagio">
+    </div>
+  
+    <div class="col-md-3 espacamento-top" >
+      <label for="cargo-supervisor-estagio" class="label-block">Cargo Supervisor Estágio:</label>
+      <input name="cargo-supervisor-estagio" [(ngModel)]="contrato.cargoSupervisorEstagio" type="text" class="form-control" id="cargo-supervisor-estagio">
+    </div>
+  
+    <div class="col-md-3 espacamento-top">
+      <label for="input-email" class="label-block">E-mail:</label>
+      <input name="email" [(ngModel)]="contrato.emailSupervisor" type="text" class="form-control" id="input-email" style="margin-bottom:20px;">
+    </div>
+  
+    <div class="col-md-12">
+      <label for="input-obs" class="label-block">Observação:</label>
+      <input name="observacao" [(ngModel)]="contrato.observacao" type="text" class="form-control" id="input-obs">
+    </div>
+  </div>
+  </form>
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-end espacamento-top">
+        <button id="btn-limpar" type="button" class="btn btn-secondary" (click)="limpar(associarContratoForm, associarEmpresaForm, associarAlunoForm)">Limpar</button>
+        <button id="btn-salvar" type="button" class="btn btn-danger" (click)="geraContrato(modalPosRequisicao, associarContratoForm, associarEmpresaForm, associarAlunoForm)">{{ btnSubmit }}</button>
+    </div>
+  </div>
 </div>
+
+<ng-template #modalPosRequisicao>
+  <div class="modal-body">
+    <div class="row row-margin">
+      <div class="col-md-12">
+        <h4 class="modal-title align-center">{{ mensagemPosReq }}</h4>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <button id="btnOK" type="button" class="btn btn-danger" (click)="modalPosReq.hide()" style="margin-top:10px; width: 100px">Ok</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

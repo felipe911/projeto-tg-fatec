@@ -1,7 +1,7 @@
 <div class="container" style="margin-top:150px">
   <div class="row">
     <div class="col-md-9">
-      <p class="titulo">Consultar {{ titulo }}</p>
+      <p class="titulo">{{ titulo }}</p>
     </div>
   </div>
   <form id="form-cadastro">
@@ -107,9 +107,9 @@
         <td>{{ contrato.agenteIntegracao }}</td>
         <td>{{ contrato.supervisor }}</td>
         <td style="text-align: center">
-            <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar)" class="fa fa-eye"></a>
-            <a id="editar" title="Editar" (click)="editarContrato()" class="fa fa-edit" style="padding-left: 10px"></a>
-            <a id="excluir" title="Excluir" (click)="openModalConfirm(modalConfirm)" class="fa fa-trash" style="padding-left: 10px"></a>
+            <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar, contrato.contratoId)" class="fa fa-eye"></a>
+            <a id="editar" title="Editar" (click)="editarContrato(contrato.contratoId)" class="fa fa-edit" style="padding-left: 10px"></a>
+            <a id="excluir" title="Excluir" (click)="openModalConfirm(modalConfirm, contrato.contratoId)" class="fa fa-trash" style="padding-left: 10px"></a>
         </td>
       </tr>
    </tbody>
@@ -124,14 +124,108 @@
   </button>
 </div>
 <div class="modal-body">
-  <app-visualizar-contrato></app-visualizar-contrato>
+  <form id="form-contrato-visualizacao">
+    <div class="row row-margin">
+  
+      <div class="col-md-12 identificacao-titulo">
+        Aluno
+      </div>
+  
+      <div class="col-md-4">
+        <label for="ra" class="bold">RA:</label>
+        <label name="ra" id="ra" class="label-block" [(ngModel)]="aluno.ra" style="margin-bottom: 20px">{{ aluno.ra }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="nome" class="bold">Nome:</label>
+        <label name="nome" id="nome" class="label-block" [(ngModel)]="aluno.nome">{{ aluno.nome }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="curso" class="bold">Curso:</label>
+        <label name="curso" id="curso" class="label-block" [(ngModel)]="aluno.curso">{{ aluno.curso }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="semestre" class="bold">Semestre:</label>
+        <label name="semestre" id="semestre" class="label-block" style="margin-bottom: 20px" [(ngModel)]="aluno.semestre">{{ aluno.semestre }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="periodo" class="bold">Período:</label>
+        <label name="periodo" id="periodo" class="label-block" [(ngModel)]="aluno.periodo">{{ aluno.periodo }}</label>
+      </div>
+  
+      <div class="col-md-12 identificacao-titulo">
+        Empresa
+      </div>
+  
+      <div class="col-md-4">
+        <label for="razao" class="bold">Razão Social:</label>
+        <label name="razao" id="razao" class="label-block" [(ngModel)]="empresa.razaoSocial">{{ empresa.razaoSocial }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="contato" class="bold">Contato:</label>
+        <label name="contato" id="contato" class="label-block" [(ngModel)]="empresa.contatoResponsavel">{{ empresa.contatoResponsavel }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="telefone" class="bold">Telefone:</label>
+        <label name="telefone" id="telefone" class="label-block" [(ngModel)]="empresa.telefone">{{ empresa.telefone }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="email" class="bold">E-Mail:</label>
+        <label name="email" id="email" class="label-block" [(ngModel)]="empresa.email">{{ empresa.email }}</label>
+      </div>
+  
+      <div class="col-md-12 identificacao-border">Dados contrato</div> 
+  
+      <div class="col-md-4">
+        <label for="dtInicio" class="bold">Data Início:</label>
+        <label name="dtInicio" id="dtInicio" class="label-block" [(ngModel)]="contrato.dataInicio">{{ contrato.dataInicio | date: 'dd/MM/yyyy' }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="dtFim" class="bold">Data Fim:</label>
+        <label name="dtFim" id="dtFim" class="label-block" [(ngModel)]="contrato.dataFim">{{ contrato.dataFim | date: 'dd/MM/yyyy' }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="agente" class="bold">Agente de integração:</label>
+        <label name="agente" id="agente" class="label-block" [(ngModel)]="contrato.agenteIntegracao">{{ contrato.agenteIntegracao }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="valorBolsa" class="bold">Valor da Bolsa:</label>
+        <label name="valorBolsa" id="valorBolsa" class="label-block" [(ngModel)]="contrato.valorBolsa">R$: {{ contrato.valorBolsa }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="supervisor" class="bold">Supervisor:</label>
+        <label name="supervisor" id="supervisor" class="label-block" [(ngModel)]="contrato.supervisorEstagio">{{ contrato.supervisorEstagio }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="cargoSupervisor" class="bold">Cargo Supervisor:</label>
+        <label name="cargoSupervisor" id="cargoSupervisor" class="label-block" [(ngModel)]="contrato.cargoSupervisor">{{ contrato.cargoSupervisorEstagio }}</label>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="observacao" class="bold">Observação:</label>
+        <label name="observacao" id="observacao" class="label-block" [(ngModel)]="contrato.observacao">{{ contrato.observacao }}</label>
+      </div>
+    </div>
+  </form>
 </div>
 </ng-template>
 
 <ng-template #modalConfirm>
 <div class="modal-body text-center">
-  <p>Tem certeza que deseja excluir este registro ?</p>
-  <button type="button" class="btn btn-danger" (click)="confirm()">Sim</button>
-  <button type="button" class="btn btn-danger" (click)="decline()" style="margin-left: 10px">Não</button>
+  <p>{{ mensagemModal }}</p>
+  <button type="button" class="btn btn-danger" (click)="confirmarExclusao()" *ngIf="btnSim">Sim</button>
+  <button type="button" class="btn btn-danger" (click)="cancelarExclusao()" *ngIf="btnNao" style="margin-left: 10px">Não</button>
+  <button type="button" class="btn btn-danger" (click)="cancelarExclusao()" *ngIf="btnOk" style="margin-top:10px; width: 100px">Ok</button>
 </div>
 </ng-template>
