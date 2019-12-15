@@ -3,6 +3,7 @@ import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 import { Router } from '@angular/router';
 import { AlunoService } from 'src/app/service/aluno.service';
 import { Aluno } from 'src/app/model/Aluno';
+import { Estagio } from 'src/app/model/Estagio';
 
 @Component({
   selector: 'app-aluno-pesquisa-datatable',
@@ -24,8 +25,10 @@ export class AlunoPesquisaDatatableComponent implements OnInit {
   modalVis: BsModalRef;
   modalConfirm: BsModalRef;
   alunos: Aluno[];
+  aluno: Aluno = new Aluno();
+  estagios: Estagio[];
 
-  cabecalhoElementos = ['Id','Nome', 'RA', 'Curso', 'Semestre', 'Período', 'Data Vestibular', 'Ações'];
+  cabecalhoElementos = ['Nome', 'RA', 'Curso', 'Semestre', 'Período', 'Data Vestibular', 'Ações'];
 
   ngOnInit(){
     this.listarAlunos();
@@ -38,9 +41,25 @@ export class AlunoPesquisaDatatableComponent implements OnInit {
       });
   }
 
-  openModalVisualizar(template: TemplateRef<any>) {
+  openModalVisualizar(template: TemplateRef<any>, id) {
     const config: ModalOptions = { class: 'modal-lg' }
     this.modalVis = this.modalService.show(template, config);
+
+    this.buscaDadosAluno(id);
+  }
+
+  buscaDadosAluno(id){
+
+    this.alunoService.buscarDadosAlunoEstagio(id).subscribe(
+
+      dados => {
+        this.estagios = dados.estagios;
+        this.aluno = dados.aluno;
+      },
+      error =>{
+        alert('Erro na Requisição');
+      }
+    )
   }
 
   openModalConfirm(template: TemplateRef<any>, id: number) {

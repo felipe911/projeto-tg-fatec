@@ -6,7 +6,7 @@ import { Estagio } from "../model/Estagio";
 export class EntregaRelatorioMediator{
 
     estagio: Estagio;
-    relatorioFinal: RelatorioFinal[];
+    relatorioFinal: RelatorioFinal;
     relatorioParcial: RelatorioParcial[];
     relatorioAtividade: RelatorioAtividade[];
 

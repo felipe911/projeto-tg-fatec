@@ -26,11 +26,11 @@
         </thead>
         <tbody>
           <tr *ngFor="let entrega of entregas">
-              <td> {{ entrega.estagio.aluno.ra }}</td>
               <td> {{ entrega.estagio.aluno.nome }}</td>
+              <td> {{ entrega.estagio.aluno.ra }}</td>
               <td> {{ entrega.estagio.aluno.curso }}</td>
             <td style="text-align: center">
-              <a id="visualizar" title="Visualizar" (click)="openModalVisualizarRelatorios(modalVisualizarRelatorios)"
+              <a id="visualizar" title="Visualizar" (click)="openModalVisualizarRelatorios(modalVisualizarRelatorios, entrega.estagio.aluno.id)"
                 class="fa fa-eye"></a>
             </td>
           </tr>
@@ -54,118 +54,96 @@
       </div>
 
       <div class="col-md-3">
-        <label for="ra" class="bold">RA:</label>
-        <label id="ra" class="label-block" style="margin-bottom: 20px">0030481521009</label>
+        <label for="nome" class="bold">Aluno:</label>
+        <label name="nome" id="nome" class="label-block">{{ aluno.nome }}</label>
       </div>
 
       <div class="col-md-3">
-        <label for="nome" class="bold">Aluno:</label>
-        <label id="nome" class="label-block">Felipe Augusto de Oliveira</label>
+        <label for="ra" class="bold">RA:</label>
+        <label name="ra" id="ra" class="label-block" style="margin-bottom: 20px">{{ aluno.ra }}</label>
       </div>
+
 
       <div class="col-md-3">
         <label for="curso" class="bold">Curso:</label>
-        <label id="curso" class="label-block">ADS</label>
+        <label name="curso" id="curso" class="label-block">{{ aluno.curso }}</label>
       </div>
 
       <div class="col-md-3">
-        <label for="semestre" class="bold">Empresa:</label>
-        <label id="semestre" class="label-block" style="margin-bottom: 20px">Ventron</label>
+        <label for="razaoSocial" class="bold">Empresa:</label>
+        <label name="razaoSocial" id="razaoSocial" class="label-block" style="margin-bottom: 20px">{{ empresa.razaoSocial }}</label>
       </div>
 
-      <div class="col-md-4">
-        <label for="periodo" class="bold">Período de Avaliação:</label>
-        <label id="periodo" class="label-block">01/01/2018 até 01/06/2018</label>
+      <div *ngFor="let relatorioParcial of relatoriosParciais">
+        <div class="col-md-12">
+          <label for="periodo" class="bold" style="margin-right: 7px;">Período de Avaliação:</label>
+          <label id="periodo" >{{ relatorioParcial.periodoDe | date: 'dd/MM/yyyy' }} até {{ relatorioParcial.periodoAte | date: 'dd/MM/yyyy' }}</label>
+          
+          <button style="margin-left: 20px;" id="btn-buscar" type="button" class="btn btn-danger" title="Visualizar Relatório Parcial"
+            (click)="visualizarRelatorioParcial()">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="col-md-12">
+          <label for="periodo" class="bold">Este relatório foi entregue ?</label>
+          <input type="radio" class="check" id="acordo-plano-sim" name="plano1">Sim
+          <input type="radio" class="check" id="acordo-plano-nao" name="plano1">Não
+        </div>
       </div>
 
-      <div class="col-md-4">
-        <label for="periodo" class="bold">Este relatório foi entregue ?</label>
-        <input type="radio" class="check" id="acordo-plano-sim" name="plano1">Sim
-        <input type="radio" class="check" id="acordo-plano-nao" name="plano1">Não
-      </div>
-      <div class="col-md-4" style="margin-top: 20px;">
-        <button id="btn-buscar" type="button" class="btn btn-danger" title="Visualizar Relatório Parcial"
-          (click)="visualizarRelatorioParcial()">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
+      <div *ngIf="relatoriosParciais.length == 0">
+        <p style="color: red; margin-left: 15px;" class="bold">Nenhum Relatório Parcial registrado para este Aluno</p>
       </div>
 
-      <div class="col-md-4">
-        <label for="periodo" class="bold">Período de Avaliação:</label>
-        <label id="periodo" class="label-block">01/06/2018 até 01/12/2018</label>
-      </div>
-
-      <div class="col-md-4">
-        <label for="periodo" class="bold">Este relatório foi entregue ?</label>
-        <input type="radio" class="check" id="acordo-plano-sim" name="plano2">Sim
-        <input type="radio" class="check" id="acordo-plano-nao" name="plano2">Não
-      </div>
-      <div class="col-md-4" style="margin-top: 20px;">
-        <button id="btn-buscar" type="button" class="btn btn-danger" title="Visualizar Relatório Parcial"
-          (click)="visualizarRelatorioParcial()">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-      </div>
-
-      <div class="col-md-4">
-        <label for="periodo" class="bold">Período de Avaliação:</label>
-        <label id="periodo" class="label-block">01/01/2019 até 01/06/2019</label>
-      </div>
-
-      <div class="col-md-4">
-        <label for="periodo" class="bold">Este relatório foi entregue ?</label>
-        <input type="radio" class="check" id="acordo-plano-sim" name="plano3">Sim
-        <input type="radio" class="check" id="acordo-plano-nao" name="plano3">Não
-      </div>
-      <div class="col-md-4" style="margin-top: 20px;">
-        <button id="btn-buscar" type="button" class="btn btn-danger" title="Visualizar Relatório Parcial"
-          (click)="visualizarRelatorioParcial()">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-      </div>
-
+      
       <div class="identificacao-titulo" style="margin-top: 10px;">
         Relatório Final
       </div>
+      
+      <div class="modal-body">
+        <div *ngIf="relatorioFinal != null" class="row row-margin">
+          <div class="col-md-12">
+            <label for="tipo-atividade" class="bold">Tipo de Atividade desenvolvida e forma de comprovação:</label>
+            <label id="tipo-atividade" class="label-block" style="margin-bottom: 20px">{{ relatorioFinal.tipoAtividade }}</label>
+          </div>
 
-      <div class="col-md-12">
-        <label for="tipo-atividade" class="bold">Tipo de Atividade desenvolida e forma de comprovação:</label>
-        <label id="tipo-atividade" class="label-block" style="margin-bottom: 20px">Como Estagiário, Realizado no setor
-          privado (indústria/comércio/serviços)</label>
+          <div class="col-md-3">
+            <label for="local" class="bold">Local:</label>
+            <label id="local" class="label-block">{{ relatorioFinal.local }}</label>
+          </div>
+
+          <div class="col-md-3">
+            <label for="de" class="bold">De:</label>
+            <label id="de" class="label-block">{{ relatorioFinal.periodoDe | date: 'dd/MM/yyyy' }}</label>
+          </div>
+
+          <div class="col-md-3">
+            <label for="ate" class="bold">Até:</label>
+            <label id="ate" class="label-block">{{ relatorioFinal.periodoAte | date: 'dd/MM/yyyy' }}</label>
+          </div>
+
+          <div class="col-md-3">
+            <label for="area" class="bold">Área da Atividade:</label>
+            <label id="area" class="label-block" style="margin-bottom: 20px">{{ relatorioFinal.areaAtividade }}</label>
+          </div>
+
+          <div class="col-md-4">
+            <label for="horas" class="bold">Total de Horas Cumpridas:</label>
+            <label id="horas" class="label-block" style="margin-bottom: 20px">{{ relatorioFinal.totalHorasCumpridas }}</label>
+          </div>
+
+          <div class="col-md-4">
+            <label for="periodo" class="bold">Este relatório foi entregue ?</label>
+            <input type="radio" class="check" id="acordo-plano-sim" name="plano4">Sim
+            <input type="radio" class="check" id="acordo-plano-nao" name="plano4">Não
+          </div>
+        </div>
+        <div *ngIf="relatorioFinal == null">
+          <p style="color: red; margin-left: 15px;" class="bold">Relatório Final não registrado</p>
+        </div>
       </div>
-
-      <div class="col-md-3">
-        <label for="local" class="bold">Local:</label>
-        <label id="local" class="label-block">Ventron</label>
-      </div>
-
-      <div class="col-md-3">
-        <label for="de" class="bold">De:</label>
-        <label id="de" class="label-block">01/01/2018</label>
-      </div>
-
-      <div class="col-md-3">
-        <label for="ate" class="bold">Até:</label>
-        <label id="ate" class="label-block">01/12/2019</label>
-      </div>
-
-      <div class="col-md-3">
-        <label for="area" class="bold">Área da Atividade:</label>
-        <label id="area" class="label-block" style="margin-bottom: 20px">Desenvolvimento</label>
-      </div>
-
-      <div class="col-md-4">
-        <label for="horas" class="bold">Total de Horas Cumpridas:</label>
-        <label id="horas" class="label-block" style="margin-bottom: 20px">200 horas</label>
-      </div>
-
-      <div class="col-md-4">
-        <label for="periodo" class="bold">Este relatório foi entregue ?</label>
-        <input type="radio" class="check" id="acordo-plano-sim" name="plano4">Sim
-        <input type="radio" class="check" id="acordo-plano-nao" name="plano4">Não
-      </div>
-
-      <div class="col-md-12 d-flex justify-content-end">
+      <div *ngIf="relatorioFinal != null || relatorioParcial.length > 0" class="col-md-12 d-flex justify-content-end">
           <button id="btn-salvar" type="button" class="btn btn-danger" title="Salvar">Salvar</button>
       </div>
 

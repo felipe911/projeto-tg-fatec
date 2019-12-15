@@ -103,7 +103,6 @@
     </thead>
     <tbody>
       <tr *ngFor="let aluno of alunos">
-        <td> {{ aluno.id }}</td>
         <td> {{ aluno.nome }}</td>
         <td> {{ aluno.ra }}</td>
         <td> {{ aluno.curso }} </td>
@@ -111,7 +110,7 @@
         <td> {{ aluno.periodo }} </td>
         <td> {{ aluno.dataVestibular | date: 'dd/MM/yyyy' }}</td>
         <td style="text-align: center">
-          <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar)" class="fa fa-eye"></a>
+          <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar, aluno.id)" class="fa fa-eye"></a>
           <a id="editar" title="Editar" (click)="editarAluno(aluno.id)" class="fa fa-edit" style="padding-left: 15px"></a>
           <a id="excluir" title="Excluir" (click)="openModalConfirm(modalConfirm, aluno.id)" class="fa fa-trash" style="padding-left: 15px"></a>
         </td>
@@ -128,8 +127,105 @@
     </button>
   </div>
   <div class="modal-body">
-      <app-visualizar-dados-aluno></app-visualizar-dados-aluno>
-      <app-visualizar-estagios-aluno></app-visualizar-estagios-aluno>
+    <form id="form-dados-aluno">
+      <div class="row row-margin">
+    
+        <div class="col-md-4">
+          <label for="ra" class="bold">RA:</label>
+          <label name="ra" id="ra" class="label-block" style="margin-bottom: 20px">{{ aluno.ra }}</label>
+        </div>
+    
+        <div class="col-md-4">
+          <label for="nome" class="bold">Nome:</label>
+          <label name="nome" id="nome" class="label-block">{{ aluno.nome }}</label>
+        </div>
+    
+        <div class="col-md-4">
+          <label for="curso" class="bold">Curso:</label>
+          <label name="curso" id="curso" class="label-block">{{ aluno.curso }}</label>
+        </div>
+    
+        <div class="col-md-4">
+          <label for="semestre" class="bold">Semestre:</label>
+          <label name="semestre" id="semestre" class="label-block" style="margin-bottom: 20px">{{ aluno.semestre }}</label>
+        </div>
+    
+        <div class="col-md-4">
+          <label for="periodo" class="bold">Período:</label>
+          <label name="periodo" id="periodo" class="label-block">{{ aluno.periodo }}</label>
+        </div>
+    
+        <div class="col-md-4">
+          <label for="email" class="bold">E-Mail:</label>
+          <label  name="email" id="email" class="label-block">{{ aluno.email }}</label>
+        </div>
+    
+        <div class="col-md-4">
+          <label for="telefone" class="bold">Telefone:</label>
+          <label name="telefone" id="telefone" class="label-block">{{ aluno.telefone }}</label>
+        </div>
+    
+        <div class="col-md-4">
+          <label for="sexo" class="bold">Sexo:</label>
+          <label name="sexo" id="sexo" class="label-block">{{ aluno.sexo }}</label>
+        </div>
+    
+        <div class="col-md-4">
+          <label for="dtVestibular" class="bold">Data Vestibular:</label>
+          <label name="dataVestibular" id="dtVestibular" class="label-block">{{ aluno.dataVestibular | date: 'dd/MM/yyyy' }}</label>
+        </div>
+      </div>
+    </form>
+    <form id="form-dados-estagio">
+      <div class="row row-margin">
+        <div class="col-md-12 identificacao-border">Estágios</div>
+        <div class="col-md-12">
+          <div *ngFor="let estagio of estagios"  class="row row-margin">
+            <div class="col-md-3">
+              <label for="empresa" class="label-block bold">Empresa:</label>
+              <label id="empresa">{{ estagio.contrato.empresa.razaoSocial }}</label>
+            </div>
+            <div class="col-md-3">
+              <label for="dt-inicio" class="label-block bold">Data Início:</label>
+              <label id="dt-inicio">{{ estagio.contrato.dataInicio | date: 'dd/MM/yyyy' }}</label>
+            </div>
+            <div class="col-md-3">
+              <label for="dt-fim" class="label-block bold">Data Fim:</label>
+              <label id="dt-fim">{{ estagio.contrato.dataFim | date: 'dd/MM/yyyy' }}</label>
+            </div>
+            <div class="col-md-3">
+              <label for="supervisor" class="label-block bold">Supervisor de Estágio:</label>
+              <label id="supervisor">{{ estagio.contrato.supervisorEstagio }}</label>
+            </div>
+            <div class="col-md-3">
+              <label for="qtd-horas" class="label-block bold">Qtd. de Horas Registradas:</label>
+              <label id="qtd-horas">200</label>
+            </div>
+            <div class="col-md-3">
+              <label for="status-estagio" class="label-block bold">Status:</label>
+              <label id="status-estagio">{{ estagio.status }}</label>
+            </div>
+            <div class="col-md-12 d-flex justify-content-end">
+              <button id="btn-visualiza-atividades" type="button" class="btn btn-danger" style="margin-top:20px"
+                (click)="openModalVisualizar(modalVisualizarAtividades)">Visualizar
+                Atividades</button>
+            </div>
+          </div>
+    
+          <ng-template #modalVisualizarAtividades>
+            <div class="modal-header">
+              <h4 class="modal-title pull-left">Visualizar Atividades</h4>
+              <button type="button" class="close pull-right" aria-label="Close" (click)="modalVisuAtividades.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <app-visualizar-atividades></app-visualizar-atividades>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </form>
   </div>
 </ng-template>
 

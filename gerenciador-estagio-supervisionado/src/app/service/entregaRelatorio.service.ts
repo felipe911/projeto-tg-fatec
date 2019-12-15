@@ -17,4 +17,8 @@ export class EntregaRelatorioService {
     listar(): Observable<EntregaRelatorioMediator[]>{
         return this.http.get<EntregaRelatorioMediator[]>(`${this.baseUrl}`);
     }
+
+    listarEntregaRelatorioPorIdAluno(id): Observable<EntregaRelatorioMediator>{
+      return this.http.get<EntregaRelatorioMediator>(`${this.baseUrl}` + '/buscar-por-aluno/' + id);
+  }
 }

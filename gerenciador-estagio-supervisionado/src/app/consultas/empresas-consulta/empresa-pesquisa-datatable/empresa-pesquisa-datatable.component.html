@@ -62,7 +62,6 @@
     </tr>
     <tbody>
       <tr *ngFor="let empresa of empresas">
-        <td> {{ empresa.id }}</td>
         <td> {{ empresa.razaoSocial }}</td>
         <td> {{ empresa.prazoConvenio | date: 'dd/MM/yyyy' }} </td>
         <td> {{ empresa.cidade }} </td>
@@ -90,57 +89,57 @@
   
       <div class="col-md-4">
         <label for="razao" class="bold">Razão Social:</label>
-        <label name="razao" id="razao" class="label-block" style="margin-bottom: 20px" [(ngModel)]="empresa.razaoSocial" ngDefaultControl>{{ empresa.razaoSocial }}</label>
+        <label name="razao" id="razao" class="label-block" style="margin-bottom: 20px">{{ empresa.razaoSocial }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="contato" class="bold">Contato:</label>
-        <label name="contato" id="contato" class="label-block" [(ngModel)]="empresa.contatoResponsavel" ngDefaultControl>{{ empresa.contatoResponsavel }}</label>
+        <label name="contato" id="contato" class="label-block">{{ empresa.contatoResponsavel }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="prazo" class="bold">Prazo Convênio:</label>
-        <label name="prazoConvenio" id="prazo" class="label-block" [(ngModel)]="empresa.prazoConvenio" ngDefaultControl>{{ empresa.prazoConvenio | date: 'dd/MM/yyyy' }}</label>
+        <label name="prazoConvenio" id="prazo" class="label-block">{{ empresa.prazoConvenio | date: 'dd/MM/yyyy' }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="cep" class="bold">CEP:</label>
-        <label name="cep" id="cep" class="label-block" style="margin-bottom: 20px" [(ngModel)]="empresa.cep" ngDefaultControl>{{ empresa.cep }}</label>
+        <label name="cep" id="cep" class="label-block" style="margin-bottom: 20px">{{ empresa.cep }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="uf" class="bold">UF:</label>
-        <label name="uf" id="uf" class="label-block" [(ngModel)]="empresa.uf" ngDefaultControl>{{ empresa.uf }}</label>
+        <label name="uf" id="uf" class="label-block">{{ empresa.uf }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="cidade" class="bold">Cidade:</label>
-        <label name="cidade" id="cidade" class="label-block" [(ngModel)]="empresa.cidade" ngDefaultControl>{{ empresa.cidade }}</label>
+        <label name="cidade" id="cidade" class="label-block">{{ empresa.cidade }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="endereco" class="bold">Endereço:</label>
-        <label name="endereco" id="endereco" class="label-block" style="margin-bottom: 20px;" [(ngModel)]="empresa.endereco" ngDefaultControl>{{ empresa.endereco }}</label>
+        <label name="endereco" id="endereco" class="label-block" style="margin-bottom: 20px;">{{ empresa.endereco }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="bairro" class="bold">Bairro:</label>
-        <label name="bairro" id="bairro" class="label-block" [(ngModel)]="empresa.bairro" ngDefaultControl>{{ empresa.bairro }}</label>
+        <label name="bairro" id="bairro" class="label-block">{{ empresa.bairro }}</label>
       </div>
 
       <div class="col-md-4">
         <label for="numero" class="bold">Número:</label>
-        <label name="numero" id="numero" class="label-block" [(ngModel)]="empresa.numero" ngDefaultControl>{{ empresa.numero }}</label>
+        <label name="numero" id="numero" class="label-block">{{ empresa.numero }}</label>
       </div>
 
       <div class="col-md-4">
         <label for="telefone" class="bold">Telefone:</label>
-        <label name="telefone"  id="telefone" class="label-block" [(ngModel)]="empresa.telefone" ngDefaultControl>{{ empresa.telefone }}</label>
+        <label name="telefone"  id="telefone" class="label-block">{{ empresa.telefone }}</label>
       </div>
 
       <div class="col-md-4">
         <label for="email" class="bold">E-Mail:</label>
-        <label name="email" id="email" class="label-block" [(ngModel)]="empresa.email" ngDefaultControl>{{ empresa.email }}</label>
+        <label name="email" id="email" class="label-block">{{ empresa.email }}</label>
       </div>
     </div>
   </form>

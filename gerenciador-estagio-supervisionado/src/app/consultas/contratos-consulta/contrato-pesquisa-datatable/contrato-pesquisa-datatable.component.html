@@ -106,7 +106,7 @@
         <td>{{ contrato.status }}</td>
         <td>{{ contrato.agenteIntegracao }}</td>
         <td>{{ contrato.supervisor }}</td>
-        <td style="text-align: center">
+        <td style="text-align: center; width: 100px">
             <a id="visualizar" title="Visualizar" (click)="openModalVisualizar(modalVisualizar, contrato.contratoId)" class="fa fa-eye"></a>
             <a id="editar" title="Editar" (click)="editarContrato(contrato.contratoId)" class="fa fa-edit" style="padding-left: 10px"></a>
             <a id="excluir" title="Excluir" (click)="openModalConfirm(modalConfirm, contrato.contratoId)" class="fa fa-trash" style="padding-left: 10px"></a>
@@ -133,27 +133,27 @@
   
       <div class="col-md-4">
         <label for="ra" class="bold">RA:</label>
-        <label name="ra" id="ra" class="label-block" [(ngModel)]="aluno.ra" style="margin-bottom: 20px">{{ aluno.ra }}</label>
+        <label name="ra" id="ra" class="label-block" style="margin-bottom: 20px">{{ aluno.ra }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="nome" class="bold">Nome:</label>
-        <label name="nome" id="nome" class="label-block" [(ngModel)]="aluno.nome">{{ aluno.nome }}</label>
+        <label name="nome" id="nome" class="label-block">{{ aluno.nome }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="curso" class="bold">Curso:</label>
-        <label name="curso" id="curso" class="label-block" [(ngModel)]="aluno.curso">{{ aluno.curso }}</label>
+        <label name="curso" id="curso" class="label-block">{{ aluno.curso }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="semestre" class="bold">Semestre:</label>
-        <label name="semestre" id="semestre" class="label-block" style="margin-bottom: 20px" [(ngModel)]="aluno.semestre">{{ aluno.semestre }}</label>
+        <label name="semestre" id="semestre" class="label-block" style="margin-bottom: 20px">{{ aluno.semestre }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="periodo" class="bold">Período:</label>
-        <label name="periodo" id="periodo" class="label-block" [(ngModel)]="aluno.periodo">{{ aluno.periodo }}</label>
+        <label name="periodo" id="periodo" class="label-block">{{ aluno.periodo }}</label>
       </div>
   
       <div class="col-md-12 identificacao-titulo">
@@ -162,59 +162,59 @@
   
       <div class="col-md-4">
         <label for="razao" class="bold">Razão Social:</label>
-        <label name="razao" id="razao" class="label-block" [(ngModel)]="empresa.razaoSocial">{{ empresa.razaoSocial }}</label>
+        <label name="razao" id="razao" class="label-block">{{ empresa.razaoSocial }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="contato" class="bold">Contato:</label>
-        <label name="contato" id="contato" class="label-block" [(ngModel)]="empresa.contatoResponsavel">{{ empresa.contatoResponsavel }}</label>
+        <label name="contato" id="contato" class="label-block">{{ empresa.contatoResponsavel }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="telefone" class="bold">Telefone:</label>
-        <label name="telefone" id="telefone" class="label-block" [(ngModel)]="empresa.telefone">{{ empresa.telefone }}</label>
+        <label name="telefone" id="telefone" class="label-block">{{ empresa.telefone }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="email" class="bold">E-Mail:</label>
-        <label name="email" id="email" class="label-block" [(ngModel)]="empresa.email">{{ empresa.email }}</label>
+        <label name="email" id="email" class="label-block">{{ empresa.email }}</label>
       </div>
   
       <div class="col-md-12 identificacao-border">Dados contrato</div> 
   
       <div class="col-md-4">
         <label for="dtInicio" class="bold">Data Início:</label>
-        <label name="dtInicio" id="dtInicio" class="label-block" [(ngModel)]="contrato.dataInicio">{{ contrato.dataInicio | date: 'dd/MM/yyyy' }}</label>
+        <label name="dtInicio" id="dtInicio" class="label-block">{{ contrato.dataInicio | date: 'dd/MM/yyyy' }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="dtFim" class="bold">Data Fim:</label>
-        <label name="dtFim" id="dtFim" class="label-block" [(ngModel)]="contrato.dataFim">{{ contrato.dataFim | date: 'dd/MM/yyyy' }}</label>
+        <label name="dtFim" id="dtFim" class="label-block">{{ contrato.dataFim | date: 'dd/MM/yyyy' }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="agente" class="bold">Agente de integração:</label>
-        <label name="agente" id="agente" class="label-block" [(ngModel)]="contrato.agenteIntegracao">{{ contrato.agenteIntegracao }}</label>
+        <label name="agente" id="agente" class="label-block">{{ contrato.agenteIntegracao }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="valorBolsa" class="bold">Valor da Bolsa:</label>
-        <label name="valorBolsa" id="valorBolsa" class="label-block" [(ngModel)]="contrato.valorBolsa">R$: {{ contrato.valorBolsa }}</label>
+        <label name="valorBolsa" id="valorBolsa" class="label-block">R$: {{ contrato.valorBolsa }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="supervisor" class="bold">Supervisor:</label>
-        <label name="supervisor" id="supervisor" class="label-block" [(ngModel)]="contrato.supervisorEstagio">{{ contrato.supervisorEstagio }}</label>
+        <label name="supervisor" id="supervisor" class="label-block">{{ contrato.supervisorEstagio }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="cargoSupervisor" class="bold">Cargo Supervisor:</label>
-        <label name="cargoSupervisor" id="cargoSupervisor" class="label-block" [(ngModel)]="contrato.cargoSupervisor">{{ contrato.cargoSupervisorEstagio }}</label>
+        <label name="cargoSupervisor" id="cargoSupervisor" class="label-block">{{ contrato.cargoSupervisorEstagio }}</label>
       </div>
   
       <div class="col-md-4">
         <label for="observacao" class="bold">Observação:</label>
-        <label name="observacao" id="observacao" class="label-block" [(ngModel)]="contrato.observacao">{{ contrato.observacao }}</label>
+        <label name="observacao" id="observacao" class="label-block">{{ contrato.observacao }}</label>
       </div>
     </div>
   </form>

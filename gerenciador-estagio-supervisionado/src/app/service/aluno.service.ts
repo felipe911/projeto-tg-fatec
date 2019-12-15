@@ -4,6 +4,7 @@ import { retry, catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpEvent, HttpParams } from "@angular/common/http";
 import 'rxjs/add/operator/catch';
 import { Aluno } from '../model/Aluno';
+import { AlunoEstagioMediator } from '../mediators/AlunoEstagiosMediator';
 
 @Injectable({
   providedIn: 'root'
@@ -46,5 +47,9 @@ export class AlunoService {
 
     deletar(id){
         return this.http.delete(`${this.baseUrl}` + '/' + id)
+    }
+
+    buscarDadosAlunoEstagio(id): Observable<AlunoEstagioMediator>{
+        return this.http.get<AlunoEstagioMediator>(`${this.baseUrl}` + '/busca-estagios-do-aluno/' + id);
     }
 }

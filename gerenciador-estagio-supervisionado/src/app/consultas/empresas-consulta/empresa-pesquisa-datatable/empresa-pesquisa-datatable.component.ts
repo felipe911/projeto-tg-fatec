@@ -14,7 +14,7 @@ export class EmpresaPesquisaDatatableComponent implements OnInit {
 
   constructor(private modalService: BsModalService, private router: Router, private empresaService: EmpresaService) { }
 
-  cabecalhoElementos = ['Id', 'Razão Social', 'Convênio até', 'Cidade', 'Qtd. Estagiários Ativos', 'Ações'];
+  cabecalhoElementos = ['Razão Social', 'Convênio até', 'Cidade', 'Qtd. Estagiários Ativos', 'Ações'];
   cabecalhoElementosEstagiarios = ['Nome', 'Ra', 'Curso', 'Semestre'];
   
   idSelecionado: number;
@@ -28,7 +28,7 @@ export class EmpresaPesquisaDatatableComponent implements OnInit {
   mensagemModal: String;
 
   empresas: Empresa[];
-  empresa: Empresa;
+  empresa: Empresa = new Empresa();
   alunos: Aluno[];
 
   ngOnInit() {
@@ -80,7 +80,6 @@ export class EmpresaPesquisaDatatableComponent implements OnInit {
         alert('Erro na Requisição');
       }
     )
-
   }
 
   confirmarExclusao(): void {
