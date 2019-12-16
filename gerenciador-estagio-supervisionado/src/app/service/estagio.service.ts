@@ -16,4 +16,8 @@ export class EstagioService {
     buscaEstagioPorIdAluno(id){
       return this.http.get<Estagio>(`${this.baseUrl}` + '/busca-por-aluno/' + id);
     }
+
+    buscaEstagiosPorIdAluno(id){
+      return this.http.get<Estagio[]>(`${this.baseUrl}` + '/busca-estagios-por-aluno/' + id);
+    }
 }

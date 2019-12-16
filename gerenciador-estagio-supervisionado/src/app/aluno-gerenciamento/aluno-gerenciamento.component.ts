@@ -6,6 +6,7 @@ import { EstagioService } from '../service/estagio.service';
 import { Aluno } from '../model/Aluno';
 import { Empresa } from '../model/Empresa';
 import { Contrato } from '../model/Contrato';
+import { Estagio } from '../model/Estagio';
 
 @Component({
   selector: 'app-aluno-gerenciamento',
@@ -19,6 +20,7 @@ export class AlunoGerenciamentoComponent implements OnInit {
   aluno: Aluno = new Aluno();
   empresa: Empresa = new Empresa();
   contrato: Contrato = new Contrato();
+  estagios: Estagio[];
 
   modalRef: BsModalRef;
   modalRefChild: BsModalRef;
@@ -40,9 +42,17 @@ export class AlunoGerenciamentoComponent implements OnInit {
     this.modalRefChild = this.modalService.show(template, config);
   }
 
-  openModalHistorico(template: TemplateRef<any>) {
+  openModalHistorico(template: TemplateRef<any>, id) {
     const config: ModalOptions = { class: 'modal-lg' }
     this.modalRefHist = this.modalService.show(template, config);
+
+    this.estagioService.buscaEstagiosPorIdAluno(id).subscribe(
+
+      dados => {
+        this.estagios = dados;
+      }
+
+    )
   }
 
   openModalConfirm(template: TemplateRef<any>) {
@@ -60,9 +70,9 @@ export class AlunoGerenciamentoComponent implements OnInit {
     this.estagioService.buscaEstagioPorIdAluno(1).subscribe(
 
       dados => {
-        this.aluno = dados.aluno;
-        this.empresa = dados.contrato.empresa;
-        this.contrato = dados.contrato;
+          this.aluno = dados.aluno;
+          this.empresa = dados.contrato.empresa;
+          this.contrato = dados.contrato;
       }
     )
   }
