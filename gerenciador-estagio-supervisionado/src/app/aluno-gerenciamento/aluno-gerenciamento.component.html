@@ -97,9 +97,9 @@
               <label for="supervisor" class="label-block bold">Supervisor de Estágio:</label>
               <label id="supervisor">{{ estagio.contrato.supervisorEstagio }}</label>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" *ngFor="let qtdHora of qtdHorasTotais">
               <label for="qtd-horas" class="label-block bold">Qtd. de Horas Registradas:</label>
-              <label id="qtd-horas">xxx</label>
+              <label id="qtd-horas">{{ qtdHora }}</label>
             </div>
             <div class="col-md-6">
               <input type="radio" class="check" id="utilizar-estagio" style="margin:30px 10px 0 0" name="opcao-estagio">

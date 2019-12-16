@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpEvent } from "@angular/
 
 import { Observable } from 'rxjs';
 import { Estagio } from '../model/Estagio';
+import { EstagiosQtdHorasMediator } from '../mediators/EstagiosQtdHorasMediator';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,6 @@ export class EstagioService {
     }
 
     buscaEstagiosPorIdAluno(id){
-      return this.http.get<Estagio[]>(`${this.baseUrl}` + '/busca-estagios-por-aluno/' + id);
+      return this.http.get<EstagiosQtdHorasMediator>(`${this.baseUrl}` + '/busca-estagios-por-aluno/' + id);
     }
 }
