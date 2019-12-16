@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpEvent } from "@angular/
 import { Observable } from 'rxjs';
 
 import { EntregaRelatorioMediator } from '../mediators/EntregaRelatorioMediator';
+import { RelatorioFinal } from '../model/RelatorioFinal';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,5 @@ export class EntregaRelatorioService {
 
     listarEntregaRelatorioPorIdAluno(id): Observable<EntregaRelatorioMediator>{
       return this.http.get<EntregaRelatorioMediator>(`${this.baseUrl}` + '/buscar-por-aluno/' + id);
-  }
+    }
 }

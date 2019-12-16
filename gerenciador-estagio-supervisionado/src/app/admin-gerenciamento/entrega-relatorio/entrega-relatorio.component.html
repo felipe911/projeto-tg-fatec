@@ -49,29 +49,34 @@
   </div>
   <div class="modal-body">
     <div class="row row-margin">
+      
       <div class="identificacao-titulo">
-        Relatórios Parciais
+        Aluno
       </div>
 
       <div class="col-md-3">
         <label for="nome" class="bold">Aluno:</label>
         <label name="nome" id="nome" class="label-block">{{ aluno.nome }}</label>
       </div>
-
+      
       <div class="col-md-3">
         <label for="ra" class="bold">RA:</label>
         <label name="ra" id="ra" class="label-block" style="margin-bottom: 20px">{{ aluno.ra }}</label>
       </div>
-
-
+      
+      
       <div class="col-md-3">
         <label for="curso" class="bold">Curso:</label>
         <label name="curso" id="curso" class="label-block">{{ aluno.curso }}</label>
       </div>
-
+      
       <div class="col-md-3">
         <label for="razaoSocial" class="bold">Empresa:</label>
         <label name="razaoSocial" id="razaoSocial" class="label-block" style="margin-bottom: 20px">{{ empresa.razaoSocial }}</label>
+      </div>
+      
+      <div class="identificacao-titulo">
+        Relatórios Parciais
       </div>
 
       <div *ngFor="let relatorioParcial of relatoriosParciais">
@@ -97,7 +102,7 @@
       </div>
       
       <div class="modal-body">
-        <div *ngIf="relatorioFinal != null" class="row row-margin">
+        <div *ngIf="relatorioFinal != undefined" class="row row-margin">
           <div class="col-md-12">
             <label for="tipo-atividade" class="bold">Tipo de Atividade desenvolvida e forma de comprovação:</label>
             <label id="tipo-atividade" class="label-block" style="margin-bottom: 20px">{{ relatorioFinal.tipoAtividade }}</label>
@@ -130,14 +135,28 @@
 
           <div class="col-md-4">
             <label for="periodo" class="bold">Este relatório foi entregue ?</label>
-            <input type="radio" class="check" id="acordo-plano-sim" name="plano4">Sim
-            <input type="radio" class="check" id="acordo-plano-nao" name="plano4">Não
+            <input type="radio" class="check" id="acordo-plano-sim" name="entregue" value="true" (change)="relatorioEntregue($event, relatorioFinal)">Sim
+            <input type="radio" class="check" id="acordo-plano-nao" name="entregue" value="false" (change)="relatorioEntregue($event, relatorioFinal)">Não
           </div>
         </div>
 
       </div>
-      <div class="col-md-12 d-flex justify-content-end">
-          <button id="btn-salvar" type="button" class="btn btn-danger" title="Salvar">Salvar</button>
+      <div class="col-md-12 d-flex justify-content-end" *ngIf="relatorioFinal != undefined">
+          <button id="btn-salvar" type="button" class="btn btn-danger" title="Salvar" (click)="salvarRelatorioEntregue(modalPosRequisicao)">Salvar</button>
+      </div>
+
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #modalPosRequisicao>
+  <div class="modal-body">
+    <div class="row row-margin">
+      <div class="col-md-12">
+        <h4 class="modal-title align-center">{{ mensagemPosReq }}</h4>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <button id="btnOK" type="button" class="btn btn-danger" (click)="modalPosReq.hide()" style="margin-top:10px; width: 100px">Ok</button>
       </div>
     </div>
   </div>
