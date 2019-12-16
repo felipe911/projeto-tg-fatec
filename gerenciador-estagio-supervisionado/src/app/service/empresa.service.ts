@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpEvent } from "@angular/
 import 'rxjs/add/operator/catch';
 import { Empresa } from '../model/Empresa';
 import { AlunosDaEmpresaMediator } from '../mediators/AlunosDaEmpresaMediator';
+import { EmpresaQtdEstagiarios } from '../mediators/EmpresaQtdEstagiarios';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,10 @@ export class EmpresaService {
 
     listar(): Observable<Empresa[]>{
         return this.http.get<Empresa[]>(`${this.baseUrl}`);
+    }
+
+    listarEmpresasEstagiarios(): Observable<EmpresaQtdEstagiarios>{
+        return this.http.get<EmpresaQtdEstagiarios>(`${this.baseUrl}` + `/busca-estatisticas-empresa`);
     }
 
     buscaPorRazaoSocial(empresa: Empresa): Observable<Empresa>{

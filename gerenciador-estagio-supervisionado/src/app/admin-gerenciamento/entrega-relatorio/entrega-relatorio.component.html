@@ -91,11 +91,6 @@
           <input type="radio" class="check" id="acordo-plano-nao" name="plano1">Não
         </div>
       </div>
-
-      <div *ngIf="relatoriosParciais.length == 0">
-        <p style="color: red; margin-left: 15px;" class="bold">Nenhum Relatório Parcial registrado para este Aluno</p>
-      </div>
-
       
       <div class="identificacao-titulo" style="margin-top: 10px;">
         Relatório Final
@@ -139,14 +134,11 @@
             <input type="radio" class="check" id="acordo-plano-nao" name="plano4">Não
           </div>
         </div>
-        <div *ngIf="relatorioFinal == null">
-          <p style="color: red; margin-left: 15px;" class="bold">Relatório Final não registrado</p>
-        </div>
+
       </div>
-      <div *ngIf="relatorioFinal != null || relatorioParcial.length > 0" class="col-md-12 d-flex justify-content-end">
+      <div class="col-md-12 d-flex justify-content-end">
           <button id="btn-salvar" type="button" class="btn btn-danger" title="Salvar">Salvar</button>
       </div>
-
     </div>
   </div>
 </ng-template>

@@ -34,5 +34,9 @@ export class ContratoService {
 
     buscaPorIdEditarContrato(id){
       return this.http.get<Estagio>('/api/estagio/' + id);
-  }
+    }
+
+    listarQtdEstagiariosPorMes(): Observable<number[]>{
+      return this.http.get<number[]>(`${this.baseUrl}` + `/estagiarios-contratados-mes`);
+    }
 }
