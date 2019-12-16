@@ -30,6 +30,7 @@ export class AlunoGerenciamentoComponent implements OnInit {
   empresa: Empresa = new Empresa();
   contrato: Contrato = new Contrato();
   estagios: Estagio[];
+  qtdHorasTotais: number[];
   relatoriosAtividades: RelatorioAtividade[];
   relatoriosAtividadesAlunoHistoricos: RelatorioAtividade[];
   relatorioAtividade: RelatorioAtividade = new RelatorioAtividade();
@@ -92,7 +93,8 @@ export class AlunoGerenciamentoComponent implements OnInit {
     this.estagioService.buscaEstagiosPorIdAluno(id).subscribe(
 
       dados => {
-        this.estagios = dados;
+        this.estagios = dados.estagios;
+        this.qtdHorasTotais = dados.qtdHoras;
       }
     )
     
