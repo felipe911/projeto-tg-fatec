@@ -61,7 +61,7 @@
           <button id="btn-historico-total" type="button" (click)="openModalHistorico(modalHistorico, 1)"
                   class="btn btn-danger espacamento-left">Histórico de Estágios
           </button>
-          <button id="btn-estagio-atual" type="button" (click)="openModal(atual)" class="btn btn-danger espacamento-left">Estágio
+          <button id="btn-estagio-atual" type="button" (click)="openModal(atual, aluno)" class="btn btn-danger espacamento-left">Estágio
             Atual</button>
         </form>
       </div>
@@ -138,81 +138,32 @@
     </button>
   </div>
   <div class="modal-body">
-    <div class="row row-margin">
-      <div class="col-md-4">
-        <label for="dt-entrega" class="label-block bold">Data Entrega Relatório:</label>
-        <label id="dt-entrega">01/01/2019</label>
+  
+      <div class="row row-margin" *ngFor="let relatorioAtividade of relatoriosAtividades">
+        <div class="col-md-4">
+          <label for="dt-entrega" class="label-block bold">Data Entrega Relatório:</label>
+          <label id="dt-entrega">{{ relatorioAtividade.dataEntrega }}</label>
+        </div>
+        <div class="col-md-4">
+          <label for="qtd-horas" class="label-block bold">Qtd. de Horas:</label>
+          <label id="qtd-horas">{{ relatorioAtividade.qtdHoras }}</label>
+        </div>
+        <div class="col-md-12">
+          <label for="descricao" class="label-block bold">Descrição Atividade:</label>
+          <label class="descricao-atividade" id="qtd-horas">{{ relatorioAtividade.descricao }}</label>
+        </div>
+        <div class="barra"></div>
       </div>
-      <div class="col-md-4">
-        <label for="qtd-horas" class="label-block bold">Qtd. de Horas:</label>
-        <label id="qtd-horas">50</label>
-      </div>
-      <div class="col-md-12">
-        <label for="descricao" class="label-block bold">Descrição Atividade:</label>
-        <label class="descricao-atividade" id="qtd-horas">Integração sobre a empresa, treinamentos dos diversos temas:
-          UX, Design Thinking, Agile, Scrum, Git, Conceitos de Aplicações Web, Banco de Dados, Testes, .Net Framework,
-          Front-End, Java. Participação Sprint Plaining do dia 02/04/2018.
-          Configuração do ambiente da máquina que utilizo, no meu caso, instalação do Software Microsoft Visual Studio
-          2010 e 2015, SQL Management, além de outras diversas configurações específicas para atuar no ambiente
-          NewSpace (cliente Ventron). Ouvinte na palestra do Tech Day sobre Agile Journey, ministrado pelo Diretor da
-          Ventron, Alex Salino.
-          Desenvolvimento e entrega de um CRUD Inicial Web (desafio), proposto pelas equipes NewSpace para verificar
-          os conhecimentos nas tecnologias C#, MVC, Entity Framework code first, orientação a objetos, entendimento de
-          caso de uso.
-          Entendimento teórico da metodologia de 3 camadas de separação de uma solução, camada de apresentação (View),
-          negócio (BLL), acesso a dados (DAL).
-        </label>
-      </div>
-
-      <div class="barra"></div>
-
-      <div class="col-md-4">
-        <label for="dt-entrega" class="label-block bold">Data Entrega Relatório:</label>
-        <label id="dt-entrega">01/06/2019</label>
-      </div>
-      <div class="col-md-4">
-        <label for="qtd-horas" class="label-block bold">Qtd. de Horas:</label>
-        <label id="qtd-horas">50</label>
-      </div>
-      <div class="col-md-12">
-        <label for="descricao" class="label-block bold">Descrição Atividade:</label>
-        <label class="descricao-atividade" id="qtd-horas">Adaptação e separação em camadas para o projeto Crud Inicial
-          que desenvolvemos anteriormente.
-          Card 5640 – Solução do problema e realizar testes. Ouvinte do TechDay do dia 27/04/2018 – Clean Code,
-          ministrado pelo Gerente de Projetos
-        </label>
-      </div>
-
-      <div class="barra"></div>
-
-      <div class="col-md-4">
-        <label for="dt-entrega" class="label-block bold">Data Entrega Relatório:</label>
-        <label id="dt-entrega">01/12/2019</label>
-      </div>
-      <div class="col-md-4">
-        <label for="qtd-horas" class="label-block bold">Qtd. de Horas:</label>
-        <label id="qtd-horas">100</label>
-      </div>
-      <div class="col-md-12">
-        <label for="descricao" class="label-block bold">Descrição Atividade:</label>
-        <label class="descricao-atividade" id="qtd-horas">Particiapações em Sprint Plainings, Daylis. Analisar e
-          realizar soluções para os cards: 7186 -Criação de Robô que efetue assinatura Digital (atuação em melhoria
-          específica do card), 6994 - Criação de Nova Área, Seguimento e Modalidade (atuação em melhoria específica do
-          card),
-        </label>
-      </div>
-    </div>
-
-    <div class="barra"></div>
+    
 
     <div class="row row-margin" style="text-align: center">
       <div class="col-md-6">
         <label for="total-horas" class="label-block bold">Total de Horas Atuais:</label>
-        <label id="total-horas">200 Horas</label>
+        <label id="total-horas">{{ totalHorasAtuais }} Horas</label>
       </div>
       <div class="col-md-6">
         <label for="horas-faltantes" class="label-block bold">Total de Horas Faltantes:</label>
-        <label id="horas-faltantes">0 Horas</label>
+        <label id="horas-faltantes">{{ totalHorasFaltantes }} Horas</label>
       </div>
     </div>
 
@@ -225,6 +176,49 @@
         <button id="btn-imprimir" type="button" class="btn btn-secondary">Imprimir</button>
         <button id="btn-adicionar" type="button" class="btn btn-danger espacamento-left"
           (click)="openModalAddAtividade(modalAddAtividade)">Adicionar Atividade</button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #modalAddAtividade>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Adicionar Atividade </h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRefChild.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #relatorioAtividadeAdicionarForm ="ngForm" id="form-adicionar-registro">
+      <div class="row row-margin">
+          <div class="col-md-3">
+            <label for="input-data-entrega">Data Entrega Relatório:</label>
+            <input name="dataEntrega" type="date" class="form-control" id="input-data-entrega" [(ngModel)]="relatorioAtividade.dataEntrega">
+          </div>
+          <div class="col-md-3">
+              <label for="input-horas">Qtd. Horas:</label>
+              <input name="qtdHoras" type="number" class="form-control" id="input-horas" [(ngModel)]="relatorioAtividade.qtdHoras">
+            </div>
+          <div class="col-md-12">
+            <label for="input-descricao" class="espacamento-top">Descrição Atividade:</label>
+            <textarea name="descricao" class="form-control" id="input-descricao" rows="3" [(ngModel)]="relatorioAtividade.descricao"></textarea>
+          </div>
+      </div>
+    </form>
+    <br />
+    <button id="btn-limpar" type="button" class="btn btn-secondary" (click)="limparRelatorioAtividadeAdd(relatorioAtividadeAdicionarForm)">Limpar</button>
+    <button id="btn-add-estagio" type="button" class="btn btn-danger"(click)="salvarRelatorioAtividade(modalPosRequisicao, relatorioAtividadeAdicionarForm)" style="margin-left: 10px;">Adicionar</button>
+  </div>
+</ng-template>
+
+<ng-template #modalPosRequisicao>
+  <div class="modal-body">
+    <div class="row row-margin">
+      <div class="col-md-12">
+        <h4 class="modal-title align-center">{{ mensagemPosReq }}</h4>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+        <button id="btnOK" type="button" class="btn btn-danger" (click)="modalPosReq.hide()" style="margin-top:10px; width: 100px">Ok</button>
       </div>
     </div>
   </div>
