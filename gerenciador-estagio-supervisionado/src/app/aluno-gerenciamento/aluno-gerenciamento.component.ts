@@ -24,12 +24,14 @@ export class AlunoGerenciamentoComponent implements OnInit {
               private modalService: BsModalService,
               private relatorioService: RelatoriosService) { }
 
-  alunoSelecionado: Aluno = new Aluno();            
+  alunoSelecionado: Aluno = new Aluno();      
+  idSelecionado: number;      
   aluno: Aluno = new Aluno();
   empresa: Empresa = new Empresa();
   contrato: Contrato = new Contrato();
   estagios: Estagio[];
   relatoriosAtividades: RelatorioAtividade[];
+  relatoriosAtividadesAlunoHistoricos: RelatorioAtividade[];
   relatorioAtividade: RelatorioAtividade = new RelatorioAtividade();
   relatorioAlunoMediator: RelatoriosAlunoMediator = new RelatoriosAlunoMediator;
   totalHorasAtuais: number;
@@ -85,13 +87,15 @@ export class AlunoGerenciamentoComponent implements OnInit {
     const config: ModalOptions = { class: 'modal-lg' }
     this.modalRefHist = this.modalService.show(template, config);
 
+    this.idSelecionado = id;
+
     this.estagioService.buscaEstagiosPorIdAluno(id).subscribe(
 
       dados => {
         this.estagios = dados;
       }
-
     )
+    
   }
 
   openModalConfirm(template: TemplateRef<any>) {
@@ -102,6 +106,14 @@ export class AlunoGerenciamentoComponent implements OnInit {
   openModalVisualizar(template: TemplateRef<any>) {
     const config: ModalOptions = { class: 'modal-lg' }
     this.modalVisualizarRef = this.modalService.show(template, config);
+
+    this.relatorioService.buscaRelatorioAtividadePorIdAluno(this.idSelecionado).subscribe(
+
+      dados => {
+        this.relatoriosAtividadesAlunoHistoricos = dados;
+      }
+
+    )
   }
 
 

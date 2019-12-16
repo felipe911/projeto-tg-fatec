@@ -35,4 +35,8 @@ export class RelatoriosService {
   buscarRelatoriosAtividadePorAluno(aluno: Aluno):Observable<RelatorioAtividade[]>{
     return this.http.post<RelatorioAtividade[]>(`${this.baseUrl}` + 'relatorio-atividade/buscar-por-aluno' , aluno);
   }
+
+  buscaRelatorioAtividadePorIdAluno(id){
+    return this.http.get<RelatorioAtividade[]>(`${this.baseUrl}` + 'relatorio-atividade/buscar-por-aluno-id/' + id);
+  }
 }

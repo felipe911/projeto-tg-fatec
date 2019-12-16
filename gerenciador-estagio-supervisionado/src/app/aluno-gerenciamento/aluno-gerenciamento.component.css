@@ -63,6 +63,10 @@ h1{
     display: block !important;
 }
 
+.align-center{
+    text-align: center;
+}
+
 .btn-full-width{
     width: 100%;
     text-align: left;
