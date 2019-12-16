@@ -13,6 +13,25 @@ h1{
     padding: 10px 30px 10px 30px;
 }
 
+#btn-concluir-estagio, #btn-add-estagio{
+    float: right;
+}
+
+.descricao-atividade{
+    text-align: justify;
+}
+
+.barra{
+    height: 2px;
+    width: 100%;
+    border: 2px solid #ced4da;
+    margin: 10px 0 10px 0;
+}
+
+.bold{
+    font-weight: bold;
+}
+
 .titulo{
     font-family: 'Open Sans', Arial, sans-serif;
     font-style: italic;
@@ -74,4 +93,9 @@ h1{
     color: rgb(0, 0, 0);
     background-color: #ffffff;
     border-color: #ced4da;
+}
+
+.btn-danger{
+    background-color: #990000;
+    color: white;
 }

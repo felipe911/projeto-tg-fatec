@@ -63,19 +63,18 @@
             Atividades</button>
         </div>
       </div>
-
-      <ng-template #modalVisualizar>
-        <div class="modal-header">
-          <h4 class="modal-title pull-left">Visualizar Atividades</h4>
-          <button type="button" class="close pull-right" aria-label="Close" (click)="modalVisualizarRef.hide()">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <app-visualizar-atividades></app-visualizar-atividades>
-        </div>
-      </ng-template>
-
     </div>
   </div>
 </form>
+
+<ng-template #modalVisualizar>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Visualizar Atividades</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalVisualizarRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-visualizar-atividades></app-visualizar-atividades>
+  </div>
+</ng-template>

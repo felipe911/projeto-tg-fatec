@@ -13,22 +13,22 @@
 
       <div class="col-md-3">
         <label for="nome">Aluno(a):</label>
-        <label id="nome" class="label-block">Felipe Augusto de Oliveira</label>
+        <label name="nome" id="nome" class="label-block">{{ aluno.nome }}</label>
       </div>
 
       <div class="col-md-3">
         <label for="ra">RA:</label>
-        <label id="ra" class="label-block">0030481521009</label>
+        <label id="ra" class="label-block">{{ aluno.ra }}</label>
       </div>
 
       <div class="col-md-3">
         <label for="curso">Curso:</label>
-        <label id="curso" class="label-block">Análise e Desenvolvimento de Sistemas</label>
+        <label id="curso" class="label-block">{{ aluno.curso }}</label>
       </div>
 
       <div class="col-md-3">
         <label for="turno">Turno:</label>
-        <label id="turno" class="label-block">Noturno</label>
+        <label id="turno" class="label-block">{{ aluno.periodo }}</label>
       </div>
 
       <div class="col-md-12 identificacao-border">
@@ -37,34 +37,124 @@
 
       <div class="col-md-3">
         <label for="razao-social">Razão Social:</label>
-        <label id="razao-social" class="label-block">Ventron Informática</label>
+        <label id="razao-social" class="label-block">{{ empresa.razaoSocial }}</label>
       </div>
 
       <div class="col-md-3">
-        <label for="ramo-atividade">Ramo de Atividade da Organização:</label>
-        <label id="ramo-atividade" class="label-block">Desenvolvimento de Software</label>
+        <label for="nome-orientador">Supervisor de Estágio:</label>
+        <label id="nome-orientador" class="label-block">{{ contrato.supervisorEstagio }}</label>
       </div>
 
       <div class="col-md-3">
-        <label for="nome-orientador">Nome Orientador(a) de Estágio:</label>
-        <label id="nome-orientador" class="label-block">Maria Angélica</label>
+        <label for="cargo-orientador">Cargo Supervisor de Estágio:</label>
+        <label id="cargo-orientador" class="label-block">{{ contrato.cargoSupervisorEstagio }}</label>
       </div>
 
       <div class="col-md-3">
-        <label for="cargo-orientador">Cargo Orientador de Estágio:</label>
-        <label id="cargo-orientador" class="label-block">Team Leader</label>
-      </div>
-
-      <div class="col-md-6">
-        <br/>
-        <label for="contatos-orientador">Contato Orientador de Estágio:</label>
-        <label id="contatos-orientador" class="label-block">maria-angelica@fatec.com.br</label>
+        <label for="contatos-orientador">E-mail Supervisor de Estágio:</label>
+        <label id="contatos-orientador" class="label-block">{{ contrato.emailSupervisor }}</label>
       </div>
 
       <div class="col-md-12 d-flex justify-content-end" style="margin-top: 30px">
-        <app-historico-estagio></app-historico-estagio>
+        <form id="form-historico-estagio">
+
+          <button id="btn-historico-total" type="button" (click)="openModalHistorico(modalHistorico)"
+                  class="btn btn-danger espacamento-left">Histórico de Estágios
+          </button>
+        </form>
       </div>
 
     </div>
   </form>
 </div>
+
+<ng-template #modalHistorico>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Histórico de Estágios</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRefHist.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form id="form-dados-estagio">
+      <div class="row row-margin">
+        <div class="col-md-12">
+          <div class="row row-margin">
+            <div class="col-md-3">
+              <label for="empresa" class="label-block bold">Empresa:</label>
+              <label id="empresa">Fatec Sorocaba</label>
+            </div>
+            <div class="col-md-3">
+              <label for="dt-inicio" class="label-block bold">Data Início Estágio:</label>
+              <label id="dt-inicio">01/01/2018</label>
+            </div>
+            <div class="col-md-3">
+              <label for="dt-fim" class="label-block bold">Data Fim Estágio:</label>
+              <label id="dt-fim">01/06/2018</label>
+            </div>
+            <div class="col-md-3">
+              <label for="supervisor" class="label-block bold">Supervisor de Estágio:</label>
+              <label id="supervisor">Maria Angélica</label>
+            </div>
+            <div class="col-md-3">
+              <label for="qtd-horas" class="label-block bold">Qtd. de Horas Registradas:</label>
+              <label id="qtd-horas">200</label>
+            </div>
+            <div class="col-md-6">
+              <input type="radio" class="check" id="utilizar-estagio" style="margin:30px 10px 0 0" name="opcao-estagio">
+              <label for="utilizar-estagio">Utilizar este estágio para conclusão do Curso</label>
+            </div>
+            <div class="col-md-3">
+              <button id="btn-visualiza-atividades" type="button" class="btn btn-danger" style="margin-top:20px"
+                (click)="openModalVisualizar(modalVisualizar)">Visualizar
+                Atividades</button>
+            </div>
+            <div class="barra"></div>
+    
+            <div class="col-md-3">
+              <label for="empresa" class="label-block bold">Empresa:</label>
+              <label id="empresa">Ventron Informática</label>
+            </div>
+            <div class="col-md-3">
+              <label for="dt-inicio" class="label-block bold">Data Início Estágio:</label>
+              <label id="dt-inicio">01/01/2019</label>
+            </div>
+            <div class="col-md-3">
+              <label for="dt-fim" class="label-block bold">Data Fim Estágio:</label>
+              <label id="dt-fim">01/12/2019</label>
+            </div>
+            <div class="col-md-3">
+              <label for="supervisor" class="label-block bold">Supervisor de Estágio:</label>
+              <label id="supervisor">João</label>
+            </div>
+            <div class="col-md-3">
+              <label for="qtd-horas" class="label-block bold">Qtd. de Horas Registradas:</label>
+              <label id="qtd-horas">200</label>
+            </div>
+            <div class="col-md-6">
+              <input type="radio" class="check" id="utilizar-estagio2" style="margin:30px 10px 0 0" name="opcao-estagio">
+              <label for="utilizar-estagio2">Utilizar este estágio para conclusão do Curso</label>
+            </div>
+            <div class="col-md-3">
+              <button id="btn-visualiza-atividades" type="button" class="btn btn-danger" style="margin-top:20px"
+                (click)="openModalVisualizar(modalVisualizar)">Visualizar
+                Atividades</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<ng-template #modalVisualizar>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Visualizar Atividades</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalVisualizarRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-visualizar-atividades></app-visualizar-atividades>
+  </div>
+</ng-template>
