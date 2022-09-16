@@ -23,7 +23,7 @@
     "@angular/router": "^6.0.3",
     "angular-datatables": "^8.0.0",
     "angular-font-awesome": "^3.1.2",
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^4.3.1",
     "bootstrap-sass-loader": "^1.0.10",
     "chart.js": "^2.8.0",
     "core-js": "^2.5.4",
